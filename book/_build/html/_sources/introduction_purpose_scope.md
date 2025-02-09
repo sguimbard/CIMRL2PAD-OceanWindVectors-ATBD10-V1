@@ -1,62 +1,12 @@
 # Introduction, purpose and scope
 
-Here comes an introduction and the purpose and scope of the ATBD
+The purpose of this Algorithm Theoretical Baseline Document (ATBD) is to establish the procedure that will be used in the CIMR mission to generate the Ocean Wind Vector (OWV) data from brightness temperatures (Tb) recorded by the CIMR radiometer. The historical satellite OWV "Background" and justification of selected algorithm are first provided. As described in the "Level-2 product definition" section, the output product (CIMR OWV Level 2 product) will consist of files containing half-orbit data (from pole to pole) on a geographical grid (e.g. EASE2-like for Polar Regions, Equal Area Cylindrical projection) defined by the level 1c grid, itself defined by the CIMR Leve1b re-sampling approach.
 
 
-```{note}
-This is an example of a note
-```
+As it is not possible to transform the Tb into OWV through a univocal mathematical expression. emission of the sea surface at the five CIMR frequencies is computed using a series of mathematical models that have as independent variables the different geophysical parameters (including OWV) that determine this emission. 
+Some of these parameters are obtained from sources external to CIMR or from CIMR data directly (SST, SSS,..), and for OWV a guessed value is considered. The computed Tb, for all observation configurations that correspond to the specific satellite passage, are compared to the measured ones, and then the independent variables are modified in an iterative process until reaching the maximum similarity between both Tb values. The OWV that corresponds to this situation is the value retrieved from CIMR.
 
-##### Here is an example of a table with a label
-(gridsCDR)=
- | Id  |  $\mathbf{n}_{x}$  |  $\mathbf{n}_{y}$  |  $\mathbf{A}_{x}$ \[km\] |  $\mathbf{A}_{y}$ \[km\]  | $\mathbf{B}_{x}$ \[km\]  | $\mathbf{B}_{y}$ \[km\]|
- | ----- | ----- | ----- | ------ | ----- | ----- |-----|
- | `nh_ease2-750`, `sh_ease2-750`  |  144 |  144  |   75.0   |    75.0  | -5375.0  |   5375.0|
- | `nh_ease2-250`, `sh_ease2-250`  |  432  | 432   |    25.0 |  25.0 |   -5387.5  |      5387.5|
- | `nh_ease2-125`, `sh_ease2-125`  |  864 |  864    |          12.5   |    12.5     |  -5393.75  |  5393.75|
+In the "Baseline Algorithm Definition" section, a detailed description of all the parts of the algorithm, the different modules or sub-models that are used to compute the different contributions to sea surface Tb as well as the procedures to compare it with the measured Tb and the iterative convergence method. 
 
-
-Here is a citation, {cite}`brodzik/etal:2012`
-
-
-Here is an example of how to label a section:
-
-(seasons)= 
-### Seasons
-
-The  sea-ice drift CDR has global coverage and thus cover all sea ice in
-the Northern Hemisphere (NH) and Southern Hemisphere (SH). The quality
-of the drift estimates vary with season, and it is convenient to refer
-to winter, summer, and transition periods. The definition of these
-periods are in .
-
- |         |  Northern Hemisphere |  Southern Hemisphere|
- | --------| ---------------------| ---------------------|
- | Winter   |      Nov - Apr       |     Apr - Sept |
- | Spring   |         May        |           Oct |
- | Summer   |     Jun - Sept     |        Nov - Feb |
- | Autumn   |         Oct        |           Mar|
-
-
-Here is an example of how to insert and label images:
-
-
-
-```{figure} inv_params_nh_2013-2020_jul.jpg
----
-name: inv_params_nh
----
-Figure caption here!
-```
-
-```{figure} inv_params_sh_2012-2019_dec.jpg
----
-name: inv_params_sh
----
-Second figure caption
-```
-
-These maps of parameters and residuals are saved in a monthly parameter
-file. In Figures {numref}`inv_params_nh` and {numref}`inv_params_sh`
-examples of these parameters are shown.
+In the Algorithm Input and Output Data Definition, we define all needed input and output data.
 
