@@ -24,11 +24,7 @@ chapters:
   title: Algorithm Input and Output Data Definition (IODD)
 - file: algorithm_performance_assessment
   title: Algorithm Performance Assessment 
-- file: markdown-notebooks
-  title: Notebook comments
 - file: cimr_ocean_retrieval
   title: Python notebook for CIMR ocean retrieval
 - file: references
-  title: References (example)
-- file: annex
-  title: Annex
+  title: References
