@@ -1,0 +1,1088 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Algorithm Performance Assessment using SCEPS &#8212; CIMR L2 Ocean Wind Vectors ATBD v1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm_performance_assessment';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 Ocean Wind Vector ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_purpose_scope.html">Introduction, purpose and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and justification of selected algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Performance Assessment using SCEPS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebook comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="references.html">References (example)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/OceanWindVectors_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/algorithm_performance_assessment.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algorithm Performance Assessment using SCEPS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithm Performance Assessment using SCEPS</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geophysical-data-used-to-describe-the-ocean-scene">Geophysical Data Used to Describe the Ocean Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-toa-tbs-over-the-scene">Simulated TOA Tbs over the Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-instrument-tbs-over-the-scene">Simulated Instrument Tbs Over the Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-ocean-surface-wind-and-sst-retrievals">Step 1: Ocean Surface Wind and SST Retrievals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ocean-wind-direction-inversion-algorithm">Step 2: Ocean Wind Direction Inversion Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-assessment-summary">Performance Assessment Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-future-atbd-development">Roadmap for future ATBD development</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment-using-sceps">
+<h1>Algorithm Performance Assessment using SCEPS<a class="headerlink" href="#algorithm-performance-assessment-using-sceps" title="Link to this heading">#</a></h1>
+<p>To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes (<a class="reference internal" href="#figure36"><span class="std std-numref">Fig. 16</span></a>).</p>
+<p>As described in RD.2, the simulator consists of a single statically-linked Linux executable program, <strong>cimrProject</strong>, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a <em>test card</em>, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures.</p>
+<p>The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_p\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure35">
+<img alt="_images/Figure35.png" src="_images/Figure35.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Schematic of the retrieval algorithm assessment using SCEPS</span><a class="headerlink" href="#figure35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>A schematic of the overall retrieval algorithm assessment using SCEPS is provided in <a class="reference internal" href="#figure35"><span class="std std-numref">Fig. 15</span></a>. The assessment is based upon these successive steps:</p>
+<ol class="arabic simple">
+<li><p>The scene is first described by geophysical fields, including: SSS, SST, OWV at ~1 km spatial resolution and then interpolated (in space and time) atmospheric vertical parameters from ERA5.</p></li>
+<li><p>The TOA brightness temperatures are then evaluated for all CIMR frequencies and polarization using the previously described RTM for an ensemble of incidence angles. The azimuthal harmonic contributions to total TOA temperature are also evaluated separately.</p></li>
+<li><p>The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field involves several aspects:</p>
+<ul class="simple">
+<li><p>3.1 Calculation of orbit and viewing geometry,</p></li>
+<li><p>3.2 Calculation of the scene brightness Stokes vector,</p></li>
+<li><p>3.3 Integration of the scene brightness over the antenna patterns (both near and far from the feed boresights) for each horn.</p></li>
+<li><p>3.4 Addition of NEDT noise to the antenna temperatures,</p></li>
+<li><p>3.5 Calculation and application of the Antenna Pattern Correction (APC) matrices for all feeds, to reduce/remove cross-pol contamination. For these tests, this APC has the polarization basis rotation <em>built-in</em>;</p></li>
+<li><p>3.6 Production of a preliminary version of the Level 1b product.</p></li>
+</ul>
+</li>
+<li><p>Resampled brightness temperature are then computed by applying the Backus-Gilbert method to express in the surface polarization basis:</p>
+<ul class="simple">
+<li><p>SCEPS uses elliptical power patterns (on Earth) to compute the BG inner products.</p></li>
+<li><p>Fore and aft sampled can be combined or kept separated in fore and aft images.</p></li>
+<li><p>The Target grid is the original test card at 1 km resolution and the target patterns are all circular Gaussians with FWHM for L, C, X, Ku, and Ka band defined as follows: 60, 30, 30, 8, and 8 km.</p></li>
+<li><p>A single application of BG yields weights that can be applied to all antenna pattern contributions.</p></li>
+<li><p>Maps of error variance amplification factors are computed from the BG weights.</p></li>
+</ul>
+</li>
+<li><p>The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped <em>‘measured L1B Tbs’</em>.</p></li>
+</ol>
+<hr class="docutils" />
+<section id="geophysical-data-used-to-describe-the-ocean-scene">
+<h2>Geophysical Data Used to Describe the Ocean Scene<a class="headerlink" href="#geophysical-data-used-to-describe-the-ocean-scene" title="Link to this heading">#</a></h2>
+<p>The synthetic wind field used to model the scene is a merge between ERA5 re-analyses used as the background wind field, and more local and high-resolution surface winds from Sentinel-1/2 SAR data around two hurricanes. The SSS is from the MERCATOR model. The SST is from ERA5 re-analyses, which were also used to simulate the atmospheric vertical profiles. The test scene includes several coasts to analyze the land-contamination.</p>
+<figure class="align-default" id="figure36">
+<img alt="_images/Figure36.png" src="_images/Figure36.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Input geophysical data used to simulate the test card: (top left): SSS from Mercator; (top right): ERA5 SST and (bottom) merged ERA5 &amp; SAR images (over the two hurricanes) surface wind vectors</span><a class="headerlink" href="#figure36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="simulated-toa-tbs-over-the-scene">
+<h2>Simulated TOA Tbs over the Scene<a class="headerlink" href="#simulated-toa-tbs-over-the-scene" title="Link to this heading">#</a></h2>
+<p>Using these geophysical data as input, we generated TOA L- to Ka-band TOA Tbs using the previously described RTM at an ensemble of EIA with values of 0°, 20°, 40°, 50°, 55°, 60°, 70°, 80° including azimuthal harmonics for the full Stokes vector. Note: In the Forward Model simulations, we assumed the anisotropic roughness effects to be similar at all EIA values. ERA5 vertical profiles for Cloud Liquid, Ice Water Content, air temperature, humidity were used to evaluate the atmospheric contributions at each frequency. Land Tbs &gt; 300K are from the SCEPS project (courtesy Carlos Jimenez). Example of such Tb fields are shown in <a class="reference internal" href="#figure37"><span class="std std-numref">Fig. 17</span></a>.</p>
+<figure class="align-default" id="figure37">
+<img alt="_images/Figure37.png" src="_images/Figure37.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">(Top Left) L-band H-pol; (Top right) L-band V-pol; (2nd panel from Top Left) C-band H-pol; (2nd panel from Top right) C-band V-pol; (3rd panel from Top Left) X-band H-pol; (3rd panel from Top right) X-band V-pol; (4th panel from Top Left) Ku-band H-pol; (4th panel from Top right) Ku-band V-pol; (Bottom panel, left) Ka-band H-pol; (Bottom panel, right) Ka-band H-pol; based on the Radiative forward model (EIA = 52° for L-band and EIA = 55° for X-Ka band).</span><a class="headerlink" href="#figure37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As described in previous sections, the roughness-induced emission <span class="math notranslate nohighlight">\(\Delta T_p\)</span> can be decomposed into isotropic and anisotropic emission components using a second-order azimuthal harmonic expansion as a function of <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span>, the relative azimuth between the radiometer look direction and the wind direction.</p>
+<p>The Stokes vector of the total brightness temperature emitted by the sea surface at location <span class="math notranslate nohighlight">\((x_1, x_2)\)</span> and at an EIA of <span class="math notranslate nohighlight">\(\theta_s\)</span> thus reads:</p>
+<div class="math notranslate nohighlight">
+\[
+T_h(x_1, x_2, \theta_s) = T_{hso} + T_{ho}(U_{10}) + T_{hc1}(U_{10}) \cos(\tilde{\varphi}) + T_{hc2}(U_{10}) \cos(2\tilde{\varphi})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T_v(x_1, x_2, \theta_s) = T_{vso} + T_{vo}(U_{10}) + T_{vc1}(U_{10}) \cos(\tilde{\varphi}) + T_{vc2}(U_{10}) \cos(2\tilde{\varphi})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+U(x_1, x_2, \theta_s) = U_{hs1}(U_{10}) \sin(\tilde{\varphi}) + U_{hs2}(U_{10}) \sin(2\tilde{\varphi})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V(x_1, x_2, \theta_s) = V_{hs1}(U_{10}) \sin(\tilde{\varphi}) + V_{hs2}(U_{10}) \sin(2\tilde{\varphi})
+\]</div>
+<hr class="docutils" />
+<p>As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: <span class="math notranslate nohighlight">\(T_{ho}(U_{10})\)</span> and <span class="math notranslate nohighlight">\(T_{vo}(U_{10})\)</span>. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))\)</span> and the second-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))\)</span>. Note that the third <span class="math notranslate nohighlight">\(U\)</span> and fourth <span class="math notranslate nohighlight">\(V\)</span> Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.</p>
+<p>For each frequency, SCEPS integrates the harmonic contributions (*see <a class="reference internal" href="#figure38"><span class="std std-numref">Fig. 18</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[
+T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10})
+\]</div>
+<p>to total antenna temperature separately and stores them in an extended L1B netCDF file.</p>
+<figure class="align-default" id="figure38">
+<img alt="_images/Figure38.png" src="_images/Figure38.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Example of the TOA scene azimuthal harmonics simulated from the surface wind field in <a class="reference internal" href="#figure36"><span class="std std-numref">Fig. 16</span></a> for L-band, C-band, and X-band. For each frequency panels show (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_v\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>).</span><a class="headerlink" href="#figure38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here, we specified wind direction-relative harmonics together with the wind direction at each grid point. Note that the harmonics other than 0 cannot vary with incidence angle and are provided as a single value at each horizontal grid point.</p>
+</section>
+<hr class="docutils" />
+<section id="simulated-instrument-tbs-over-the-scene">
+<h2>Simulated Instrument Tbs Over the Scene<a class="headerlink" href="#simulated-instrument-tbs-over-the-scene" title="Link to this heading">#</a></h2>
+<p>The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field then involves several aspects:</p>
+<ol class="arabic simple">
+<li><p>Calculation of orbit and viewing geometry,</p></li>
+<li><p>Calculation of the scene brightness Stokes vector for an ensemble of incidence angles, and of the wind-relative azimuthal harmonics components,</p></li>
+<li><p>Integration of the scene brightness over the antenna patterns (both near and far from the feed boresights),</p></li>
+<li><p>Addition of NEDT noise to the antenna temperatures,</p></li>
+<li><p>Calculation and application of the antenna pattern correction matrices for all feeds,</p></li>
+<li><p>Production of a preliminary version of the Level 1B product,</p></li>
+<li><p>Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied,</p></li>
+<li><p>An OZA adjustment is then simply computed by interpolating the test card Tbs (without harmonics) to the reference and actual OZA for each sample/measurement using those values directly without integrating over the antenna pattern. Then, the resampler resamples the interpolated test card Tbs at the OZA values as well as the unadjusted antenna Tbs separately so as to keep track of the adjustment. The OZA correction is then applied after resampling as a simple addition of the resampled adjustment.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Details about each step of the SCEPS simulator can be found in [RD.2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns.</p>
+<p>Noting that most of the power originates near the feed boresight, the integration domain is divided into an inner and an outer domain. These domains are defined for each feed (see <a class="reference internal" href="#figure39"><span class="std std-numref">Fig. 19</span></a>): The inner domain includes the boresight and extends out to an ellipse corresponding to an azimuthally averaged power 40 dB below the peak (at the feed boresight), where the azimuthal average is computed in the tilted direction cosine coordinate system. The outer domain covers the rest of the Front Half-Space (FHS) of antenna (containing boresight) in either the tilted or un-tilted coordinate system.</p>
+<figure class="align-default" id="figure39">
+<img alt="_images/Figure39.png" src="_images/Figure39.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Inner (left) and outer (right) integration grids in untilted director cosine (u, v) coordinates for L. Only the directivities down to -40 dB and -60 dB below the peak are shown for the inner and outer grids, respectively. The color indicates the antenna pattern power relative to peak.</span><a class="headerlink" href="#figure39" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The CIMR instrument consists of 25 feeds, with one at L-band, 4 at C/X bands, and 8 at Ku/Ka bands. <a class="reference internal" href="#figure40"><span class="std std-numref">Fig. 20</span></a> shows the measurement (full integration time) footprints for a portion of three successive scans for the L-, C-band, X-band, and Ku-band horns. The figure illustrates the extent of overlap between successive footprints both along and across the scan near the swath center. Although overlap can be increased (at the expense of increased noise) along the scan by using individual samples, the across-scan overlap cannot be changed. To obtain a resolution consistent with the antenna pattern footprint size, distance between neighboring measurements should not exceed half the Half-Power Beam Width (by the Whittaker–Nyquist–Shannon sampling theorem).</p>
+<p>As discussed in [RD.2], this condition is not satisfied across scan in L and Ku bands, but is satisfied in C and X bands. For Ku-band, there is no overlap in the half-power footprints across scan, which may be a limiting factor in the resolution of images obtained from resampled antenna temperatures.</p>
+<p>The figure illustrates the extent of overlap between successive footprints both along and across scan near the swath center. Although overlap can be increased (at the expense of increased noise) along scan by using individual samples, the across-scan overlap cannot be changed.</p>
+<figure class="align-default" id="figure40">
+<img alt="_images/Figure40.png" src="_images/Figure40.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Projection of the L-band, C-band, X-band, and Ku-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.</span><a class="headerlink" href="#figure40" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>In SCEPS, the total antenna temperature integral over all space is separated into several parts, with different integration methods for each:</p>
+<ul class="simple">
+<li><p>Inner domain: Extending from each feed boresight out to a circle (in tilted director cosine coordinates) corresponding to an isotropic directivity of -40 dB relative to the maximum at feed center (HBS).</p></li>
+<li><p>Outer domain: Extending from the boundary of the inner domain out to the Earth limb in the untilted frame (OUT).</p></li>
+<li><p>Contribution from distributed foreign sources: Cold sky and galactic radiation in nominal instrument pointing (sky).</p></li>
+<li><p>Contribution from localized sources: Bright spots in the test card scene (bs).</p></li>
+<li><p>Contribution from the direct sun and moon: Without reflection from the Earth.</p></li>
+</ul>
+<hr class="docutils" />
+<p>In SCEPS, the default reflector rotation rate is set to the fixed value of 7.8 rpm (clockwise looking towards the instrument along the spin axis from behind the reflector), and the radiometer integration times are set to the values shown in <a class="reference internal" href="#tablerecparam"><span class="std std-numref">Table 8</span></a>.</p>
+<p>SCEPS can be configured to produce antenna temperatures for only the full measurements or for all samples. In the present simulation, there are five samples per measurement.</p>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table" id="tablerecparam">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Receiver characteristics. Both the antenna temperature and the effective receiver noise temperature (<span class="math notranslate nohighlight">\(T_{rn}\)</span>) corresponding to the NEDT values are taken to be 150 K in SCEPS. There are five samples per measurement for all bands.</span><a class="headerlink" href="#tablerecparam" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Band Name</p></th>
+<th class="head"><p>Number of Feeds</p></th>
+<th class="head"><p>Center Frequency (GHz)</p></th>
+<th class="head"><p>Maximum Bandwidth (MHz)</p></th>
+<th class="head"><p>Sample Integration Time (ms)</p></th>
+<th class="head"><p>Measurement NEDT at <span class="math notranslate nohighlight">\(T_a\)</span> = <span class="math notranslate nohighlight">\(T_{rn}\)</span> = 150 K</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L</p></td>
+<td><p>1</p></td>
+<td><p>1.4135</p></td>
+<td><p>50.0</p></td>
+<td><p>11.12</p></td>
+<td><p>0.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>4</p></td>
+<td><p>6.875</p></td>
+<td><p>825.0</p></td>
+<td><p>2.80</p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>4</p></td>
+<td><p>10.65</p></td>
+<td><p>100.0</p></td>
+<td><p>2.74</p></td>
+<td><p>0.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ku</p></td>
+<td><p>8</p></td>
+<td><p>18.7</p></td>
+<td><p>200.0</p></td>
+<td><p>1.00</p></td>
+<td><p>0.4</p></td>
+</tr>
+<tr class="row-even"><td><p>Ka</p></td>
+<td><p>8</p></td>
+<td><p>36.5</p></td>
+<td><p>1000.0</p></td>
+<td><p>0.74</p></td>
+<td><p>0.7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p>The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.</p>
+<hr class="docutils" />
+<p>The simulated noisy instrument <span class="math notranslate nohighlight">\(T_B\)</span> are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands.
+For L-band, one uses a weighted average of the original scene <span class="math notranslate nohighlight">\(T_Bs\)</span> based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in <a class="reference internal" href="#figure41"><span class="std std-numref">Fig. 21</span></a>.</p>
+<hr class="docutils" />
+<p>Note that instrument measurements are simulated from scene <span class="math notranslate nohighlight">\(T_p\)</span> using SCEPS with several options:</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA + NEDT (constant over the antenna pattern),</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA without NEDT.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA integrated over inner antenna patterns (HBS): Boresight to -40 dB,</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA integrated over full antenna patterns (TOT): 0 dB to -60 dB,</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA <span class="math notranslate nohighlight">\(T_p\)</span> are then remapped into L1C TOA <span class="math notranslate nohighlight">\(T_p\)</span> using Backus-Gilbert interpolation (all frequencies except L-band) or using « gaussian weighted-average » for L-band (do not respect Nyquist sampling)</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1C TOA <span class="math notranslate nohighlight">\(T_p\)</span> are then generated for both Aft and Fore views and for 2 ascending passes intercepting the scene.</p>
+<figure class="align-default" id="figure41">
+<img alt="_images/Figure41.png" src="_images/Figure41.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene (left) V-pol; (right) H-pol. From Top to bottom: L-band; C-band, X-band, Ku-band and Ka-band.</span><a class="headerlink" href="#figure41" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-1-ocean-surface-wind-and-sst-retrievals">
+<h2>Step 1: Ocean Surface Wind and SST Retrievals<a class="headerlink" href="#step-1-ocean-surface-wind-and-sst-retrievals" title="Link to this heading">#</a></h2>
+<p>The two-step OWV retrieval has been implemented and applied over the scene, following:</p>
+<ul class="simple">
+<li><p><strong>Step 1:</strong> Retrieval of ocean surface wind speed modulus <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> (and of the SST <span class="math notranslate nohighlight">\(T_s^{ret}\)</span>) from the 16 input linearly polarized Tbs at resampled C-, X-, Ku-, and Ka-band channel data, namely <span class="math notranslate nohighlight">\(T_{th}^{TOA}\)</span> and <span class="math notranslate nohighlight">\(T_{tv}^{TOA}\)</span>, for aft and fore views.</p></li>
+<li><p><strong>Step 2:</strong> Retrieval of ocean surface wind direction from the 8 input C- and X-band channels 3rd and 4th Stokes parameters <span class="math notranslate nohighlight">\(U^{TOA}\)</span> and <span class="math notranslate nohighlight">\(V^{TOA}\)</span> for aft and fore views, as well as the surface wind speed <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> and SST <span class="math notranslate nohighlight">\(T_s^{ret}\)</span> retrieved at the previous step.</p></li>
+</ul>
+<hr class="docutils" />
+<p>To retrieve the surface wind speed vector modulus, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind speed, and of the SST: <span class="math notranslate nohighlight">\(\mathcal{p}\)</span> is taken to be the product of the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> and prior distribution functions <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(P'\)</span> for wind speed and SST, respectively:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{p}(\tilde{u}_{10}|T_p; \tilde{T}_s|T_p, \sigma_u, u_{10p}, \phi_{wp}, \sigma_T, T_{sp}) = \mathcal{L}(\tilde{u}_{10}, \tilde{T}_s, T_p, \phi_{wp}) \cdot P(\tilde{u}_{10}|\sigma_u, u_{10p}) \cdot P'(\tilde{T}_s|\sigma_T, T_{sp}) \quad (Eq.R1)
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{p}\)</span> is the posterior distribution of the retrieved wind speed,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a likelihood function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_p\)</span> are the input CIMR TOA Tbs:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+T_p = [T_{h,C}^{TOA,fore}, T_{v,C}^{TOA,fore}, T_{h,C}^{TOA,aft}, T_{v,C}^{TOA,aft}, T_{h,X}^{TOA,fore}, T_{v,X}^{TOA,fore}, T_{h,X}^{TOA,aft}, T_{v,X}^{TOA,aft}, \ldots, T_{h,Ku}^{TOA,fore}, T_{v,Ku}^{TOA,fore}, T_{h,Ku}^{TOA,aft}, T_{v,Ku}^{TOA,aft}, T_{h,Ka}^{TOA,fore}, T_{v,Ka}^{TOA,fore}, T_{h,Ka}^{TOA,aft}, T_{v,Ka}^{TOA,aft}]
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the prior distribution of wind speed,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P'\)</span> is the prior distribution of SST,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_u\)</span> is the standard deviation of the prior wind speed,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_T\)</span> is the standard deviation of the prior SST,</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{sp}\)</span> is the prior SST,</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_{10p}\)</span> is the prior wind speed, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi_{wp}\)</span> is the prior wind direction.</p></li>
+</ul>
+<hr class="docutils" />
+<p>We set here <span class="math notranslate nohighlight">\(P = P' = 1\)</span>, to give zero impacts of priors on the end retrievals. In addition, we further assumed that <span class="math notranslate nohighlight">\(u_{10p} = 7 \, m/s\)</span>, and <span class="math notranslate nohighlight">\(T_{sp} = 15^\circ C\)</span> are constant and uniform for all the scene.</p>
+<p>The likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is computed using the previously described RTM, here represented by the geophysical model function <span class="math notranslate nohighlight">\(G\)</span>, and which can be evaluated using <strong>(Eq.166)</strong> and the input CIMR TOA Tbs <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(\tilde{u}_{10}, \tilde{T}_s, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_p^i - G(\tilde{u}_{10}, \tilde{T}_s, \phi_{wp}))^2}{2\sigma_{p,i}^2} \right) \quad (Eq.R2)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\sigma_{p,i}\)</span> is the standard deviation of the CIMR TOA Tbs. It can be first taken to be the respective NEDT of each channel and can be re-evaluated post-launch using a large collected Tb TOA dataset.</p>
+<p>The nominal Bayesian wind speed and SST solution are then taken to be the Maximum Likelihood Estimate (mode of the posterior distribution), following:</p>
+<div class="math notranslate nohighlight">
+\[
+(U_{10}^{ret}, T_s^{ret}) = arg_{max(u_{10}, T_s)} \mathcal{p}(\tilde{u}_{10}|T_p; \tilde{T}_s|T_p, \sigma_u, u_{10p}, \phi_{wp}, \sigma_T, T_{sp}) \quad (Eq.R3)
+\]</div>
+<p>This non-linear problem is solved iteratively using a Levenberg-Marquardt (1963) algorithm to find the local maxima.</p>
+<p>Examples of Ocean Surface wind <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> speed retrieved over the scene is shown in <a class="reference internal" href="#figure42"><span class="std std-numref">Fig. 22</span></a>. In these retrieval simulations, the instrument Tbs were derived by integrating the scene over the full antenna patterns (HBS + outer patterns). <strong>SCEPS</strong> provides the option to add NEDT noise to the antenna temperatures: we perform retrieval simulations with and without NEDT.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure42">
+<img alt="_images/Figure42.png" src="_images/Figure42.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Retrieved Ocean wind speed modulus using aft-views with full antenna pattern integration and NEDT added to antenna temperatures. (Right) Retrieved Ocean wind speed modulus using fore-views with full antenna pattern integration and no NEDT added to antenna temperatures.</span><a class="headerlink" href="#figure42" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We next focus on comparing the input surface wind speed to the retrieved ones.
+Here, we consider only the most complete simulations combining aft and fore views (weighted average), adding NEDT on the antenna Tbs, and integrating over the full antenna patterns.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure43">
+<img alt="_images/Figure43.png" src="_images/Figure43.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Input surface wind speed; (Top right) retrieved surface wind speed combining both Aft and Fore views. (Bottom) Map of the differences between retrieved and input wind speed.</span><a class="headerlink" href="#figure43" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As illustrated in <a class="reference internal" href="#figure43"><span class="std std-numref">Fig. 23</span></a>, the difference between the retrieved wind speed and the input wind speed (<span class="math notranslate nohighlight">\(\Delta WS\)</span>) exhibits around zero values in general except in two domains:</p>
+<ul class="simple">
+<li><p>Along the coasts where the <span class="math notranslate nohighlight">\(\Delta WS\)</span> shows high values greater than <strong>1 m/s</strong>.</p></li>
+<li><p>Around the eye of the hurricane, where <strong>negative</strong> <span class="math notranslate nohighlight">\(\Delta WS\)</span> values are observed.</p></li>
+</ul>
+<hr class="docutils" />
+<figure class="align-default" id="figure44">
+<img alt="_images/Figure44.png" src="_images/Figure44.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Distribution of the <span class="math notranslate nohighlight">\(\Delta WS\)</span> considering the full retrieval domain shown in <strong>Figure 43</strong>.</span><a class="headerlink" href="#figure44" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The distribution of <span class="math notranslate nohighlight">\(\Delta WS\)</span> is shown in <a class="reference internal" href="#figure44"><span class="std std-numref">Fig. 24</span></a> and reveals:</p>
+<ul class="simple">
+<li><p>A <strong>high RMSD = 8.6 m/s</strong>.</p></li>
+<li><p>A <strong>skewed and biased mean retrieval</strong> over the scene with <strong>mean <span class="math notranslate nohighlight">\(\Delta WS\)</span> = +2 m/s</strong>, mainly because of the impact of land-contamination on the antenna Tbs.</p></li>
+</ul>
+<p>To illustrate this point further (see <a class="reference internal" href="#figure45"><span class="std std-numref">Fig. 25</span></a>), we <strong>bin-averaged</strong> the <span class="math notranslate nohighlight">\(\Delta WS\)</span> as a function of the distance to the nearest coasts.</p>
+<ul class="simple">
+<li><p>The <strong>median bias</strong> and <strong>STD</strong> are around <strong>0</strong> until the distance to the nearest coasts reaches a value below <strong>~40 km</strong> and increases as distance to coasts diminishes toward zero.</p></li>
+<li><p><strong>Very near the coast</strong>, the <strong>median <span class="math notranslate nohighlight">\(\Delta WS\)</span></strong> reaches around <strong>+30 m/s</strong> and <strong>STD(<span class="math notranslate nohighlight">\(\Delta WS\)</span>) ~25 m/s</strong>, which reveal a relatively <strong>strong impact of land</strong> on the Tbs.</p></li>
+</ul>
+<p>Given that the <strong>FWHM</strong> for C- and X-band resampled Tbs is <strong>~15 km</strong>, the land-contamination is therefore coming from <strong>emission from the outer domain</strong> of the antenna patterns.</p>
+<figure class="align-default" id="figure45">
+<img alt="_images/Figure45.png" src="_images/Figure45.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Median (top) and STD (bottom) of the <span class="math notranslate nohighlight">\(\Delta WS\)</span> evaluated per bins of distance to nearest coasts (bin width 5 km).</span><a class="headerlink" href="#figure45" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When filtering data with distance to nearest coasts less than or equal to <strong>40 km</strong> (see <a class="reference internal" href="#figure46"><span class="std std-numref">Fig. 26</span></a>), the statistics of <span class="math notranslate nohighlight">\(\Delta WS\)</span> evolve toward expected values with:</p>
+<ul class="simple">
+<li><p><strong>Median (and mean) <span class="math notranslate nohighlight">\(\Delta WS\)</span> ~ 0 m/s</strong></p></li>
+<li><p><strong>STD(<span class="math notranslate nohighlight">\(\Delta WS\)</span>) ~ 0.1 m/s</strong></p></li>
+</ul>
+<p>showing that most of the ‘bad-quality’ retrievals are found in the <strong>40 km coastal band</strong>.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure46">
+<img alt="_images/Figure46.png" src="_images/Figure46.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">(Left) Map of the <span class="math notranslate nohighlight">\(\Delta WS\)</span> after filtering the data with distance to nearest coasts less than or equal to 40 km. (Right) Distribution of the <span class="math notranslate nohighlight">\(\Delta WS\)</span> considering the retrieval domain filtered for distance to nearest coasts less than or equal to 40 km.</span><a class="headerlink" href="#figure46" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although the median and STD of the differences between the input and retrieved wind are strongly reduced after filtering the pixels within 40 km from the coasts, as seen in <a class="reference internal" href="#figure46"><span class="std std-numref">Fig. 26</span></a>, <span class="math notranslate nohighlight">\(\Delta WS\)</span> is still larger within a coastal band farther than 40 km, and locally, the error increases around the eye of the hurricane. This might come from:</p>
+<ol class="arabic simple">
+<li><p>Unresolved spatial structure in the veering winds around the eye, and/or</p></li>
+<li><p>Uncertainties in the wind direction (here with a first guess assumed to be ERA5 wind direction), which would translate into errors in the anisotropic components of the modeled Tbs.</p></li>
+</ol>
+<figure class="align-default" id="figure47">
+<img alt="_images/Figure47.png" src="_images/Figure47.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">(Top Left) input ERA5 SST; (Top right) retrieved SST combining both Aft and Fore views. (Bottom) Map of the differences between retrieved and input SSTs.</span><a class="headerlink" href="#figure47" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="figure48">
+<img alt="_images/Figure48.png" src="_images/Figure48.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Median (top) and STD (bottom) of the <span class="math notranslate nohighlight">\(\Delta SST\)</span> evaluated per bins of distance to nearest coasts (bin width 5 km).</span><a class="headerlink" href="#figure48" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As illustrated in <a class="reference internal" href="#figure46"><span class="std std-numref">Fig. 26</span></a> to <a class="reference internal" href="#figure49"><span class="std std-numref">Fig. 29</span></a>, a similar pattern of high land-contamination is found in the retrieved SSTs within ~40 km from nearest coasts. After removing the data within that band, an overall unbiased retrieval is found with an RMSD of ~0.1°C with respect to the input data when combining both aft and fore views in the input data used for retrieval, as well as adding the proper NEDT to each used channel. Outside of the coastal band, as for the retrieved wind speed modulus, the largest errors in the retrieved SSTs are found in the hurricane center region.
+While this error is obviously related to azimuthal-harmonic components (see <a class="reference internal" href="#figure38"><span class="std std-numref">Fig. 18</span></a>), the exact source for that error (polarization mixing?) yet remains unidentified and would require further investigation.</p>
+<figure class="align-default" id="figure49">
+<img alt="_images/Figure49.png" src="_images/Figure49.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">(Left) Map of the <span class="math notranslate nohighlight">\(\Delta SST\)</span> after filtering the data with distance to nearest coasts less than or equal to 40 km. (Right) Distribution of the <span class="math notranslate nohighlight">\(\Delta SST\)</span> considering the retrieval domain filtered for distance to nearest coasts less than or equal to 40 km.</span><a class="headerlink" href="#figure49" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2-ocean-wind-direction-inversion-algorithm">
+<h2>Step 2: Ocean Wind Direction Inversion Algorithm<a class="headerlink" href="#step-2-ocean-wind-direction-inversion-algorithm" title="Link to this heading">#</a></h2>
+<p>In a second step, the algorithm aims at retrieving the wind direction, <span class="math notranslate nohighlight">\(\phi_{w}^{ret}\)</span> only, using as input 8 datasets corresponding to C- and X-band channels 3rd and 4th Stokes parameters for both aft and fore views:</p>
+<div class="math notranslate nohighlight">
+\[
+T_p = [U_C^{TOA,fore}, V_C^{TOA,fore}, U_C^{TOA,aft}, V_C^{TOA,aft}, U_X^{TOA,fore}, V_X^{TOA,fore}, U_X^{TOA,aft}, V_X^{TOA,aft}]
+\]</div>
+<p>The algorithm also uses as input the surface wind speed <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> and temperature <span class="math notranslate nohighlight">\(T_s^{ret}\)</span>, retrieved from Step 1.</p>
+<hr class="docutils" />
+<p>To retrieve the surface wind speed vector direction, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind direction <span class="math notranslate nohighlight">\(\tilde{\phi}_w\)</span>, denoted <span class="math notranslate nohighlight">\(\mathcal{P}'\)</span>, is taken to be the product of the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}'\)</span> and prior distribution functions <span class="math notranslate nohighlight">\(P''\)</span> for wind direction:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T) = \mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) \cdot P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) \quad (Eq.R4)
+\]</div>
+<p>For the prior distribution of wind direction, we assumed a Gaussian distribution.</p>
+<div class="math notranslate nohighlight">
+\[
+P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \exp \left( -\frac{[\tilde{\phi}_w - \phi_{wp}]^2}{2\sigma_{\phi}^2} \right) \quad (Eq.177)
+\]</div>
+<p>Where the prior wind direction <span class="math notranslate nohighlight">\(\phi_{wp}\)</span> is given by ERA5 and where we tested several values for the prior standard deviation of <span class="math notranslate nohighlight">\(\sigma_{\phi} = 20^\circ, 30^\circ, 40^\circ, 60^\circ\)</span>.</p>
+<hr class="docutils" />
+<p>The likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}'\)</span> is computed using the RTM, here represented by the geophysical model function <span class="math notranslate nohighlight">\(G\)</span> and which can be evaluated using (Eq.166) and the input SCEPS simulated CIMR TOA 3rd and 4th Stokes Tbs <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_{p,i} - G(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}))^2}{2\sigma_{p,i}^2} \right) \quad (Eq.R5)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\sigma_{p,i}\)</span> is the standard deviation of the CIMR TOA 3rd and 4th Stokes parameters.</p>
+<hr class="docutils" />
+<p>The nominal Bayesian wind direction solution is then taken to be the Maximum Likelihood Estimate (mode of the posterior distribution), following:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi_w^{ret} = \arg \max_{\phi} \, \mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T) \quad (Eq.R6)
+\]</div>
+<p>We apply the conjugate gradient technique using a modified Levenberg-Marquardt (1963) algorithm to find the local maxima. The wind speed vector solution to this constrained minimization problem is the final L2B retrieval.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure50">
+<img alt="_images/Figure50.png" src="_images/Figure50.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Example of wind speed and direction retrievals (red arrows) and input ERA5 winds (green arrows) after full antenna pattern integration, NEDT added, combining Aft and Fore views, and assuming a standard deviation for the prior wind direction of 60°</span><a class="headerlink" href="#figure50" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Examples of wind speed and direction retrievals (as compared to the prior ERA5 wind direction), using as input the simulated instrument’s 3rd and 4th Stokes parameters after full antenna pattern integration, NEDT added, combining Aft and Fore views, and assuming a standard deviation for the prior wind direction of 60°, are shown in <a class="reference internal" href="#figure50"><span class="std std-numref">Fig. 30</span></a> to <a class="reference internal" href="#figure52"><span class="std std-numref">Fig. 32</span></a>.</p>
+<figure class="align-default" id="figure51">
+<img alt="_images/Figure51.png" src="_images/Figure51.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Zoom on the south-west located hurricane IRMA region. Same legend as in <a class="reference internal" href="#figure50"><span class="std std-numref">Fig. 30</span></a>.</span><a class="headerlink" href="#figure51" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="figure52">
+<img alt="_images/Figure52.png" src="_images/Figure52.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Zoom on the coasts North of the Amazon River mouth. Same legend as in <a class="reference internal" href="#figure50"><span class="std std-numref">Fig. 30</span></a>.</span><a class="headerlink" href="#figure52" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As shown, and expected, the quality of the wind direction retrieval strongly degrades in the near-coast region (distance to nearest coasts less than or equal to 40 km) and some larger errors are apparent at low winds. Maps of the input and retrieved wind direction, as well as their differences, are shown in <a class="reference internal" href="#figure53"><span class="std std-numref">Fig. 33</span></a> and <a class="reference internal" href="#figure54"><span class="std std-numref">Fig. 34</span></a> after filtering data at grid points where the distance to nearest coasts is less than or equal to 40 km.</p>
+<hr class="docutils" />
+<p>While the retrieved wind direction is noisy, the retrieved wind direction patterns are in general very coherent with the input ones. As evidenced, larger uncertainties in the retrieved wind direction are observed:</p>
+<ol class="arabic simple">
+<li><p>For lower wind speeds (see <a class="reference internal" href="#figure54"><span class="std std-numref">Fig. 34</span></a>, right panel), as expected given the small amplitudes (&lt; 0.5 K) of the azimuthal harmonics of the 3rd and 4th Stokes parameters for <span class="math notranslate nohighlight">\(U_{10} &lt; 5 \, m/s\)</span> with respect to the antenna Tbs NEDT in C and X-bands (0.2 - 0.3 K).</p></li>
+<li><p>Larger uncertainties are also observed in regions where the relative wind direction exhibits transitions around ±180°. This can be potentially attributed to larger ambiguities in the wind direction because U and V = 0 at all wind speeds and frequencies at such values of the relative azimuth angle (see for example Figure 27 to Figure 31).</p></li>
+</ol>
+<hr class="docutils" />
+<figure class="align-default" id="figure53">
+<img alt="_images/Figure53.png" src="_images/Figure53.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Maps of (Left) Input Wind Direction and (Right) Retrieved Wind Direction</span><a class="headerlink" href="#figure53" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>After filtering for data at grid points where the distance to nearest coasts is less than or equal to 40 km and where the relative wind direction angle reaches ±180°, we found an RMSD between the input and retrieved wind direction of ~19° on average over the scene, increasing to 35° for conditions where <span class="math notranslate nohighlight">\(U_{10} &lt; 5\)</span> m/s.</p>
+<hr class="docutils" />
+<figure class="align-default" id="figure54">
+<img alt="_images/Figure54.png" src="_images/Figure54.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Maps of (Left) Differences <span class="math notranslate nohighlight">\(\Delta \phi\)</span> between the input wind direction (ERA5 prior) and the retrieved wind direction. (Right) Retrieved Wind Speed</span><a class="headerlink" href="#figure54" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="performance-assessment-summary">
+<h2>Performance Assessment Summary<a class="headerlink" href="#performance-assessment-summary" title="Link to this heading">#</a></h2>
+<p>An initial performance assessment of the CIMR prototype Level-2 OWV retrieval algorithm was performed using a large-scale reference scenario (Test card scenes). We used the SCEPS prototype simulator to generate a very large tropical-to-mid latitude test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes.</p>
+<p>The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field involves:</p>
+<ul class="simple">
+<li><p>Calculation of orbit and viewing geometry,</p></li>
+<li><p>Calculation of the scene brightness Stokes vector for an ensemble of incidence angles,</p></li>
+<li><p>Calculation of the wind-relative azimuthal harmonics components,</p></li>
+<li><p>Integration of the scene brightness over the antenna patterns (both near and far from the feed boresights),</p></li>
+<li><p>Addition of NEDT noise to the antenna temperatures,</p></li>
+<li><p>Calculation and application of the antenna pattern correction matrices for all feeds,</p></li>
+<li><p>Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied,</p></li>
+<li><p>Finally, an OZA correction is then applied after resampling.</p></li>
+</ul>
+<p>The two-step OWV retrieval algorithm was then applied by minimizing the differences between simulated CIMR antenna Tbs and Tbs from the RTM model.</p>
+<hr class="docutils" />
+<p>As found, the Ocean Wind Speed (and SST) retrievals exhibit an RMSD of ~0.1 m/s with zero bias with respect to the input OWVs as long as the data are acquired at a distance of at least more than 40 km from the nearest coasts.</p>
+<p>The land-contamination is the first error source for these TOA Tbs resampled at the C- and X-band resolution (using a FWHM window of 15 km in the BG resampling):</p>
+<ul class="simple">
+<li><p>It is coming from earth emissivity contributions from both inner and outer antenna patterns.</p></li>
+<li><p>When filtering data with distance to nearest coasts greater than or equal to 40 km, the statistics of <span class="math notranslate nohighlight">\( \Delta WS \)</span> evolves toward expected values with a median (and mean) <span class="math notranslate nohighlight">\( \Delta WS \sim 0\)</span> m/s and STD<span class="math notranslate nohighlight">\((\Delta WS) \sim 0.1\)</span> m/s, showing that most of the ‘bad-quality’ retrievals are found in the 40 km coastal band.</p></li>
+</ul>
+<p>Locally, retrieved SWS error is also found to increase around the eye of the hurricanes. This might come from:</p>
+<ul class="simple">
+<li><p>Unresolved spatial structure in the veering winds around the eye, and/or</p></li>
+<li><p>Uncertainties in the wind direction (here with a first guess assumed to be ERA5 wind direction), which would translate into errors in the anisotropic components of the modeled Tbs.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Similar patterns of high land-contamination are found in the retrieved SSTs within ~40 km from nearest coasts. After removing the data within that band:</p>
+<ul class="simple">
+<li><p>An overall unbiased SST retrieval is found with an RMSD of ~0.1°C with respect to the input data when combining both aft and fore views in the input TOA Tb data used for retrieval, as well as adding the proper NEDT to each used channel.</p></li>
+</ul>
+<p>Outside of the coastal bands, as for the retrieved wind speed modulus, the largest errors in the retrieved SSTs are found in the hurricane center region. While this error is obviously related to azimuthal-harmonic components, the exact source for that error (polarization mixing?) yet remains unidentified and would require further investigation.</p>
+<hr class="docutils" />
+<p>As found for OWV and SST, the quality of the wind direction retrieval strongly degrades in the near-coast region (distance to nearest coasts less than or equal to 40 km), and some larger errors are apparent at low winds. While the retrieved wind direction is noisy, the retrieved wind direction patterns are in general very coherent with the input ones.</p>
+<p>As evidenced, larger uncertainties in the retrieved wind direction are observed:</p>
+<ol class="arabic simple">
+<li><p>For lower wind speed, as expected given the relatively small amplitudes (<span class="math notranslate nohighlight">\(&lt;0.5\)</span>K) of the azimuthal harmonics of the third and fourth Stokes parameters for <span class="math notranslate nohighlight">\( U_{10} &lt; 5 \)</span> m/s with respect to the antenna Tbs NEDT in C and X-bands (0.2–0.3 K).</p></li>
+<li><p>Larger uncertainties are also observed in regions where the relative wind direction exhibits transitions around <span class="math notranslate nohighlight">\( \pm 180^\circ \)</span>. This can be potentially attributed to larger ambiguities in the wind direction because <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V = 0\)</span> at all wind speeds and frequencies at such value of the relative azimuth angle.</p></li>
+</ol>
+<p>The combination of aft and fore views helps minimize such uncertainties, but they are not totally suppressed. After filtering for data at grid points where the distance to nearest coasts is less than or equal to 40 km and where the relative wind direction angle reaches <span class="math notranslate nohighlight">\( \pm 180^\circ \)</span>, we found an RMSD between the input and retrieved wind direction of <span class="math notranslate nohighlight">\( \sim 19^\circ \)</span> on average over the scene, increasing to <span class="math notranslate nohighlight">\(35^\circ\)</span> for conditions where <span class="math notranslate nohighlight">\(U_{10} &lt; 5\)</span> m/s.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="roadmap-for-future-atbd-development">
+<h1>Roadmap for future ATBD development<a class="headerlink" href="#roadmap-for-future-atbd-development" title="Link to this heading">#</a></h1>
+<p>The prototype CIMR Level-2 OWV retrieval algorithm presented in this ATBD is based on several assumptions and simplifications. Several developments and improvements to the prototype algorithm are planned which have the potential to significantly improve the performance of the CIMR Level-2 OWV algorithm. We highlight a few of them in this chapter.</p>
+<section id="improvements-in-the-forward-radiative-transfer-model">
+<h2>Improvements in the Forward Radiative Transfer model<a class="headerlink" href="#improvements-in-the-forward-radiative-transfer-model" title="Link to this heading">#</a></h2>
+<section id="new-sea-water-dielectric-constant-model-at-l-band">
+<h3>New Sea water dielectric constant model at L-band<a class="headerlink" href="#new-sea-water-dielectric-constant-model-at-l-band" title="Link to this heading">#</a></h3>
+<p>At the time this ATBD was developed, two up-to-date parametrizations for the sea water dielectric constant at L-band were available, based on one hand, on the Soil Moisture and Ocean Salinity (SMOS) satellite multi-angular brightness temperature measurements by Boutin et al. (2021) (BV), and, on the other hand, on the new George Washington University laboratory measurements by Zhou et al. (2021) (GW2020). These two approaches are fully independent. For most SSS and Sea Surface Temperature (SST) conditions commonly observed over the open ocean, the relative variations of brightness temperatures Tb simulated through the BV and GW2020 parametrizations agree particularly well, and better than with earlier parametrizations previously used in the SMOS, SMAP, and Aquarius SSS retrievals. Being based purely on Laboratory data, we therefore advise the use of GW2020 in the present ATBD. However, uncertainty remains, especially below 10°C where a ∼0.1 K relative difference between the two models is observed. This motivated the development of a revised parameterization, BVZ (Boutin, Vergely, and Zhou (2023)), based on a methodology similar to that used to derive BV but using GW2020 instead of SMOS measurements. Compared to the GW2020 parameterization, BVZ is derived with a reduced number of degrees of freedom, it relies on the TEOS10 PSS78 conductivity-salinity relationship, and on the previously derived static permittivity of fresh water. Noting that this new parametrization significantly improved the SSS retrieval from SMOS in the 5°C–15°C SST range, we advise to update the GW2020 L-band sea water dielectric constant model with this new BVZ model in future algorithm developments for CIMR.</p>
+</section>
+<section id="roughness-emission-azimuthal-harmonics-in-high-winds">
+<h3>Roughness emission azimuthal harmonics in High winds<a class="headerlink" href="#roughness-emission-azimuthal-harmonics-in-high-winds" title="Link to this heading">#</a></h3>
+<p>It remains unclear how the roughness anisotropic emission components (first and second harmonics, see Figure 9 and Figure 10) for all four Stokes parameters behave in high wind speed regimes (say &gt; 20 m/s). Wind-direction signals in passive microwave polarimetry for ocean surfaces under hurricane force winds were however presented in Yueh et al., 2008. They performed analysis of Windsat data for several Atlantic hurricanes from 2003 to 2005. The polarimetric third Stokes parameter observations from the Windsat 10-,18-, and 37-GHz channels were collocated with the ocean-surface winds from the National Oceanic and Atmospheric Administration Hwind analysis. The collocated data were binned as a function of wind speed and wind direction. The 10-GHz data show clear 4-K peak-to-peak directional signals at 50-60-m/s wind speed after correction for atmospheric attenuation. The signals in the 18- and 37-GHz channels were unclear at above 40-m/s wind speeds, probably caused by the impact of clouds and rain. The data were expanded by sinusoidal series of the relative azimuth angles between the Hwind analysis and observation directions. The coefficients of the sinusoidal series suggest decreasing response to wind direction for increasing wind speed, but the 10-GHz data appear to be fairly constant for up to 50-m/s wind speeds. The trend of the high-wind data (&gt; 25 m/s) is, in general, consistent with the characteristics of the lighter wind data. The combined Windsat–GDAS (&lt; 25 m/s) and Windsat–Hwind (&gt; 25 m/s) analyses show that the amplitude of first-harmonic coefficients (U1) increases with increasing wind speed from low to 20 m/s but then saturates and decreases at higher wind speeds. The amplitude of second harmonic coefficients (U2), having a similar feature, increases with wind speed from light to moderately high wind speed (&lt; 15 m/s) and then displays a decreasing trend beyond about 15–20-m/s wind speeds. This feature is consistent with the active microwave observations of hurricanes. This implies that the ocean waves and other roughness features generated by hurricane force winds will start to lose directionality for increasing wind speed beyond 30–50 m/s. The loss of directionality can be due to a wider azimuthal spreading of wave propagation, increasing coverage of sea foam and spray, and the impact of raindrops on the surface roughness. Excessive attenuation by rain, if undercorrected, may further reduce the directional dependence of U. The ocean waves with longer wavelengths having greater influence on the 10, 6 and 1.4-GHz microwaves probably can sustain better directionality at very high winds than the ocean waves with shorter wavelength, which have greater impact on the 18.7- and 36.5-GHz frequencies. Therefore, in future ATBD developments for CIMR, we suggest to decrease the directional harmonics (1 and 2) towards zero for wind speed higher than 20 m/s.</p>
+</section>
+<section id="simplified-atmospheric-corrections">
+<h3>Simplified Atmospheric Corrections<a class="headerlink" href="#simplified-atmospheric-corrections" title="Link to this heading">#</a></h3>
+<p>Our proposed atmospheric corrections rely on the vertical integration of the indexes of refraction from local atmospheric parameter profiles. This may be unpractical for an operational processing in terms of computing time. In this case, we suggest to follow the approach used in AMSR-E ATBD (Wentz and Meissner, 2000), where approximated vertically integrated absorption coefficients can be derived from vertically integrated water vapor, cloud liquid water, and air temperature.</p>
+</section>
+</section>
+<section id="needed-and-missing-corrections">
+<h2>Needed and Missing Corrections<a class="headerlink" href="#needed-and-missing-corrections" title="Link to this heading">#</a></h2>
+<section id="retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">
+<h3>Retrieval in Coastal Areas and Closer to the Sea Ice Edge<a class="headerlink" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge" title="Link to this heading">#</a></h3>
+<p>The improved resolution of CIMR and stringent beam forming (“distance-to-coast”) requirements mean that Level-2 OWV retrievals can be achieved closer to the coastline. Still, coastal regions and water bodies will be challenging for the CIMR Level-2 products when the main beam overlaps different surface types. This can lead to erroneous coastal OWVs.</p>
+<p>Similar challenges exist for retrieval of OWV close to the sea-ice edge. Application of a land-spill over correction and methods for mitigating land contamination (Olmedo et al., 2017; Olmedo et al., 2018) should be investigated, as well as methods to reduce sea-ice contamination (Meissner and Manaster, 2021). It is not fully clear yet at which processing level (1 or 2) the land- and ice-ocean transitions effects shall be corrected for on the <span class="math notranslate nohighlight">\(T_B\)</span>s (so-called land-sea contamination). Given that these effects require antenna-pattern-related information, it shall better be applied in the Level 1 algorithms.</p>
+</section>
+<hr class="docutils" />
+<section id="all-weather-owv-retrieval-algorithm">
+<h3>All Weather OWV Retrieval Algorithm<a class="headerlink" href="#all-weather-owv-retrieval-algorithm" title="Link to this heading">#</a></h3>
+<p>It is difficult to measure radiometer wind speeds in rainy conditions which are often encountered simultaneously with high wind conditions. Rain increases the atmospheric attenuation, especially at frequencies higher than L-band, such as C- to Ka-band channels of CIMR. The brightness temperature signal and therefore the signal-to-noise ratio decreases with the square of the atmospheric transmittance <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
+<p>Therefore, under rain, the radiometer measurement is less sensitive to the surface wind speed. This is particularly true for the Ku- and Ka-band channels of CIMR, which will be strongly affected by rain. By assuming that the vertical atmospheric temperature profile <span class="math notranslate nohighlight">\(T_{eff}(h)\)</span> is isothermal and therefore independent of <span class="math notranslate nohighlight">\(h\)</span> and that it is also equal to the surface temperature <span class="math notranslate nohighlight">\(T_s\)</span>, and that there are no surface scattering of sky radiation, Meissner and Wentz (2009) have nevertheless shown that the Top of the Atmosphere brightness can be related to the surface reflectivity <span class="math notranslate nohighlight">\(R_p\)</span> using:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{BV} = (1 - R_V \tau^2) T_{eff}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T_{BH} = (1 - R_H \tau^2) T_{eff}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is the atmospheric transmittance.</p>
+<p>If there is scattering rain in the atmosphere due to rain, the expressions above remain still valid but the effective temperature <span class="math notranslate nohighlight">\(T_{eff}\)</span> is smaller than the atmospheric temperature. It is very difficult to accurately model brightness temperatures in rain. Because of the high variability of rainy atmospheres, the brightness temperatures depend on cloud type and the distribution of rain within the footprint (beam filling). In addition, with increasing frequency and increasing drop size, atmospheric scattering starts to become important.</p>
+<p>That means that it is not possible to use the simple Rayleigh approximation for cloud water absorption but one rather needs to apply the full Mie absorption theory. This requires additional input such as size and form of the raindrops. However, those parameters are not readily available. Nevertheless, using Liebe et al., 1995 atmospheric microwave propagation model one can obtain a “rough” estimate of the values of <span class="math notranslate nohighlight">\(\tau\)</span> for the three L-, C-, and X-band frequencies as a function of rain rate as illustrated in <a class="reference internal" href="#figure55"><span class="std std-numref">Fig. 35</span></a>.</p>
+<figure class="align-default" id="figure55">
+<img alt="_images/Figure55.png" src="_images/Figure55.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">(Left) Rain attenuation coefficient (Nepers/m) and (right) brightness temperature reduction (K) through rain at 4 km altitude as a function of rain rate (mm/h) and electromagnetic frequency: L-band (black), C-band (red), and X-band (magenta).</span><a class="headerlink" href="#figure55" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>According to this model, L-band Tbs are very little attenuated by rain compared to C- and X-bands. C-band attenuation coefficient is found about <span class="math notranslate nohighlight">\(1/3^{rd}\)</span> of the X-band at most rain rate. At C-band and X-frequency bands, atmospheric absorption, emission, and scattering associated with high cloud liquid and ice water content and intense precipitations have large impacts on the brightness temperatures.</p>
+<p>The algorithm we proposed is valid for moderate wind speed conditions (&lt; 20 m/s) and low rain rates (&lt; 1-2 mm/h). In order to retrieve wind speeds in rain at higher resolution than L-band, we need to be able to find appropriate combinations of CIMR C and X-band channels that reduce the sensitivity to rain without reducing the sensitivity to wind too much. As discussed in Meissner and Wentz (2009), it is interesting to consider the channel combinations <span class="math notranslate nohighlight">\(T6H − λ \cdot T10H\)</span> between H-polarized data at C-band and H-pol at X-band.</p>
+<p>As found, the <span class="math notranslate nohighlight">\(\lambda\)</span> parameter shall be chosen to minimize the sensitivity to rain. As found in Meissner and Wentz (2009) and also in the Hwang (2019)’s GMF, the H-pol reflectivities are approximately the same for both C and X-band: <span class="math notranslate nohighlight">\(R_{6H} \sim R_{10H} \equiv R_H\)</span>. Therefore, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = T_{BH}^{6.8 \, GHz} - \lambda \cdot T_{BH}^{10.7 \, GHz} = -T_{eff} R_H (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2)
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(\lambda\)</span> is then chosen to minimize the sensitivity of <span class="math notranslate nohighlight">\(Q\)</span> to rain rate:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial Q}{\partial R} (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2) = 0
+\]</div>
+<p>or:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \frac{\partial \tau_{6.8 \, GHz}^2 / \partial R}{\partial \tau_{10.7 \, GHz}^2 / \partial R}
+\]</div>
+<p>According to matchup-atmospheric databases established globally and under hurricanes for WindSat and also, as found from the Liebe et al. (1992)’s model, the dependence of <span class="math notranslate nohighlight">\(\tau^2\)</span> on rain rate <span class="math notranslate nohighlight">\(R\)</span> for global atmospheric set, give an estimate <span class="math notranslate nohighlight">\(\lambda \simeq 1/3\)</span>. So, when using the quantity:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz}
+\]</div>
+<p>the rain effect shall be best minimized at both C and X bands. The change of <span class="math notranslate nohighlight">\(Q\)</span> as a function of surface wind speed can be then derived from the linearly extrapolated isotropic GMFs above 20 m/s. As found, <span class="math notranslate nohighlight">\(Q\)</span> remains sensitive to wind speed although it is certainly less sensitive to wind speed than <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, or <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, separately.</p>
+<figure class="align-default" id="figure56">
+<img alt="_images/Figure56.png" src="_images/Figure56.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Sensitivity of the surface brightness temperature to wind speed for the L-band H polarization <span class="math notranslate nohighlight">\(T_{BH}^{1.4 GHz}\)</span>, compared to <span class="math notranslate nohighlight">\(Q = T_{BH}^{6.8 GHz} - 0.3 \cdot T_{BH}^{10.7 GHz}\)</span>.</span><a class="headerlink" href="#figure56" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Interestingly, we find that:</p>
+<div class="math notranslate nohighlight">
+\[
+Q(U_{10}) = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz} \approx T_{BH}^{1.4 \, GHz}(U_{10})
+\]</div>
+<p>Basically, by combining the H-pol channel of the X- and C-bands, one can reproduce a quasi-synthetic “L-band” sensor from the viewpoint of sea surface roughness dependencies (minimized rain effects and similar sensitivity to surface wind) but at a significantly higher spatial resolution of ~15 km instead of ~60 km for the L-band.</p>
+<p>To retrieve the wind speed in stormy weather, one can therefore minimize a likelihood function which will include the quantity <span class="math notranslate nohighlight">\(Q\)</span> for wind speed and the 3rd Stokes parameter at X-band for wind direction. An important additional constraint will be put on the C-, X-band wind vector retrievals during the iterative inversion: after spatial averaging of the retrieved Moderate spatial resolution (~15 km wind vector at the spatial resolution of the L-band (~50 km)), the <span class="math notranslate nohighlight">\(Q\)</span>-retrieved wind field shall match the L-band-only retrieved low-resolution wind. We suggest to implement in the future the <span class="math notranslate nohighlight">\(Q\)</span>-retrieval approach for winds above 20 m/s and rain rate &gt; 2 mm/h.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="input-cimr-data-combination-and-retrieval-configuration">
+<h2>Input CIMR Data Combination and Retrieval Configuration<a class="headerlink" href="#input-cimr-data-combination-and-retrieval-configuration" title="Link to this heading">#</a></h2>
+<p>In the OWV retrieval simulations that were performed over the large tropical test card:</p>
+<ol class="arabic simple">
+<li><p>We both retrieved ocean wind speed and SST together from all input linear polarization channels.</p></li>
+<li><p>Wind direction is retrieved using only C- and X-band channels 3rd and 4th Stokes parameters.</p></li>
+</ol>
+<p>It is expected that the number and type of frequency channels used as input for wind speed retrieval shall be kept configurable in the operational processor. SST can be provided as a first guess in the retrieval algorithm from the official L2 product retrievals. For the wind direction, we focused only on using the C- and X-band channels 3rd and 4th Stokes parameters as inputs because at higher frequency, atmospheric effects might corrupt the quality of the wind direction retrievals. In clear sky conditions, the Ku and Ka-band data might nevertheless be used as inputs given their higher sensitivity to wind direction. The L-band channel can also be used but the sensitivity to wind direction of the 3rd and <span class="math notranslate nohighlight">\(4^{th}\)</span> Stokes parameters is much reduced and the data might be more affected by Faraday rotation than at the higher frequencies.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algorithm_input_output_data_definition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithm Performance Assessment using SCEPS</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geophysical-data-used-to-describe-the-ocean-scene">Geophysical Data Used to Describe the Ocean Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-toa-tbs-over-the-scene">Simulated TOA Tbs over the Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-instrument-tbs-over-the-scene">Simulated Instrument Tbs Over the Scene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-ocean-surface-wind-and-sst-retrievals">Step 1: Ocean Surface Wind and SST Retrievals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ocean-wind-direction-inversion-algorithm">Step 2: Ocean Wind Direction Inversion Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-assessment-summary">Performance Assessment Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-future-atbd-development">Roadmap for future ATBD development</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joseph Tenerelli (ODL) and Nicolas Reul (IFREMER/LOPS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD study (2024-2026) (contract 4000143081).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

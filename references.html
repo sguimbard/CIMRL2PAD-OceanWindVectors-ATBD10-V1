@@ -1,0 +1,1576 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>References &#8212; CIMR L2 Ocean Wind Vectors ATBD v1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Annex" href="annex.html" />
+    <link rel="prev" title="THE CIMR OCEAN RETRIEVAL SYSTEM" href="cimr_ocean_retrieval.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 Ocean Wind Vector ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_purpose_scope.html">Introduction, purpose and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and justification of selected algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment using SCEPS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebook comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">References (example)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/OceanWindVectors_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/references.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>References</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<div class="docutils container" id="id1">
+<div class="citation" id="id107" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Hauke Kite-Powell. The value of ocean surface wind information for maritime commerce. <em>Marine Technology Society Journal</em>, 45(1):75–84, 2011.</p>
+</div>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>John Coll, David K. Woolf, Stuart W. Gibb, and Peter G. Challenor. Sensitivity of ferry services to the western isles of scotland to changes in wave and wind climate. <em>Journal of Applied Meteorology and Climatology</em>, 52(5):1069 – 1084, 2013. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/52/5/jamc-d-12-0138.1.xml">https://journals.ametsoc.org/view/journals/apme/52/5/jamc-d-12-0138.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JAMC-D-12-0138.1">doi:10.1175/JAMC-D-12-0138.1</a>.</p>
+</div>
+<div class="citation" id="id123" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>H. Clinton. America’s pacific century. <em>Foreign Policy</em>, 2011.</p>
+</div>
+<div class="citation" id="id117" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>C. Krauss and J. M. Broder. Deepwater oil drilling picks up again as bp disaster fades. <em>New York Times</em>, 2012.</p>
+</div>
+<div class="citation" id="id203" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Owen H. Shieh, Michael Fiorino, Matthew E. Kucas, and Bin Wang. Extreme rapid intensification of typhoon vicente (2012) in the south china sea. <em>Weather and Forecasting</em>, 28(6):1578 – 1587, 2013. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/28/6/waf-d-13-00076_1.xml">https://journals.ametsoc.org/view/journals/wefo/28/6/waf-d-13-00076_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-13-00076.1">doi:10.1175/WAF-D-13-00076.1</a>.</p>
+</div>
+<div class="citation" id="id200" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>Matthew Sitkowski and Gary M. Barnes. Low-level thermodynamic, kinematic, and reflectivity fields of hurricane guillermo (1997) during rapid intensification. <em>Monthly Weather Review</em>, 137(2):645 – 663, 2009. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/mwre/137/2/2008mwr2531.1.xml">https://journals.ametsoc.org/view/journals/mwre/137/2/2008mwr2531.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/2008MWR2531.1">doi:10.1175/2008MWR2531.1</a>.</p>
+</div>
+<div class="citation" id="id113" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>James P. Kossin and Matthew Sitkowski. Predicting hurricane intensity and structure changes associated with eyewall replacement cycles. <em>Weather and Forecasting</em>, 27(2):484 – 488, 2012. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/27/2/waf-d-11-00106_1.xml">https://journals.ametsoc.org/view/journals/wefo/27/2/waf-d-11-00106_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-11-00106.1">doi:10.1175/WAF-D-11-00106.1</a>.</p>
+</div>
+<div class="citation" id="id96" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<p>Hao Jin, Melinda S. Peng, Yi Jin, and James D. Doyle. An evaluation of the impact of horizontal resolution on tropical cyclone predictions using coamps-tc. <em>Weather and Forecasting</em>, 29(2):252 – 270, 2014. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/29/2/waf-d-13-00054_1.xml">https://journals.ametsoc.org/view/journals/wefo/29/2/waf-d-13-00054_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-13-00054.1">doi:10.1175/WAF-D-13-00054.1</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<p>Dudley B. Chelton, Michael G. Schlax, Michael H. Freilich, and Ralph F. Milliff. Satellite measurements reveal persistent small-scale features in ocean winds. <em>Science</em>, 303(5660):978–983, 2004. URL: <a class="reference external" href="https://www.science.org/doi/abs/10.1126/science.1091901">https://www.science.org/doi/abs/10.1126/science.1091901</a>, <a class="reference external" href="https://arxiv.org/abs/https://www.science.org/doi/pdf/10.1126/science.1091901">arXiv:https://www.science.org/doi/pdf/10.1126/science.1091901</a>, <a class="reference external" href="https://doi.org/10.1126/science.1091901">doi:10.1126/science.1091901</a>.</p>
+</div>
+<div class="citation" id="id181" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<p>Craig M. Risien and Dudley B. Chelton. A global climatology of surface wind and wind stress fields from eight years of quikscat scatterometer data. <em>Journal of Physical Oceanography</em>, 38(11):2379 – 2413, 2008. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/38/11/2008jpo3881.1.xml">https://journals.ametsoc.org/view/journals/phoc/38/11/2008jpo3881.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/2008JPO3881.1">doi:10.1175/2008JPO3881.1</a>.</p>
+</div>
+<div class="citation" id="id103" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
+<p>Kristina B. Katsaros, Evan B. Forde, Paul Chang, and W. Timothy Liu. Quikscat's sea winds facilitates early identification of tropical depressions in 1999 hurricane season. <em>Geophysical Research Letters</em>, 28(6):1043–1046, 2001. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000GL011646">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000GL011646</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2000GL011646">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2000GL011646</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2000GL011646">doi:https://doi.org/10.1029/2000GL011646</a>.</p>
+</div>
+<div class="citation" id="id202" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<p>Ryan J. Sharp, Mark A . Bourassa, and James J. O'Brien. Early detection of tropical cyclones using seawinds-derived vorticity. <em>Bulletin of the American Meteorological Society</em>, 83(6):879 – 890, 2002. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/83/6/1520-0477_2002_083_0879_edotcu_2_3_co_2.xml">https://journals.ametsoc.org/view/journals/bams/83/6/1520-0477_2002_083_0879_edotcu_2_3_co_2.xml</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0477(2002)083&lt;0879:EDOTCU&gt;2.3.CO;2">doi:10.1175/1520-0477(2002)083&lt;0879:EDOTCU&gt;2.3.CO;2</a>.</p>
+</div>
+<div class="citation" id="id86" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
+<p>Michelle M. Gierach, Mark A. Bourassa, Philip Cunningham, James J. O’Brien, and Paul D. Reasor. Vorticity-based detection of tropical cyclogenesis. <em>Journal of Applied Meteorology and Climatology</em>, 46(8):1214 – 1229, 2007. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/46/8/jam2522.1.xml">https://journals.ametsoc.org/view/journals/apme/46/8/jam2522.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JAM2522.1">doi:10.1175/JAM2522.1</a>.</p>
+</div>
+<div class="citation" id="id125" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
+<p>Gary S. E. Lagerloef, Roger Lukas, Fabrice Bonjean, John T. Gunn, Gary T. Mitchum, Mark Bourassa, and Antonio J. Busalacchi. El niño tropical pacific ocean surface current and temperature evolution in 2002 and outlook for early 2003. <em>Geophysical Research Letters</em>, 30(10):, 2003. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2003GL017096">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2003GL017096</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2003GL017096">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2003GL017096</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2003GL017096">doi:https://doi.org/10.1029/2003GL017096</a>.</p>
+</div>
+<div class="citation" id="id90" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
+<p>Weiqing Han, Peter J. Webster, Jia-Lin Lin, W. T. Liu, Rong Fu, Dongliang Yuan, and Aixue Hu. Dynamics of intraseasonal sea level and thermocline variability in the equatorial atlantic during 2002–03. <em>Journal of Physical Oceanography</em>, 38(5):945 – 967, 2008. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/38/5/2008jpo3854.1.xml">https://journals.ametsoc.org/view/journals/phoc/38/5/2008jpo3854.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/2008JPO3854.1">doi:10.1175/2008JPO3854.1</a>.</p>
+</div>
+<div class="citation" id="id91" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<p>Robert W. Helber, Robert H. Weisberg, Fabrice Bonjean, Eric S. Johnson, and Gary S. E. Lagerloef. Satellite-derived surface current divergence in relation to tropical atlantic sst and wind. <em>Journal of Physical Oceanography</em>, 37(5):1357 – 1375, 2007. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/37/5/jpo3052.1.xml">https://journals.ametsoc.org/view/journals/phoc/37/5/jpo3052.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JPO3052.1">doi:10.1175/JPO3052.1</a>.</p>
+</div>
+<div class="citation" id="id99" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<p>Eric S. Johnson, Fabrice Bonjean, Gary S. E. Lagerloef, John T. Gunn, and Gary T. Mitchum. Validation and error analysis of oscar sea surface currents. <em>Journal of Atmospheric and Oceanic Technology</em>, 24(4):688 – 701, 2007. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/24/4/jtech1971_1.xml">https://journals.ametsoc.org/view/journals/atot/24/4/jtech1971_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JTECH1971.1">doi:10.1175/JTECH1971.1</a>.</p>
+</div>
+<div class="citation" id="id43" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
+<p>Kathleen Dohan and Nikolai Maximenko. Monitoring ocean currents with satellite sensors. <em>Oceanography</em>, December 2010. &lt;p&gt;The interconnected ocean surface current system involves multiple scales, including basin-wide gyres, fast narrow boundary currents, eddies, and turbulence. To understand the full system requires measuring a range of motions, from thousands of kilometers to less than a meter, and time scales from those that are climate related (decades) to daily processes. Presently, satellite systems provide us with global and regional maps of the ocean surface’s mesoscale motion (larger than 100 km). Surface currents are measured indirectly from satellite systems. One method involves using remotely sensed fields of sea surface height, surface winds, and sea surface temperature within a physical model to produce currents. Another involves determining surface velocity from paths of drifting surface buoys transmitted to satellite sensors. Additional methods include tracking of surface features and exploitation of the Doppler shift in radar fields. The challenges for progress include measuring small and fast processes, capturing the vertical variation, and overcoming sensor limitations near coasts. Here, we detail the challenges as well as upcoming missions and advancements in satellite oceanography that will change our understanding of surface currents in the next 10 years.&lt;/p&gt;. URL: <a class="reference external" href="https://doi.org/10.5670/oceanog.2010.08">https://doi.org/10.5670/oceanog.2010.08</a>.</p>
+</div>
+<div class="citation" id="id196" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
+<p>Oleg A. Saenko, Andreas Schmittner, and Andrew J. Weaver. On the role of wind-driven sea ice motion on ocean ventilation. <em>Journal of Physical Oceanography</em>, 32(12):3376 – 3395, 2002. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/32/12/1520-0485_2002_032_3376_otrowd_2.0.co_2.xml">https://journals.ametsoc.org/view/journals/phoc/32/12/1520-0485_2002_032_3376_otrowd_2.0.co_2.xml</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0485(2002)032&lt;3376:OTROWD&gt;2.0.CO;2">doi:10.1175/1520-0485(2002)032&lt;3376:OTROWD&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id46" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
+<p>Stephen J. Déry and L-B. Tremblay. Modeling the effects of wind redistribution on the snow mass budget of polar sea ice. <em>Journal of Physical Oceanography</em>, 34(1):258 – 271, 2004. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/34/1/1520-0485_2004_034_0258_mteowr_2.0.co_2.xml">https://journals.ametsoc.org/view/journals/phoc/34/1/1520-0485_2004_034_0258_mteowr_2.0.co_2.xml</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0485(2004)034&lt;0258:MTEOWR&gt;2.0.CO;2">doi:10.1175/1520-0485(2004)034&lt;0258:MTEOWR&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id270" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
+<p>Jinlun Zhang, Rebecca Woodgate, and Richard Moritz. Sea ice response to atmospheric and oceanic forcing in the bering sea. <em>Journal of Physical Oceanography</em>, 40(8):1729 – 1747, 2010. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/40/8/2010jpo4323.1.xml">https://journals.ametsoc.org/view/journals/phoc/40/8/2010jpo4323.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/2010JPO4323.1">doi:10.1175/2010JPO4323.1</a>.</p>
+</div>
+<div class="citation" id="id252" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
+<p>Bingyi Wu, Dörthe Handorf, Klaus Dethloff, Annette Rinke, and Aixue Hu. Winter weather patterns over northern eurasia and arctic sea ice loss. <em>Monthly Weather Review</em>, 141(11):3786 – 3800, 2013. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/mwre/141/11/mwr-d-13-00046.1.xml">https://journals.ametsoc.org/view/journals/mwre/141/11/mwr-d-13-00046.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/MWR-D-13-00046.1">doi:10.1175/MWR-D-13-00046.1</a>.</p>
+</div>
+<div class="citation" id="id271" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></span>
+<p>Jinlun Zhang. Modeling the impact of wind intensification on antarctic sea ice volume. <em>Journal of Climate</em>, 27(1):202 – 214, 2014. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/clim/27/1/jcli-d-12-00139.1.xml">https://journals.ametsoc.org/view/journals/clim/27/1/jcli-d-12-00139.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JCLI-D-12-00139.1">doi:10.1175/JCLI-D-12-00139.1</a>.</p>
+</div>
+<div class="citation" id="id127" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></span>
+<p>Tong Lee and Michael J. McPhaden. Decadal phase change in large-scale sea level and winds in the indo-pacific region at the end of the 20th century. <em>Geophysical Research Letters</em>, 35(1):, 2008. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2007GL032419">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2007GL032419</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2007GL032419">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2007GL032419</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2007GL032419">doi:https://doi.org/10.1029/2007GL032419</a>.</p>
+</div>
+<div class="citation" id="id217" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></span>
+<p>Qingtao Song, Dudley B. Chelton, Steven K. Esbensen, Nicolai Thum, and Larry W. O’Neill. Coupling between sea surface temperature and low-level winds in mesoscale numerical models. <em>Journal of Climate</em>, 22(1):146 – 164, 2009. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/clim/22/1/2008jcli2488.1.xml">https://journals.ametsoc.org/view/journals/clim/22/1/2008jcli2488.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/2008JCLI2488.1">doi:10.1175/2008JCLI2488.1</a>.</p>
+</div>
+<div class="citation" id="id179" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></span>
+<p>Robert S Pickart, Michael A Spall, Mads Hvid Ribergaard, GW Kent Moore, and Ralph F Milliff. Deep convection in the irminger sea forced by the greenland tip jet. <em>Nature</em>, 424(6945):152–156, 2003.</p>
+</div>
+<div class="citation" id="id167" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></span>
+<p>G. W. K. Moore and I. A. Renfrew. Tip jets and barrier winds: a quikscat climatology of high wind speed events around greenland. <em>Journal of Climate</em>, 18(18):3713 – 3725, 2005. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/clim/18/18/jcli3455.1.xml">https://journals.ametsoc.org/view/journals/clim/18/18/jcli3455.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JCLI3455.1">doi:10.1175/JCLI3455.1</a>.</p>
+</div>
+<div class="citation" id="id273" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></span>
+<p>Lixin Zeng and Robert A. Brown. Scatterometer observations at high wind speeds. <em>Journal of Applied Meteorology (1988-2005)</em>, 37(11):1412–1420, 1998. URL: <a class="reference external" href="http://www.jstor.org/stable/26183216">http://www.jstor.org/stable/26183216</a> (visited on 2023-02-22).</p>
+</div>
+<div class="citation" id="id265" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></span>
+<p>Xiaojun Yuan. High-wind-speed evaluation in the southern ocean. <em>Journal of Geophysical Research: Atmospheres</em>, 109(D13):, 2004. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2003JD004179">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2003JD004179</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2003JD004179">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2003JD004179</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2003JD004179">doi:https://doi.org/10.1029/2003JD004179</a>.</p>
+</div>
+<div class="citation" id="id195" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></span>
+<p>Takeaki Sampe and Shang-Ping Xie. Mapping high sea winds from space: a global climatology. <em>Bulletin of the American Meteorological Society</em>, 88(12):1965 – 1978, 2007. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/88/12/bams-88-12-1965.xml">https://journals.ametsoc.org/view/journals/bams/88/12/bams-88-12-1965.xml</a>, <a class="reference external" href="https://doi.org/10.1175/BAMS-88-12-1965">doi:10.1175/BAMS-88-12-1965</a>.</p>
+</div>
+<div class="citation" id="id186" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></span>
+<p>N. Reul, B. Chapron, E. Zabolotskikh, C. Donlon, A. Mouche, J. Tenerelli, F. Collard, J. F. Piolle, A. Fore, S. Yueh, J. Cotton, P. Francis, Y. Quilfen, and V. Kudryavtsev. A new generation of tropical cyclone size measurements from space. <em>Bulletin of the American Meteorological Society</em>, 98(11):2367 – 2385, 2017. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/98/11/bams-d-15-00291.1.xml">https://journals.ametsoc.org/view/journals/bams/98/11/bams-d-15-00291.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/BAMS-D-15-00291.1">doi:10.1175/BAMS-D-15-00291.1</a>.</p>
+</div>
+<div class="citation" id="id148" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner, Lucrezia Ricciardulli, and Frank J. Wentz. Capability of the smap mission to measure ocean surface winds in storms. <em>Bulletin of the American Meteorological Society</em>, 98(8):1660 – 1677, 2017. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/98/8/bams-d-16-0052.1.xml">https://journals.ametsoc.org/view/journals/bams/98/8/bams-d-16-0052.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/BAMS-D-16-0052.1">doi:10.1175/BAMS-D-16-0052.1</a>.</p>
+</div>
+<div class="citation" id="id15" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></span>
+<p>Mark A. Bourassa, Thomas Meissner, Ivana Cerovecki, Paul S. Chang, Xiaolong Dong, Giovanna De Chiara, Craig Donlon, Dmitry S. Dukhovskoy, Jocelyn Elya, Alexander Fore, Melanie R. Fewings, Ralph C. Foster, Sarah T. Gille, Brian K. Haus, Svetla Hristova-Veleva, Heather M. Holbach, Zorana Jelenak, John A. Knaff, Sven A. Kranz, Andrew Manaster, Matthew Mazloff, Carl Mears, Alexis Mouche, Marcos Portabella, Nicolas Reul, Lucrezia Ricciardulli, Ernesto Rodriguez, Charles Sampson, Daniel Solis, Ad Stoffelen, Michael R. Stukel, Bryan Stiles, David Weissman, and Frank Wentz. Remotely sensed winds and wind stresses for marine forecasting and ocean modeling. <em>Frontiers in Marine Science</em>, 2019. URL: <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fmars.2019.00443">https://www.frontiersin.org/articles/10.3389/fmars.2019.00443</a>, <a class="reference external" href="https://doi.org/10.3389/fmars.2019.00443">doi:10.3389/fmars.2019.00443</a>.</p>
+</div>
+<div class="citation" id="id204" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></span>
+<p>Julia E. Smirnova, Pavel A. Golubkin, Leonid P. Bobylev, Elizaveta V. Zabolotskikh, and Bertrand Chapron. Polar low climatology over the nordic and barents seas based on satellite passive microwave data. <em>Geophysical Research Letters</em>, 42(13):5603–5609, 2015. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2015GL063865">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2015GL063865</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2015GL063865">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2015GL063865</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/2015GL063865">doi:https://doi.org/10.1002/2015GL063865</a>.</p>
+</div>
+<div class="citation" id="id88" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></span>
+<p>IAN Simmonds. Polar lows: mesoscale weather systems in the polar regions edited by erik a. rasmussen and john turner cambridge university press, cambridge. (2003) isbn 0 521 62430 4. 624 pages. £90. <em>Antarctic Science</em>, 15(4):557–557, 2003. <a class="reference external" href="https://doi.org/10.1017/S095410200321172X">doi:10.1017/S095410200321172X</a>.</p>
+</div>
+<div class="citation" id="id269" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></span>
+<p>Elizaveta Zabolotskikh, Gurvich Irina, Alexander Myasoedov, and Bertrand Chapron. Detection and study of the polar lows over the arctic sea ice edge. In <em>2016 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)</em>, volume, 7705–7707. 2016. <a class="reference external" href="https://doi.org/10.1109/IGARSS.2016.7731009">doi:10.1109/IGARSS.2016.7731009</a>.</p>
+</div>
+<div class="citation" id="id183" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></span>
+<p>Nicolas Reul, Joseph Tenerelli, Bertrand Chapron, Doug Vandemark, Yves Quilfen, and Yann Kerr. SMOS satellite L-band radiometer: A new capability for ocean surface remote sensing in hurricanes. <em>J. Geophys. Res.</em>, February 2012. URL: <a class="reference external" href="http://dx.doi.org/10.1029/2011JC007474">http://dx.doi.org/10.1029/2011JC007474</a>, <a class="reference external" href="https://doi.org/10.1029/2011JC007474">doi:10.1029/2011JC007474</a>.</p>
+</div>
+<div class="citation" id="id190" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></span>
+<p>N. Reul, B. Chapron, E. zabolotskikh, C. Donlon, Y. Quilfen, S. Guimbard, and J. F. Piollé. A revised L-band radio-brightness sensitivity to extreme winds under tropical cyclones: the 5 year SMOS-Storm database. <em>Remote Sens. Environ.</em>, 180:274–291, July 2016. URL: <a class="reference external" href="http://dx.doi.org/10.1016/j.rse.2016.03.011">http://dx.doi.org/10.1016/j.rse.2016.03.011</a>, <a class="reference external" href="https://doi.org/10.1016/j.rse.2016.03.011">doi:10.1016/j.rse.2016.03.011</a>.</p>
+</div>
+<div class="citation" id="id62" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></span>
+<p>Alexander G. Fore, Simon H. Yueh, Wenqing Tang, Bryan W. Stiles, and Akiko K. Hayashi. Combined active/passive retrievals of ocean vector wind and sea surface salinity with smap. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 54(12):7396–7404, 2016. <a class="reference external" href="https://doi.org/10.1109/TGRS.2016.2601486">doi:10.1109/TGRS.2016.2601486</a>.</p>
+</div>
+<div class="citation" id="id216" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></span>
+<p>Alex Stogryn. Electromagnetic scattering from rough, finitely conducting surfaces. <em>Radio Science</em>, 2(4):415–428, 1967. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/rds196724415">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/rds196724415</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/rds196724415">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/rds196724415</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/rds196724415">doi:https://doi.org/10.1002/rds196724415</a>.</p>
+</div>
+<div class="citation" id="id76" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></span>
+<p>James P Hollinger. Passive microwave measurements of sea surface roughness. <em>IEEE Transactions on Geoscience Electronics</em>, 9(3):165–169, 1971.</p>
+</div>
+<div class="citation" id="id168" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></span>
+<p>W. Nordberg, J. Conaway, Duncan B. Ross, and T. Wilheit. Measurements of Microwave Emission from a Foam-Covered, Wind-Driven Sea. <em>J. Atmos. Sci.</em>, 28(3):429–435, April 1971. <a class="reference external" href="https://doi.org/10.1175/1520-0469(1971)028&lt;0429:MOMEFA&gt;2.0.CO;2">doi:10.1175/1520-0469(1971)028&lt;0429:MOMEFA&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id253" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></span>
+<p>S. T. Wu and A. K. Fung. A noncoherent model for microwave emissions and backscattering from the sea surface. <em>Journal of Geophysical Research (1896-1977)</em>, 77(30):5917–5929, 1972. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC077i030p05917">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC077i030p05917</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC077i030p05917">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC077i030p05917</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC077i030p05917">doi:https://doi.org/10.1029/JC077i030p05917</a>.</p>
+</div>
+<div class="citation" id="id242" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>44<span class="fn-bracket">]</span></span>
+<p>Frank J. Wentz. A two-scale scattering model for foam-free sea microwave brightness temperatures. <em>Journal of Geophysical Research (1896-1977)</em>, 80(24):3441–3446, 1975. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC080i024p03441">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC080i024p03441</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC080i024p03441">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC080i024p03441</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC080i024p03441">doi:https://doi.org/10.1029/JC080i024p03441</a>.</p>
+</div>
+<div class="citation" id="id236" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></span>
+<p>William J Webster Jr, Thomas T Wilheit, Duncan B Ross, and Per Gloersen. Spectral characteristics of the microwave emission from a wind-driven foam-covered sea. <em>Journal of Geophysical Research</em>, 81(18):3095–3099, 1976.</p>
+</div>
+<div class="citation" id="id234" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></span>
+<p>Thomas T. Wilheit. The effect of wind on the microwave emission from the ocean's surface at 37 ghz. <em>Journal of Geophysical Research: Oceans</em>, 84(C8):4921–4926, 1979. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC084iC08p04921">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC084iC08p04921</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC084iC08p04921">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC084iC08p04921</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC084iC08p04921">doi:https://doi.org/10.1029/JC084iC08p04921</a>.</p>
+</div>
+<div class="citation" id="id235" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>47<span class="fn-bracket">]</span></span>
+<p>Thomas T. Wilheit. A model for the microwave emissivity of the ocean's surface as a function of wind speed. <em>IEEE Transactions on Geoscience Electronics</em>, 17(4):244–249, 1979. <a class="reference external" href="https://doi.org/10.1109/TGE.1979.294653">doi:10.1109/TGE.1979.294653</a>.</p>
+</div>
+<div class="citation" id="id233" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></span>
+<p>T. T. Wilheit and A. T. C. Chang. An algorithm for retrieval of ocean surface and atmospheric parameters from the observations of the scanning multichannel microwave radiometer. <em>Radio Science</em>, 15(3):525–544, 1980. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RS015i003p00525">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RS015i003p00525</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/RS015i003p00525">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/RS015i003p00525</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/RS015i003p00525">doi:https://doi.org/10.1029/RS015i003p00525</a>.</p>
+</div>
+<div class="citation" id="id170" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></span>
+<p>Eni G. Njoku and Leonard L. Swanson. Global measurements of sea surface temperature, wind speed and atmospheric water content from satellite microwave radiometry. <em>Monthly Weather Review</em>, 111:1977–1987, 1983.</p>
+</div>
+<div class="citation" id="id77" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></span>
+<p>James P Hollinger, James L Peirce, and Gene A Poe. Ssm/i instrument evaluation. <em>IEEE Transactions on Geoscience and Remote sensing</em>, 28(5):781–790, 1990.</p>
+</div>
+<div class="citation" id="id31" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></span>
+<p>EA Bespalova, VM Veselov, AA Glotov, YA Militskiy, VG Mirovskiy, IV Pokrovskaya, AE Popov, MD Raev, EA Sharkov, and VS Etkin. Issledovanie anizotropii vetrovogo volneniya po variatciyam polyarizovannogo teplovogo izlucheniya. In <em>Dokl. Akad. Nauk SSSR</em>, volume 246, 1482–1485. 1979.</p>
+</div>
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></span>
+<p>EA Bespalova, VM Veselov, AA Glotov, YA Militskii, VG Mirovskiy, LV Pokrovskaya, AY Popov, MD Rayev, EA Sharkov, and VS Etkin. Sea-ripple anisotropy estimates from variations in polarized thermal emission of the sea. <em>Oceanology</em>, 21:213–215, 1981.</p>
+</div>
+<div class="citation" id="id89" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>53<span class="fn-bracket">]</span></span>
+<p>IUA Kratsov, EA Mirovskaia, AE Popov, IA Troitskii, and VS Etkin. Critical effects in the thermal radiation of a periodically uneven water surface. <em>Academy of Sciences, USSR, Izvestiya, Atmospheric and Oceanic Physics</em>, 14:522–526, 1979.</p>
+</div>
+<div class="citation" id="id60" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>54<span class="fn-bracket">]</span></span>
+<p>VS Etkin, NN Vorsin, Yu A Kravtsov, VG Mirovskiy, VV Nikitin, AE Popov, and IA Troitskiy. Discovering critical phenomena under thermal microwave emission of the uneven water surface. <em>Radiophysics and Quantum Electronics</em>, 21(3):316–318, 1978.</p>
+</div>
+<div class="citation" id="id226" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>55<span class="fn-bracket">]</span></span>
+<p>Y. G. Trokhimovski, A. V. Kuzmin, M. N. Pospelov, V. G. Irisov, and I. N. Sadovsky. Laboratory polarimetric measurements of microwave emission from capillary waves. <em>Radio Sci.</em>, 38(3):8039, February 2003. <a class="reference external" href="https://doi.org/10.1029/2002RS002661">doi:10.1029/2002RS002661</a>.</p>
+</div>
+<div class="citation" id="id32" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>56<span class="fn-bracket">]</span></span>
+<p>EA Bespalova, VM Veselov, VE Gershenzon, YA Militskii, VG Mirovskii, IV Pokrovskaya, MD Rayev, AG Semin, NK Smirnov, VA Skachkov, and others. Surface wind velocity determination from measurements of the polarization anisotropy of microwave emission and backscatter. <em>Sov. J. Remote Sensing</em>, 1:121–131, 1982.</p>
+</div>
+<div class="citation" id="id56" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>57<span class="fn-bracket">]</span></span>
+<p>MS Dzura, VS Etkin, AS Khrupin, MN Pospelov, and MD Raev. Radiometrs-polarimeters: principles of design and applications for sea surface microwave emission polarimetry. In <em>[Proceedings] IGARSS'92 International Geoscience and Remote Sensing Symposium</em>, volume 2, 1432–1434. IEEE, 1992.</p>
+</div>
+<div class="citation" id="id264" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>58<span class="fn-bracket">]</span></span>
+<p>Simon H. Yueh, Ronald Kwok, and Son V. Nghiem. Polarimetric scattering and emission properties of targets with reflection symmetry. <em>Radio Sci.</em>, 29(6):1409–1420, Nov-Dec 1994.</p>
+</div>
+<div class="citation" id="id263" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></span>
+<p>S. H. Yueh. Modeling of wind direction signals in polarimetric sea surface brightness temperatures. <em>IEEE Trans. Geosci. Remote Sens.</em>, 35(6):1400–1418, November 1997.</p>
+</div>
+<div class="citation" id="id262" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></span>
+<p>S. H. Yueh, W. J. Wilson, S. J. Dinardo, and F. K. Li. Polarimetric microwave brightness signatures of ocean wind directions. <em>IEEE Trans. Geosci. Remote Sens.</em>, 37(2):949–959, mar 1999. URL: <a class="reference external" href="http://dx.doi.org/10.1109/36.752213">http://dx.doi.org/10.1109/36.752213</a>, <a class="reference external" href="https://doi.org/10.1109/36.752213">doi:10.1109/36.752213</a>.</p>
+</div>
+<div class="citation" id="id176" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>61<span class="fn-bracket">]</span></span>
+<p>J.R. Piepmeier and A.J. Gasiewski. High-resolution passive polarimetric microwave mapping of ocean surface wind vector fields. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 39(3):606–622, 2001. <a class="reference external" href="https://doi.org/10.1109/36.911118">doi:10.1109/36.911118</a>.</p>
+</div>
+<div class="citation" id="id244" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>62<span class="fn-bracket">]</span></span>
+<p>F. J. Wentz. A model function for ocean microwave brightness temperatures. <em>Journal of Geophysical Research: Oceans</em>, 88(C3):1892–1908, 1983. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC088iC03p01892">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC088iC03p01892</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC088iC03p01892">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC088iC03p01892</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC088iC03p01892">doi:https://doi.org/10.1029/JC088iC03p01892</a>.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>63<span class="fn-bracket">]</span></span>
+<p>John C. Alishouse. Total precipitable water and rainfall determinations from the seasat scanning multichannel microwave radiometer. <em>Journal of Geophysical Research: Oceans</em>, 88(C3):1929–1935, 1983. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC088iC03p01929">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC088iC03p01929</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC088iC03p01929">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC088iC03p01929</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC088iC03p01929">doi:https://doi.org/10.1029/JC088iC03p01929</a>.</p>
+</div>
+<div class="citation" id="id85" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>64<span class="fn-bracket">]</span></span>
+<p>Per Gloersen, Donald J Cavalieri, Albert TC Chang, Thomas T Wilheit, WJ Campbell, OM Johannessen, KB Katsaros, KF Kunzi, DB Ross, D Staelin, and others. A summary of results from the first nimbus 7 smmr observations. <em>Journal of Geophysical Research: Atmospheres</em>, 89(D4):5335–5344, 1984.</p>
+</div>
+<div class="citation" id="id243" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>65<span class="fn-bracket">]</span></span>
+<p>F. J. Wentz, V. J. Cardone, and L. S. Fedor. Intercomparison of wind speeds inferred by the sass, altimeter, and smmr. <em>Journal of Geophysical Research: Oceans</em>, 87(C5):3378–3384, 1982. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC087iC05p03378">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC087iC05p03378</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC087iC05p03378">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC087iC05p03378</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC087iC05p03378">doi:https://doi.org/10.1029/JC087iC05p03378</a>.</p>
+</div>
+<div class="citation" id="id247" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>66<span class="fn-bracket">]</span></span>
+<p>Frank J. Wentz. A well-calibrated ocean algorithm for special sensor microwave / imager. <em>Journal of Geophysical Research: Oceans</em>, 102(C4):8703–8718, 1997. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96JC01751">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96JC01751</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/96JC01751">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/96JC01751</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/96JC01751">doi:https://doi.org/10.1029/96JC01751</a>.</p>
+</div>
+<div class="citation" id="id245" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>67<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz. A 17-yr climate record of environmental parameters derived from the tropical rainfall measuring mission (trmm) microwave imager. <em>Journal of Climate</em>, 28(17):6882–6902, 2015.</p>
+</div>
+<div class="citation" id="id55" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>68<span class="fn-bracket">]</span></span>
+<p>David W Draper, David A Newell, Frank J Wentz, Sergey Krimchansky, and Gail M Skofronick-Jackson. The global precipitation measurement (gpm) microwave imager (gmi): instrument overview and early on-orbit performance. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 8(7):3452–3462, 2015.</p>
+</div>
+<div class="citation" id="id241" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>69<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz and David Draper. On-orbit absolute calibration of the global precipitation measurement microwave imager. <em>Journal of atmospheric and oceanic technology</em>, 33(7):1393–1412, 2016.</p>
+</div>
+<div class="citation" id="id95" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>70<span class="fn-bracket">]</span></span>
+<p>K Imaoka, M Kachi, M Kasahara, N Ito, K Nakagawa, and T Oki. Instrument performance and calibration of amsr-e and amsr2. <em>International archives of the photogrammetry, remote sensing and spatial information science</em>, 38(8):13–18, 2010.</p>
+</div>
+<div class="citation" id="id255" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>71<span class="fn-bracket">]</span></span>
+<p>Zhongdong Yang, Naimeng Lu, Jinmin Shi, Peng Zhang, Chaohua Dong, and Jun Yang. Overview of fy-3 payload and ground application system. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 50(12):4846–4853, 2012.</p>
+</div>
+<div class="citation" id="id147" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>72<span class="fn-bracket">]</span></span>
+<p>CA Mears, Deborah K Smith, and Frank J Wentz. Comparison of special sensor microwave imager and buoy-measured wind speeds from 1987 to 1997. <em>Journal of Geophysical Research: Oceans</em>, 106(C6):11719–11729, 2001.</p>
+</div>
+<div class="citation" id="id246" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>73<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz, Lucrezia Ricciardulli, Ernesto Rodriguez, Bryan W Stiles, Mark A Bourassa, David G Long, Ross N Hoffman, Ad Stoffelen, Anton Verhoef, Larry W O'Neill, and others. Evaluating and extending the ocean wind climate data record. <em>IEEE journal of selected topics in applied earth observations and remote sensing</em>, 10(5):2165–2185, 2017.</p>
+</div>
+<div class="citation" id="id153" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>74<span class="fn-bracket">]</span></span>
+<p>T Meissner, D Smith, and F Wentz. A 10 year intercomparison between collocated special sensor microwave imager oceanic surface wind speed retrievals and global analyses. <em>Journal of Geophysical Research: Oceans</em>, 106(C6):11731–11742, 2001.</p>
+</div>
+<div class="citation" id="id151" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>75<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner and Frank J Wentz. Wind-vector retrievals under rain with passive satellite microwave radiometers. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 47(9):3065–3083, 2009.</p>
+</div>
+<div class="citation" id="id238" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>76<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz and Roy W Spencer. Ssm/i rain retrievals within a unified all-weather ocean algorithm. <em>Journal of the Atmospheric Sciences</em>, 55(9):1613–1627, 1998.</p>
+</div>
+<div class="citation" id="id92" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>77<span class="fn-bracket">]</span></span>
+<p>KA Hilburn and FJ Wentz. Intercalibrated passive microwave rain products from the unified microwave ocean retrieval algorithm (umora). <em>Journal of Applied Meteorology and Climatology</em>, 47(3):778–794, 2008.</p>
+</div>
+<div class="citation" id="id84" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>78<span class="fn-bracket">]</span></span>
+<p>Peter W Gaiser, Karen M St Germain, Elizabeth M Twarog, Gene A Poe, William Purdy, Donald Richardson, Walter Grossman, W Linwood Jones, David Spencer, Gerald Golba, and others. The windsat spaceborne polarimetric microwave radiometer: sensor description and early orbit performance. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 42(11):2347–2361, 2004.</p>
+</div>
+<div class="citation" id="id27" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>79<span class="fn-bracket">]</span></span>
+<p>Michael H Bettenhausen, Craig K Smith, Richard M Bevilacqua, Nai-Yu Wang, Peter W Gaiser, and Stephen Cox. A nonlinear optimization algorithm for windsat wind vector retrievals. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 44(3):597–610, 2006.</p>
+</div>
+<div class="citation" id="id158" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>80<span class="fn-bracket">]</span></span>
+<p>T. Meissner and F.J. Wentz. Polarization rotation and the third stokes parameter: the effects of spacecraft attitude and faraday rotation. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 44(3):506–515, 2006. <a class="reference external" href="https://doi.org/10.1109/TGRS.2005.858413">doi:10.1109/TGRS.2005.858413</a>.</p>
+</div>
+<div class="citation" id="id182" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>81<span class="fn-bracket">]</span></span>
+<p>Lucrezia Ricciardulli, Thomas Meissner, and Frank Wentz. Towards a climate data record of satellite ocean vector winds. In <em>2012 IEEE International Geoscience and Remote Sensing Symposium</em>, 2067–2069. IEEE, 2012.</p>
+</div>
+<div class="citation" id="id93" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>82<span class="fn-bracket">]</span></span>
+<p>Kyle A Hilburn, Thomas Meissner, Frank J Wentz, and Shannon T Brown. Ocean vector winds from windsat two-look polarimetric radiances. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 54(2):918–931, 2015.</p>
+</div>
+<div class="citation" id="id16" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>83<span class="fn-bracket">]</span></span>
+<p>Shannon Brown, Paolo Focardi, Amarit Kitiyakara, Frank Maiwald, Lance Milligan, Oliver Montes, Sharmila Padmanabhan, Richard Redick, Damon Russel, Vin Bach, and others. The cowvr mission: demonstrating the capability of a new generation of small satellite weather sensors. In <em>2017 IEEE Aerospace Conference</em>, 1–7. IEEE, 2017.</p>
+</div>
+<div class="citation" id="id118" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>84<span class="fn-bracket">]</span></span>
+<p>Y.H. Kerr, P. Waldteufel, J.P. Wigneron, S. Delwart, F. Cabot, J. Boutin, M.J. Escorihuela, J. Font, N. Reul, C. Gruhier, and others. The SMOS Mission: New Tool for Monitoring Key Elements of the Global Water Cycle. <em>Proc. IEEE</em>, 98(5):666–687, 2010. <a class="reference external" href="https://doi.org/10.1109/JPROC.2010.2043032">doi:10.1109/JPROC.2010.2043032</a>.</p>
+</div>
+<div class="citation" id="id106" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>85<span class="fn-bracket">]</span></span>
+<p>Dara Entekhabi, Eni G Njoku, Peggy E O'Neill, Kent H Kellogg, Wade T Crow, Wendy N Edelstein, Jared K Entin, Shawn D Goodman, Thomas J Jackson, Joel Johnson, and others. The soil moisture active passive (smap) mission. <em>Proceedings of the IEEE</em>, 98(5):704–716, 2010.</p>
+</div>
+<div class="citation" id="id100" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>86<span class="fn-bracket">]</span></span>
+<p>Charles R. Sampson and Ann J. Schrader. The automated tropical cyclone forecasting system (version 3.2). <em>Bulletin of the American Meteorological Society</em>, 81(6):1231 – 1240, 2000. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/bams/81/6/1520-0477_2000_081_1231_tatcfs_2_3_co_2.xml">https://journals.ametsoc.org/view/journals/bams/81/6/1520-0477_2000_081_1231_tatcfs_2_3_co_2.xml</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0477(2000)081&lt;1231:TATCFS&gt;2.3.CO;2">doi:10.1175/1520-0477(2000)081&lt;1231:TATCFS&gt;2.3.CO;2</a>.</p>
+</div>
+<div class="citation" id="id194" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>87<span class="fn-bracket">]</span></span>
+<p>Charles R. Sampson, James S. Goerss, John A. Knaff, Brian R. Strahl, Edward M. Fukada, and Efren A. Serra. Tropical cyclone gale wind radii estimates, forecasts, and error forecasts for the western north pacific. <em>Weather and Forecasting</em>, 33(4):1081 – 1092, 2018. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/33/4/waf-d-17-0153_1.xml">https://journals.ametsoc.org/view/journals/wefo/33/4/waf-d-17-0153_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-17-0153.1">doi:10.1175/WAF-D-17-0153.1</a>.</p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>88<span class="fn-bracket">]</span></span>
+<p>Morris A. Bender, Timothy P. Marchok, Charles R. Sampson, John A. Knaff, and Matthew J. Morin. Impact of storm size on prediction of storm track and intensity using the 2016 operational gfdl hurricane model. <em>Weather and Forecasting</em>, 32(4):1491 – 1508, 2017. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/32/4/waf-d-16-0220_1.xml">https://journals.ametsoc.org/view/journals/wefo/32/4/waf-d-16-0220_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-16-0220.1">doi:10.1175/WAF-D-16-0220.1</a>.</p>
+</div>
+<div class="citation" id="id102" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>89<span class="fn-bracket">]</span></span>
+<p>John A. Knaff, Charles R. Sampson, and Kate D. Musgrave. Statistical tropical cyclone wind radii prediction using climatology and persistence: updates for the western north pacific. <em>Weather and Forecasting</em>, 33(4):1093 – 1098, 2018. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/33/4/waf-d-18-0027_1.xml">https://journals.ametsoc.org/view/journals/wefo/33/4/waf-d-18-0027_1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/WAF-D-18-0027.1">doi:10.1175/WAF-D-18-0027.1</a>.</p>
+</div>
+<div class="citation" id="id101" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>90<span class="fn-bracket">]</span></span>
+<p>John A. Knaff, Charles R. Sampson, Matthew E. Kucas, Christopher J. Slocum, Michael J. Brennan, Thomas Meissner, Lucrezia Ricciardulli, Alexis Mouche, Nicolas Reul, Mary Morris, Galina Chirokova, and Philippe Caroff. Estimating tropical cyclone surface winds: current status, emerging technologies, historical evolution, and a look to the future. <em>Tropical Cyclone Research and Review</em>, 10(3):125–150, 2021. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2225603221000266">https://www.sciencedirect.com/science/article/pii/S2225603221000266</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.tcrr.2021.09.002">doi:https://doi.org/10.1016/j.tcrr.2021.09.002</a>.</p>
+</div>
+<div class="citation" id="id268" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>91<span class="fn-bracket">]</span></span>
+<p>Elizaveta V. Zabolotskikh, Leonid M. Mitnik, and Bertrand Chapron. New approach for severe marine weather study using satellite passive microwave sensing. <em>Geophysical Research Letters</em>, 40(13):3347–3350, 2013. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/grl.50664">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/grl.50664</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/grl.50664">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/grl.50664</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/grl.50664">doi:https://doi.org/10.1002/grl.50664</a>.</p>
+</div>
+<div class="citation" id="id149" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>92<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner, Lucrezia Ricciardulli, and Andrew Manaster. Tropical cyclone wind speeds from windsat, amsr and smap: algorithm development and testing. <em>Remote Sensing</em>, 2021. URL: <a class="reference external" href="https://www.mdpi.com/2072-4292/13/9/1641">https://www.mdpi.com/2072-4292/13/9/1641</a>, <a class="reference external" href="https://doi.org/10.3390/rs13091641">doi:10.3390/rs13091641</a>.</p>
+</div>
+<div class="citation" id="id218" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>93<span class="fn-bracket">]</span></span>
+<p>A. Stogryn. The Emissivity of Sea Foam at Microwave Frequencies. <em>J. Geophys. Res.</em>, 77(9):1658–1666, March 1972. URL: <a class="reference external" href="http://dx.doi.org/10.1029/JC077i009p01658">http://dx.doi.org/10.1029/JC077i009p01658</a>, <a class="reference external" href="https://doi.org/10.1029/JC077i009p01658">doi:10.1029/JC077i009p01658</a>.</p>
+</div>
+<div class="citation" id="id97" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>94<span class="fn-bracket">]</span></span>
+<p>J. T. Johnson and M. Zhang. Theoretical study of the small slope approximation for ocean polarimetric thermal emission. <em>IEEE Trans. Geosci. Remote Sens.</em>, 37(5):2305–2316, 1999.</p>
+</div>
+<div class="citation" id="id98" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>95<span class="fn-bracket">]</span></span>
+<p>Joel T. Johnson. An Efficient Two-Scale Model for the Computation of Thermal Emission and Atmospheric Reflection from the Sea Surface. <em>IEEE Trans. Geosci. Remote Sens.</em>, 44(3):560–568, March 2006. <a class="reference external" href="https://doi.org/10.1109/TGRS.2005.855999">doi:10.1109/TGRS.2005.855999</a>.</p>
+</div>
+<div class="citation" id="id164" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>96<span class="fn-bracket">]</span></span>
+<p>E.C. Monahan and I. G. O'Muircheartaigh. Whitecaps and the passive remote sensing of the ocean surface. <em>Int. J. Remote Sens.</em>, 7(5):627–642, 1986. <a class="reference external" href="https://doi.org/10.1080/01431168608954716">doi:10.1080/01431168608954716</a>.</p>
+</div>
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>97<span class="fn-bracket">]</span></span>
+<p>Magdalena D. Anguelova and Ferris Webster. Whitecap coverage from satellite measurements: A first step toward modeling the variability of oceanic whitecaps. <em>J. Geophys. Res.</em>, March 2006. URL: <a class="reference external" href="http://dx.doi.org/10.1029/2005JC003158">http://dx.doi.org/10.1029/2005JC003158</a>, <a class="reference external" href="https://doi.org/10.1029/2005JC003158">doi:10.1029/2005JC003158</a>.</p>
+</div>
+<div class="citation" id="id188" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>98<span class="fn-bracket">]</span></span>
+<p>Nicolas Reul and Bertrand Chapron. A model of sea-foam thickness distribution for passive microwave remote sensing applications. <em>J. Geophys. Res.</em>, 108(C10):3321, 2003. <a class="reference external" href="https://doi.org/10.1029/2003JC001887">doi:10.1029/2003JC001887</a>.</p>
+</div>
+<div class="citation" id="id81" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>99<span class="fn-bracket">]</span></span>
+<p>Paul A. Hwang, Nicolas Reul, Thomas Meissner, and Simon H. Yueh. Ocean surface foam and microwave emission: dependence on frequency and incidence angle. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 57(10):8223–8234, 2019. <a class="reference external" href="https://doi.org/10.1109/TGRS.2019.2919001">doi:10.1109/TGRS.2019.2919001</a>.</p>
+</div>
+<div class="citation" id="id82" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>100<span class="fn-bracket">]</span></span>
+<p>Paul A. Hwang, Nicolas Reul, Thomas Meissner, and Simon H. Yueh. Whitecap and wind stress observations by microwave radiometers: global coverage and extreme conditions. <em>Journal of Physical Oceanography</em>, 49(9):2291 – 2307, 2019. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/phoc/49/9/jpo-d-19-0061.1.xml">https://journals.ametsoc.org/view/journals/phoc/49/9/jpo-d-19-0061.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JPO-D-19-0061.1">doi:10.1175/JPO-D-19-0061.1</a>.</p>
+</div>
+<div class="citation" id="id258" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>101<span class="fn-bracket">]</span></span>
+<p>Simon Yueh, Wenqing Tang, Alexander Fore, Akiko Hayashi, Yuhe T Song, and Gary Lagerloef. Aquarius geophysical model function and combined active passive algorithm for ocean surface salinity and wind retrieval. <em>Journal of Geophysical Research: Oceans</em>, 119(8):5360–5379, 2014.</p>
+</div>
+<div class="citation" id="id155" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>102<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner, Frank J Wentz, and Lucrezia Ricciardulli. The emission and scattering of l-band microwave radiation from rough ocean surfaces and wind speed measurements from the aquarius sensor. <em>Journal of Geophysical Research: Oceans</em>, 119(9):6499–6522, 2014.</p>
+</div>
+<div class="citation" id="id67" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>103<span class="fn-bracket">]</span></span>
+<p>A. J. Gasiewski and D. B. Kunkee. Polarized microwave emission from water waves. <em>Radio Sci.</em>, 29:1449–1466, 1994. <a class="reference external" href="https://doi.org/10.1029/94RS01923">doi:10.1029/94RS01923</a>.</p>
+</div>
+<div class="citation" id="id94" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>104<span class="fn-bracket">]</span></span>
+<p>V.G. Irisov, A.V. Kuzmin, M.N. Pospelov, J.G. Trokhimovsky, and V.S. Etkin. The dependence of sea brightness temperature on surface wind direction and speed. theory and experiment. In <em>[Proceedings] IGARSS'91 Remote Sensing: Global Monitoring for Earth Management</em>, volume 3, 1297–1300. 1991. <a class="reference external" href="https://doi.org/10.1109/IGARSS.1991.579317">doi:10.1109/IGARSS.1991.579317</a>.</p>
+</div>
+<div class="citation" id="id121" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>105<span class="fn-bracket">]</span></span>
+<p>B. Laursen and N. Skou. Wind direction over the ocean determined by an airborne, imaging, polarimetric radiometer system. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 39(7):1547–1555, 2001. <a class="reference external" href="https://doi.org/10.1109/36.934086">doi:10.1109/36.934086</a>.</p>
+</div>
+<div class="citation" id="id120" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>106<span class="fn-bracket">]</span></span>
+<p>J. Lahtinen, J. Pihlflyckt, I. Mononen, S.J. Tauriainen, M. Kemppinen, and M.T. Hallikainen. Fully polarimetric microwave radiometer for remote sensing. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 41(8):1869–1878, 2003. <a class="reference external" href="https://doi.org/10.1109/TGRS.2003.813847">doi:10.1109/TGRS.2003.813847</a>.</p>
+</div>
+<div class="citation" id="id266" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>107<span class="fn-bracket">]</span></span>
+<p>S.H. Yueh, W.J. Wilson, S.J. Dinardo, and S.V. Hsiao. Polarimetric microwave wind radiometer model function and retrieval testing for windsat. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 44(3):584–596, 2006. <a class="reference external" href="https://doi.org/10.1109/TGRS.2005.858416">doi:10.1109/TGRS.2005.858416</a>.</p>
+</div>
+<div class="citation" id="id228" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>108<span class="fn-bracket">]</span></span>
+<p>Eric W. Uhlhorn, Peter G. Black, James L. Franklin, Mark Goodberlet, James Carswell, and Alan S. Goldstein. Hurricane Surface Wind Measurements from an Operational Stepped Frequency Microwave Radiometer. <em>Mon. Weather Rev.</em>, 135(9):3070–3085, 2012/12/11 2007. URL: <a class="reference external" href="http://dx.doi.org/10.1175/MWR3454.1">http://dx.doi.org/10.1175/MWR3454.1</a>, <a class="reference external" href="https://doi.org/10.1175/MWR3454.1">doi:10.1175/MWR3454.1</a>.</p>
+</div>
+<div class="citation" id="id154" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>109<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner and Frank J Wentz. The emissivity of the ocean surface between 6 and 90 ghz over a large range of wind speeds and earth incidence angles. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 50(8):3004–3026, 2012.</p>
+</div>
+<div class="citation" id="id205" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>110<span class="fn-bracket">]</span></span>
+<p>A. Shibata, K. Imaoka, and T. Koike. Amsr/amsr-e level 2 and 3 algorithm developments and data validation plans of nasda. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 41(2):195–203, 2003. <a class="reference external" href="https://doi.org/10.1109/TGRS.2002.808320">doi:10.1109/TGRS.2002.808320</a>.</p>
+</div>
+<div class="citation" id="id150" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>111<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner and Andrew Manaster. Smap salinity retrievals near the sea-ice edge using multi-channel amsr2 brightness temperatures. <em>Remote Sensing</em>, 2021. URL: <a class="reference external" href="https://www.mdpi.com/2072-4292/13/24/5120">https://www.mdpi.com/2072-4292/13/24/5120</a>, <a class="reference external" href="https://doi.org/10.3390/rs13245120">doi:10.3390/rs13245120</a>.</p>
+</div>
+<div class="citation" id="id207" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>112<span class="fn-bracket">]</span></span>
+<p>F. J. Wentz, T. Meissner, and D. Smith. Evaluation of microwave scatterometers and radiometers as satellite anemometers. In <em>Proc. IEEE International Geoscience and Remote Sensing Symposium IGARSS '05</em>, volume 5, 3310–3313. 2005. URL: <a class="reference external" href="http://dx.doi.org/10.1109/IGARSS.2005.1526549">http://dx.doi.org/10.1109/IGARSS.2005.1526549</a>, <a class="reference external" href="https://doi.org/10.1109/IGARSS.2005.1526549">doi:10.1109/IGARSS.2005.1526549</a>.</p>
+</div>
+<div class="citation" id="id159" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>113<span class="fn-bracket">]</span></span>
+<p>FJ Wentz and T Meissner. Amsr ocean algorithm, version 2. <em>Remote Sensing Systems Algorithm Theoretical Basis Doc. 121599A-1</em>, 2000.</p>
+</div>
+<div class="citation" id="id177" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>114<span class="fn-bracket">]</span></span>
+<p>W.E. Purdy, P.W. Gaiser, G.A. Poe, E.A. Uliana, T. Meissner, and F.J. Wentz. Geolocation and pointing accuracy analysis for the windsat sensor. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 44(3):496–505, 2006. <a class="reference external" href="https://doi.org/10.1109/TGRS.2005.858415">doi:10.1109/TGRS.2005.858415</a>.</p>
+</div>
+<div class="citation" id="id105" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>115<span class="fn-bracket">]</span></span>
+<p>Masao Kanamitsu. Description of the nmc global data assimilation and forecast system. <em>Weather and Forecasting</em>, 4(3):335 – 342, 1989. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/4/3/1520-0434_1989_004_0335_dotngd_2_0_co_2.xml">https://journals.ametsoc.org/view/journals/wefo/4/3/1520-0434_1989_004_0335_dotngd_2_0_co_2.xml</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0434(1989)004&lt;0335:DOTNGD&gt;2.0.CO;2">doi:10.1175/1520-0434(1989)004&lt;0335:DOTNGD&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id152" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>116<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner and Frank J Wentz. The complex dielectric constant of pure and sea water from microwave satellite observations. <em>IEEE Transactions on Geoscience and remote Sensing</em>, 42(9):1836–1849, 2004.</p>
+</div>
+<div class="citation" id="id66" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>117<span class="fn-bracket">]</span></span>
+<p>Sang-Moo Lee and Albin J. Gasiewski. A physically based two-scale ocean surface emissivity model tuned to windsat and ssm/i polarimetric brightness temperatures. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 60():1–23, 2022. <a class="reference external" href="https://doi.org/10.1109/TGRS.2021.3133852">doi:10.1109/TGRS.2021.3133852</a>.</p>
+</div>
+<div class="citation" id="id156" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>118<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner, Frank J Wentz, and David M LeVine. The salinity retrieval algorithms for the nasa aquarius version 5 and smap version 3 releases. <em>Remote Sensing</em>, 10(7):1121, 2018.</p>
+</div>
+<div class="citation" id="id134" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>119<span class="fn-bracket">]</span></span>
+<p>David M. Le Vine, Emmanuel P. Dinnat, Thomas Meissner, Frank J. Wentz, Hsun-Ying Kao, Gary Lagerloef, and Tong Lee. Status of aquarius and salinity continuity. <em>Remote Sensing</em>, 2018. URL: <a class="reference external" href="https://www.mdpi.com/2072-4292/10/10/1585">https://www.mdpi.com/2072-4292/10/10/1585</a>, <a class="reference external" href="https://doi.org/10.3390/rs10101585">doi:10.3390/rs10101585</a>.</p>
+</div>
+<div class="citation" id="id260" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>120<span class="fn-bracket">]</span></span>
+<p>Simon H Yueh, Richard West, William J Wilson, Fuk K Li, Eni G Njoku, and Yahya Rahmat-Samii. Error sources and feasibility for microwave remote sensing of ocean surface salinity. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 39(5):1049–1060, 2001.</p>
+</div>
+<div class="citation" id="id61" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>121<span class="fn-bracket">]</span></span>
+<p>J. Font, G. S. E. Lagerloef, D. M. Le Vine, A. Camps, and O. -Z. Zanife. The determination of surface salinity with the European SMOS space mission. <em>IEEE Trans. Geosci. Remote Sens.</em>, 42(10):2196–2205, Oct. 2004. <a class="reference external" href="https://doi.org/10.1109/TGRS.2004.834649">doi:10.1109/TGRS.2004.834649</a>.</p>
+</div>
+<div class="citation" id="id184" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>122<span class="fn-bracket">]</span></span>
+<p>N. Reul, S. A. Grodsky, M. Arias, J. Boutin, R. Catany, B. Chapron, F. D'Amico, E. Dinnat, C. Donlon, A. Fore, S. Fournier, S. Guimbard, A. Hasson, N. Kolodziejczyk, G. Lagerloef, T. Lee, D. M. Le Vine, E. Lindstrom, C. Maes, S. Mecklenburg, T. Meissner, E. Olmedo, R. Sabia, J. Tenerelli, C. Thouvenin-Masson, A. Turiel, J.-L. Vergely, N. Vinogradova, F. Wentz, and S. Yueh. Salinity estimates from Spaceborne L-band radiometers: an overview of the first decade of observation (2010-2019). <em>Remote Sens. Environ.</em>, 242:111769, 2020. URL: <a class="reference external" href="https://doi.org/10.1016/j.rse.2020.111769">https://doi.org/10.1016/j.rse.2020.111769</a>, <a class="reference external" href="https://doi.org/10.1016/j.rse.2020.111769">doi:10.1016/j.rse.2020.111769</a>.</p>
+</div>
+<div class="citation" id="id239" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>123<span class="fn-bracket">]</span></span>
+<p>F. J. Wentz. The forward scattering of microwave solar radiation from a water surface. <em>Radio Sci.</em>, 13(1):131–138, January 1978. <a class="reference external" href="https://doi.org/10.1029/RS013i001p00131">doi:10.1029/RS013i001p00131</a>.</p>
+</div>
+<div class="citation" id="id130" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>124<span class="fn-bracket">]</span></span>
+<p>D. M. Le Vine, S. Abraham, F. Wentz, and G. S. E. Lagerloef. Impact of the Sun on remote sensing of sea surface salinity from space. In <em>Proc. IEEE Int. Geoscience and Remote Sensing Symp. IGARSS '05</em>, volume 1. 2005.</p>
+</div>
+<div class="citation" id="id185" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>125<span class="fn-bracket">]</span></span>
+<p>N. Reul, J. Tenerelli, B. Chapron, and P. Waldteufel. Modeling Sun Glitter at L-Band for Sea Surface Salinity Remote Sensing With SMOS. <em>IEEE Trans. Geosci. Remote Sens.</em>, 45(7):2073–2087, July 2007. <a class="reference external" href="https://doi.org/10.1109/TGRS.2006.890421">doi:10.1109/TGRS.2006.890421</a>.</p>
+</div>
+<div class="citation" id="id187" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>126<span class="fn-bracket">]</span></span>
+<p>N. Reul, J. E. Tenerelli, N. Floury, and B. Chapron. Earth-viewing L-band radiometer sensing of sea surface scattered celestial sky radiation. Part II: application to SMOS. <em>IEEE Trans. Geosci. Remote Sens.</em>, 46(3):675–688, March 2008. <a class="reference external" href="https://doi.org/10.1109/TGRS.2007.914804">doi:10.1109/TGRS.2007.914804</a>.</p>
+</div>
+<div class="citation" id="id220" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>127<span class="fn-bracket">]</span></span>
+<p>Joseph E Tenerelli, Nicolas Reul, Alexis A Mouche, and Bertrand Chapron. Earth-viewing l-band radiometer sensing of sea surface scattered celestial sky radiation—part i: general characteristics. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 46(3):659–674, 2008.</p>
+</div>
+<div class="citation" id="id47" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>128<span class="fn-bracket">]</span></span>
+<p>Emmanuel P Dinnat and David M Le Vine. Impact of sun glint on salinity remote sensing: an example with the aquarius radiometer. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 46(10):3137–3150, 2008.</p>
+</div>
+<div class="citation" id="id261" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>129<span class="fn-bracket">]</span></span>
+<p>Simon H Yueh. Estimates of faraday rotation with passive microwave polarimetry for microwave remote sensing of earth surfaces. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 38(5):2434–2438, 2000.</p>
+</div>
+<div class="citation" id="id133" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>130<span class="fn-bracket">]</span></span>
+<p>David M Le Vine and Saji Abraham. The effect of the ionosphere on remote sensing of sea surface salinity from space: absorption and emission at l band. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 40(4):771–782, 2002.</p>
+</div>
+<div class="citation" id="id230" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>131<span class="fn-bracket">]</span></span>
+<p>Jean-Luc Vergely, Philippe Waldteufel, Jacqueline Boutin, Xiaobin Yin, Paul Spurgeon, and Steven Delwart. New total electron content retrieval improves smos sea surface salinity. <em>Journal of Geophysical Research: Oceans</em>, 119(10):7295–7307, 2014.</p>
+</div>
+<div class="citation" id="id137" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>132<span class="fn-bracket">]</span></span>
+<p>HJ Liebe, PW Rosenkranz, and GA Hufford. Atmospheric 60-ghz oxygen spectrum: new laboratory measurements and line parameters. <em>Journal of quantitative spectroscopy and radiative transfer</em>, 48(5-6):629–643, 1992.</p>
+</div>
+<div class="citation" id="id201" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>133<span class="fn-bracket">]</span></span>
+<p>Niels Skou and Dorthe Hoffman-Bang. L-band radiometers measuring salinity from space: atmospheric propagation effects. <em>IEEE transactions on geoscience and remote sensing</em>, 43(10):2210–2217, 2005.</p>
+</div>
+<div class="citation" id="id237" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>134<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz and Thomas Meissner. Atmospheric absorption model for dry air and water vapor at microwave frequencies below 100ghz derived from spaceborne radiometer observations. <em>Radio Science</em>, 51(5):381–391, 2016.</p>
+</div>
+<div class="citation" id="id256" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>135<span class="fn-bracket">]</span></span>
+<p>Xiaobin Yin, Jacqueline Boutin, Emmanuel Dinnat, Qingtao Song, and Adrien Martin. Roughness and foam signature on smos-miras brightness temperatures: a semi-theoretical approach. <em>Remote sensing of environment</em>, 180:221–233, 2016.</p>
+</div>
+<div class="citation" id="id259" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>136<span class="fn-bracket">]</span></span>
+<p>Simon H Yueh, Steve J Dinardo, Alexander G Fore, and Fuk K Li. Passive and active l-band microwave observations and modeling of ocean surface winds. <em>IEEE transactions on geoscience and remote sensing</em>, 48(8):3087–3100, 2010.</p>
+</div>
+<div class="citation" id="id275" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>137<span class="fn-bracket">]</span></span>
+<p>Yiwen Zhou, Roger H Lang, Emmanuel P Dinnat, and David M Le Vine. Seawater debye model function at l-band and its impact on salinity retrieval from aquarius satellite data. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 59(10):8103–8116, 2021.</p>
+</div>
+<div class="citation" id="id80" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>138<span class="fn-bracket">]</span></span>
+<p>WW Ho, AW Love, and MJ VanMelle. Measurements of the dielectric properties of sea water at 1.43 ghz. Technical Report, NASA, 1974.</p>
+</div>
+<div class="citation" id="id249" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>139<span class="fn-bracket">]</span></span>
+<p>W. J. Wilson, S. H. Yueh, S. J. Dinardo, and F. K. Li. High-stability L-band radiometer measurements of saltwater. <em>IEEE Trans. Geosci. Remote Sens.</em>, 42(9):1829–1835, 2004. <a class="reference external" href="https://doi.org/10.1109/TGRS.2004.833393">doi:10.1109/TGRS.2004.833393</a>.</p>
+</div>
+<div class="citation" id="id174" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>140<span class="fn-bracket">]</span></span>
+<p>William Peake. Interaction of electromagnetic waves with some natural surfaces. <em>IRE Transactions on Antennas and Propagation</em>, 7(5):324–329, 1959.</p>
+</div>
+<div class="citation" id="id54" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>141<span class="fn-bracket">]</span></span>
+<p>J. D. Droppleman. Apparent microwave emissivity of sea foam. <em>Journal of Geophysical Research (1896-1977)</em>, 75(3):696–698, 1970. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC075i003p00696">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC075i003p00696</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC075i003p00696">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC075i003p00696</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC075i003p00696">doi:https://doi.org/10.1029/JC075i003p00696</a>.</p>
+</div>
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>142<span class="fn-bracket">]</span></span>
+<p>R. P. Barber Jr. and Jin Wu. Sea brightness temperature and effects of spray and whitecaps. <em>Journal of Geophysical Research: Oceans</em>, 102(C3):5823–5827, 1997. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96JC03760">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96JC03760</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/96JC03760">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/96JC03760</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/96JC03760">doi:https://doi.org/10.1029/96JC03760</a>.</p>
+</div>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>143<span class="fn-bracket">]</span></span>
+<p>C. S. Cox and W. H. Munk. Measurement of the roughness of the sea surface from photographs of the sun's glitter. <em>J. Opt. Soc. Am.</em>, 44(11):838–850, 1954. <a class="reference external" href="https://doi.org/10.1364/JOSA.44.000838">doi:10.1364/JOSA.44.000838</a>.</p>
+</div>
+<div class="citation" id="id163" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>144<span class="fn-bracket">]</span></span>
+<p>H. Mitsuyasu and T. Honda. Wind-induced growth of water waves. <em>J. Fluid Mech.</em>, 123:425–442, 1982.</p>
+</div>
+<div class="citation" id="id208" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>145<span class="fn-bracket">]</span></span>
+<p>Dean F. Smith, Bob L. Weber, and Albin J. Gasiewski. An anisotropic ocean surface emissivity model based on windsat polarimetric brightness observations. In <em>2008 Microwave Radiometry and Remote Sensing of the Environment</em>, volume, 1–4. 2008. <a class="reference external" href="https://doi.org/10.1109/MICRAD.2008.4579491">doi:10.1109/MICRAD.2008.4579491</a>.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>146<span class="fn-bracket">]</span></span>
+<p>C. S. Cox. Measurements of slopes of high-frequency wind waves. <em>J. Mar. Res.</em>, 16:199–225, 1958.</p>
+</div>
+<div class="citation" id="id112" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>147<span class="fn-bracket">]</span></span>
+<p>W. C. Keller and J. W. Wright. Microwave scattering and the straining of wind generated waves. <em>Radio Sci.</em>, 10:139–147, 1975. <a class="reference external" href="https://doi.org/10.1029/RS010i002p00139">doi:10.1029/RS010i002p00139</a>.</p>
+</div>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>148<span class="fn-bracket">]</span></span>
+<p>M. L. Banner. Equilibrium Spectra of Wind Waves. <em>J. Phys. Oceanogr.</em>, 20(7):966–984, July 1990. URL: <a class="reference external" href="http://dx.doi.org/10.1175/1520-0485(1990)020&lt;0966:ESOWW&gt;2.0.CO;2">http://dx.doi.org/10.1175/1520-0485(1990)020&lt;0966:ESOWW&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0485(1990)020&lt;0966:ESOWW&gt;2.0.CO;2">doi:10.1175/1520-0485(1990)020&lt;0966:ESOWW&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id83" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>149<span class="fn-bracket">]</span></span>
+<p>Paul A. Hwang, David W. Wang, Edward J. Walsh, William B. Krabill, and Robert N. Swift. Airborne Measurements of the Wavenumber Spectra of Ocean Surface Waves. Part I: Spectral Slope and Dimensionless Spectral Coefficient. <em>J. Phys. Oceanogr.</em>, 30(11):2753–2767, November 2000. URL: <a class="reference external" href="http://dx.doi.org/10.1175/1520-0485(2001)031&lt;2753:AMOTWS&gt;2.0.CO;2">http://dx.doi.org/10.1175/1520-0485(2001)031&lt;2753:AMOTWS&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0485(2001)031&lt;2753:AMOTWS&gt;2.0.CO;2">doi:10.1175/1520-0485(2001)031&lt;2753:AMOTWS&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id87" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>150<span class="fn-bracket">]</span></span>
+<p>V. G. Irisov. Azimuthal variations of the microwave radiation from a slightly non-Gaussian sea surface. <em>Radio Sci.</em>, 35(1):65–82, 2000. <a class="reference external" href="https://doi.org/10.1029/1999RS900104">doi:10.1029/1999RS900104</a>.</p>
+</div>
+<div class="citation" id="id78" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>151<span class="fn-bracket">]</span></span>
+<p>Yasunori Sasaki, Ichio Asanuma, Kei Muneyama, Gen'ichi Naito, and Tsutomu Suzuki. The dependence of sea-surface microwave emission on wind speed, frequency, incidence angle, and polarzation over the frequency range from 1 to 40 ghz. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, GE-25(2):138–146, 1987. <a class="reference external" href="https://doi.org/10.1109/TGRS.1987.289813">doi:10.1109/TGRS.1987.289813</a>.</p>
+</div>
+<div class="citation" id="id75" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>152<span class="fn-bracket">]</span></span>
+<p>J. P. Hollinger. Passive Microwave Measurements of the Sea Surface. <em>J. Geophys. Res.</em>, 75(27):5209–5213, September 1970. <a class="reference external" href="https://doi.org/10.1029/JC075i027p05209">doi:10.1029/JC075i027p05209</a>.</p>
+</div>
+<div class="citation" id="id35" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>153<span class="fn-bracket">]</span></span>
+<p>A. Camps, J. Font, M. Vall-llossera, C. Gabarró, I. Corbella, N. Duffo, F. Torres, S. Blanch, A. Aguasca, R. Villarino, L. Enrique, J. J. Miranda, J. J. Arenas, A. Julià, J. Etcheto, V. Caselles, A. Weill, J. Boutin, S. Contardo, R. Niclós, R. Rivas, S. C. Reising, P. Wursteisen, M. Berger, and M. Martín-Neira. The WISE 2000 and 2001 Field Experiments in Support of the SMOS Mission: Sea Surface L-band Brightness Temperature Observations and their Application to Multi-Angular Salinity Retrieval. <em>IEEE Trans. Geosci. Remote Sens.</em>, 42(4):804–823, 2004. <a class="reference external" href="https://doi.org/10.1109/TGRS.2003.819444">doi:10.1109/TGRS.2003.819444</a>.</p>
+</div>
+<div class="citation" id="id145" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>154<span class="fn-bracket">]</span></span>
+<p>A. C. H. Martin, J. Boutin, D. Hauser, and E. P. Dinnat. Active-passive synergy for interpreting ocean L-band emissivity: Results from the CAROLS airborne campaigns. <em>J. Geophys. Res.</em>, July 2014. URL: <a class="reference external" href="http://dx.doi.org/10.1002/2014JC009890">http://dx.doi.org/10.1002/2014JC009890</a>, <a class="reference external" href="https://doi.org/10.1002/2014JC009890">doi:10.1002/2014JC009890</a>.</p>
+</div>
+<div class="citation" id="id50" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>155<span class="fn-bracket">]</span></span>
+<p>E.P. Dinnat, J. Boutin, G. Caudal, J. Etcheto, and P. Waldteufel. Influence of sea surface emissivity model parameters at l-band for the estimation of salinity. <em>International Journal of Remote Sensing</em>, 23(23):5117 – 5122, 2002. Cited by: 42. URL: <a class="reference external" href="https://www.scopus.com/inward/record.uri?eid=2-s2.0-0037059175&amp;doi=10.1080%2f01431160210163119&amp;partnerID=40&amp;md5=26b4975d5652ec7514a885bf56d37e5b">https://www.scopus.com/inward/record.uri?eid=2-s2.0-0037059175&amp;doi=10.1080%2f01431160210163119&amp;partnerID=40&amp;md5=26b4975d5652ec7514a885bf56d37e5b</a>, <a class="reference external" href="https://doi.org/10.1080/01431160210163119">doi:10.1080/01431160210163119</a>.</p>
+</div>
+<div class="citation" id="id104" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>156<span class="fn-bracket">]</span></span>
+<p>Lise Kilic, Catherine Prigent, Jacqueline Boutin, Thomas Meissner, Stephen English, and Simon Yueh. Comparisons of ocean radiative transfer models with smap and amsr2 observations. <em>Journal of Geophysical Research: Oceans</em>, 124(11):7683–7699, 2019. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2019JC015493">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2019JC015493</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2019JC015493">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2019JC015493</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2019JC015493">doi:https://doi.org/10.1029/2019JC015493</a>.</p>
+</div>
+<div class="citation" id="id146" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>157<span class="fn-bracket">]</span></span>
+<p>Wentao Ma, Yanlei Du, Guihong Liu, Yang Yu, Xiaofeng Yang, Jian Yang, and Kun-Shan Chen. Study on direction dependence of the fully polarimetric wind-induced ocean emissivity at l-band using a semi-theoretical approach for aquarius and smap observations. <em>Remote Sensing of Environment</em>, 265:112661, 2021. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0034425721003813">https://www.sciencedirect.com/science/article/pii/S0034425721003813</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.rse.2021.112661">doi:https://doi.org/10.1016/j.rse.2021.112661</a>.</p>
+</div>
+<div class="citation" id="id12" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>158<span class="fn-bracket">]</span></span>
+<p>E.A. Bespalova, V.M. Veselov, V.E. Gershenzon, Y.A. Militskiy, V.G. Mirovskiy, I.V. Pokrovskaya, M.D. Raev, A.G. Semin, N.K. Smirnov, V.A. Skachkov, Y.G. Trokhimovski, Y.B. Hapin, V.N. Chistyakov, E.A. Sharkov, and V.S. Etkin. Surface wind velocity determination from the measurements of the polarization anisotropy of microwave emission and backscatter. <em>Soviet Journal of Remote Sensing [Translated from Russian: Issledovania Zemli iz Kosmosa, No.1, 87-94, 1982]</em>, pages 121–131, 1982.</p>
+</div>
+<div class="citation" id="id222" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>159<span class="fn-bracket">]</span></span>
+<p>Y.G. Trokhimovski, G.A. Bolotnikova, S.I. Grechko, and A.V. Kuzmin. The dependence of S-band sea-surface brightness temperature on wind vector at normal incidence. <em>IEEE Trans. Geosci. Remote Sens.</em>, 33:1085–1088, 1995. <a class="reference external" href="https://doi.org/10.1109/36.406696">doi:10.1109/36.406696</a>.</p>
+</div>
+<div class="citation" id="id141" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>160<span class="fn-bracket">]</span></span>
+<p><em>Propagation modeling of moist air and suspended water/ice particles at frequencies below 1000 GHz</em>, November 1993.</p>
+</div>
+<div class="citation" id="id139" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>161<span class="fn-bracket">]</span></span>
+<p>H. J. Liebe. An Atmopsheric Millimeter-Wave Propagation Model. <em>Int. J. Infrared and Millimeter Waves</em>, 10(6):631–650, July 1989.</p>
+</div>
+<div class="citation" id="id142" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>162<span class="fn-bracket">]</span></span>
+<p>A. Ludwig. The definition of cross polarization. <em>IEEE Transactions on Antennas and Propagation</em>, 21(1):116–119, 1973. <a class="reference external" href="https://doi.org/10.1109/TAP.1973.1140406">doi:10.1109/TAP.1973.1140406</a>.</p>
+</div>
+<div class="citation" id="id276" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>163<span class="fn-bracket">]</span></span>
+<p>M Zundo and B Duesman. On-ground bt frame of reference tn. Technical Report SO-TN-ESA-GS-5873, ESA, 2010.</p>
+</div>
+<div class="citation" id="id132" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>164<span class="fn-bracket">]</span></span>
+<p>D.M. Le Vine and S. Abraham. Faraday rotation and passive microwave remote sensing of soil moisture from space. <em>Microwave Radiometry Remote Sensing Earthés Surface Atmosphere</em>, pages 89–96, 2000.</p>
+</div>
+<div class="citation" id="id65" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>165<span class="fn-bracket">]</span></span>
+<p>N Floury. Estimation of faraday rotation from auxiliary data. Technical Report, ESA, 2007.</p>
+</div>
+<div class="citation" id="id178" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>166<span class="fn-bracket">]</span></span>
+<p>G.A. Poe. Optimum interpolation of imaging microwave radiometer data. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 28(5):800–810, 1990. <a class="reference external" href="https://doi.org/10.1109/36.58966">doi:10.1109/36.58966</a>.</p>
+</div>
+<div class="citation" id="id166" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>167<span class="fn-bracket">]</span></span>
+<p>A. H. Monahan. Idealized models of the joint probability distribution of wind speeds. <em>Nonlinear Processes in Geophysics</em>, 25(2):335–353, 2018. URL: <a class="reference external" href="https://npg.copernicus.org/articles/25/335/2018/">https://npg.copernicus.org/articles/25/335/2018/</a>, <a class="reference external" href="https://doi.org/10.5194/npg-25-335-2018">doi:10.5194/npg-25-335-2018</a>.</p>
+</div>
+<div class="citation" id="id278" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>168<span class="fn-bracket">]</span></span>
+<p>Philip Sura and Prashant D. Sardeshmukh. A global view of non-gaussian sst variability. <em>Journal of Physical Oceanography</em>, 38(3):639–647, March 2008. <a class="reference external" href="https://doi.org/10.1175/2007jpo3761.1">doi:10.1175/2007jpo3761.1</a>.</p>
+</div>
+<div class="citation" id="id144" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>169<span class="fn-bracket">]</span></span>
+<p>Donald W. Marquardt. An algorithm for least-squares estimation of nonlinear parameters. <em>Journal of the Society for Industrial and Applied Mathematics</em>, 11(2):431–441, 1963. URL: <a class="reference external" href="https://doi.org/10.1137/0111030">https://doi.org/10.1137/0111030</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1137/0111030">arXiv:https://doi.org/10.1137/0111030</a>, <a class="reference external" href="https://doi.org/10.1137/0111030">doi:10.1137/0111030</a>.</p>
+</div>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>170<span class="fn-bracket">]</span></span>
+<p>Gaël Alory, T. Delcroix, P. Téchiné, D. Diverrès, D. Varillon, S. Cravatte, Y. Gouriou, J. Grelet, S. Jacquin, E. Kestenare, and et al. The French contribution to the voluntary observing ships network of sea surface salinity. <em>Deep-Sea Res. Pt. I</em>, 105:1–18, November 2015. URL: <a class="reference external" href="http://dx.doi.org/10.1016/j.dsr.2015.08.005">http://dx.doi.org/10.1016/j.dsr.2015.08.005</a>, <a class="reference external" href="https://doi.org/10.1016/j.dsr.2015.08.005">doi:10.1016/j.dsr.2015.08.005</a>.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>171<span class="fn-bracket">]</span></span>
+<p>Giulio Notarstefano. Argo float data and metadata from global data assembly centre (argo gdac). Technical Report, IFREMER, SEANOE, 2022. <a class="reference external" href="https://doi.org/https://doi.org/10.17882/42182">doi:https://doi.org/10.17882/42182</a>.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>172<span class="fn-bracket">]</span></span>
+<p>J Aarons. A review of: “solar system radio astronomy”. edited by j. aarons. (new york : plenum press, 1965.) [pp.xi + 416.] price \$17·50. <em>International Journal of Electronics</em>, 20(3):293–293, 1966. URL: <a class="reference external" href="https://doi.org/10.1080/0020721660893786">https://doi.org/10.1080/0020721660893786</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1080/00207216608937868">arXiv:https://doi.org/10.1080/00207216608937868</a>, <a class="reference external" href="https://doi.org/10.1080/00207216608937868">doi:10.1080/00207216608937868</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>173<span class="fn-bracket">]</span></span>
+<p>William Asher, James Edson, Wade Mcgillis, Rik Wanninkhof, David T. Ho, and Trina Litchendor. <em>Fractional Area Whitecap Coverage and Air-Sea Gas Transfer Velocities Measured During GasEx-98</em>, chapter, pages 199–203. American Geophysical Union (AGU), 2002. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/GM127p0199">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/GM127p0199</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/GM127p0199">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/GM127p0199</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/GM127p0199">doi:https://doi.org/10.1029/GM127p0199</a>.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>174<span class="fn-bracket">]</span></span>
+<p>Franck Bayle, J-P Wigneron, Yann H Kerr, Philippe Waldteufel, Eric Anterrieu, J-C Orlhac, Andre Chanzy, Olivier Marloie, Marc Bernardini, Sten Sobjaerg, and others. Two-dimensional synthetic aperture images over a land surface scene. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 40(3):710–714, 2002.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>175<span class="fn-bracket">]</span></span>
+<p>G. B. Arfken and H. J. Weber. Mathematical methods for physicists 6th ed. <em>Materials and Manufacturing Processes</em>, 2005.</p>
+</div>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>176<span class="fn-bracket">]</span></span>
+<p>Gordon E Becker and Stanley H Autler. Water vapor absorption of electromagnetic radiation in the centimeter wave-length range. <em>Physical Review</em>, 70(5-6):300, 1946.</p>
+</div>
+<div class="citation" id="id13" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>177<span class="fn-bracket">]</span></span>
+<p>C. Bourlier and G. Berginc. Microwave analytical backscattering models from randomly rough anisotropic sea surface - Comparison with experimental data in C and Ku bands. <em>Progress in Electromagnetics Research</em>, 37:31–78, 2002.</p>
+</div>
+<div class="citation" id="id14" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>178<span class="fn-bracket">]</span></span>
+<p>V. G. Bondur and E. A. Sharkov. Statistical properties of whitecaps on a rough sea. <em>Oceanology</em>, 22(3):274–279, 1982.</p>
+</div>
+<div class="citation" id="id17" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>179<span class="fn-bracket">]</span></span>
+<p>DM Burrage, ML Heron, JM Hacker, Jorg L Miller, TC Stieglitz, Craig R Steinberg, and A Prytz. Structure and influence of tropical river plumes in the great barrier reef: application and performance of an airborne sea surface salinity mapping system. <em>Remote Sensing of Environment</em>, 85(2):204–220, 2003.</p>
+</div>
+<div class="citation" id="id18" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>180<span class="fn-bracket">]</span></span>
+<p>Hans-Juergen C Blume and Bruce M Kendall. Passive microwave measurements of temperature and salinity in coastal zones. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, pages 394–404, 1982.</p>
+</div>
+<div class="citation" id="id19" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>181<span class="fn-bracket">]</span></span>
+<p>K. Balaguru, P. Chang, R. Saravanan, L. R. Leung, Z. Xu, M. Li, and J.-S. Hsieh. Ocean barrier layers' effect on tropical cyclone intensification. <em>Proc. Natl. Acad. Sci. U.S.A</em>, 109(36):14343–14347, August 2012. URL: <a class="reference external" href="http://dx.doi.org/10.1073/pnas.1201364109">http://dx.doi.org/10.1073/pnas.1201364109</a>, <a class="reference external" href="https://doi.org/10.1073/pnas.1201364109">doi:10.1073/pnas.1201364109</a>.</p>
+</div>
+<div class="citation" id="id22" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>182<span class="fn-bracket">]</span></span>
+<p>Frederick M. Bingham, Stephan D. Howden, and Chester J. Koblinsky. Sea surface salinity measurements in the historical database. <em>J. Geophys. Res.</em>, 107(C12):8019, 2002. <a class="reference external" href="https://doi.org/10.1029/2000JC000767">doi:10.1029/2000JC000767</a>.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>183<span class="fn-bracket">]</span></span>
+<p>S. Blanch and A. Aguasca. Sea water dielectric permittivity models: review and impact on the brightness temperature at L-band. In <em>Proc. SMOS Campaigns Workshop, ESA SP-525</em>, 137–141. 2003.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>184<span class="fn-bracket">]</span></span>
+<p>Sebastián Blanch and Albert Aguasca. Seawater dielectric permittivity model from measurements at l band. In <em>IGARSS 2004. 2004 IEEE International Geoscience and Remote Sensing Symposium</em>, volume 2, 1362–1365. IEEE, 2004.</p>
+</div>
+<div class="citation" id="id26" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>185<span class="fn-bracket">]</span></span>
+<p>Hans-Juergen C Blume, Bruce M Kendall, and John C Fedors. Measurement of ocean temperature and salinity via microwave radiometry. <em>Boundary-Layer Meteorology</em>, 13(1):295–308, 1978.</p>
+</div>
+<div class="citation" id="id28" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>186<span class="fn-bracket">]</span></span>
+<p>Jacqueline Boutin, Jean-Luc Vergely, Stéphane Marchand, Francesco d'Amico, Audrey Hasson, Nicolas Kolodziejczyk, Nicolas Reul, Gilles Reverdin, and Jérôme Vialard. New smos sea surface salinity with reduced systematic errors and improved variability. <em>Remote Sensing of Environment</em>, 214:115–134, 2018.</p>
+</div>
+<div class="citation" id="id29" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>187<span class="fn-bracket">]</span></span>
+<p>Jacqueline Boutin, Jean-Luc Vergely, Fabrice Bonjean, Xavier Perrot, Yiwen Zhou, Emmanuel P. Dinnat, Roger H. Lang, David M. Le Vine, and Roberto Sabia. New seawater dielectric constant parametrization and application to SMOS retrieved salinity. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 61:1–13, 2023. <a class="reference external" href="https://doi.org/10.1109/tgrs.2023.3257923">doi:10.1109/tgrs.2023.3257923</a>.</p>
+</div>
+<div class="citation" id="id33" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>188<span class="fn-bracket">]</span></span>
+<p>Jacqueline Boutin, Jean-Luc Vergely, Emmanuel P. Dinnat, Philippe Waldteufel, Francesco D’Amico, Nicolas Reul, Alexandre Supply, and Clovis Thouvenin-Masson. Correcting sea surface temperature spurious effects in salinity retrieved from spaceborne l-band radiometer measurements. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 59(9):7256–7269, 2021. <a class="reference external" href="https://doi.org/10.1109/TGRS.2020.3030488">doi:10.1109/TGRS.2020.3030488</a>.</p>
+</div>
+<div class="citation" id="id34" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>189<span class="fn-bracket">]</span></span>
+<p>Adrian Callaghan, Gerrit de Leeuw, Leo Cohen, and Colin D. O'Dowd. Relationship of oceanic whitecap coverage to wind speed and wind history. <em>Geophys. Res. Lett.</em>, 35(23):L23609, December 2008. <a class="reference external" href="https://doi.org/10.1029/2008GL036165">doi:10.1029/2008GL036165</a>.</p>
+</div>
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>190<span class="fn-bracket">]</span></span>
+<p>A. Camps, M. Vall-llossera, R. Villarino, N. Reul, B. Chapron, I. Corbella, N. Duffo, F. Torres, J. J. Miranda, R. Sabia, A. Monerris, and R. Rodriguez. The emissivity of foam-covered water surface at L-band: theoretical modeling and experimental results from the FROG 2003 field experiment. <em>IEEE Trans. Geosci. Remote Sens.</em>, 43(5):925–937, May 2005. <a class="reference external" href="https://doi.org/10.1109/TGRS.2004.839651">doi:10.1109/TGRS.2004.839651</a>.</p>
+</div>
+<div class="citation" id="id37" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>191<span class="fn-bracket">]</span></span>
+<p>Igor V Cherny and Victor Yu Raizer. <em>Passive microwave remote sensing of oceans</em>. John Wiley &amp; Son Limited, 1998.</p>
+</div>
+<div class="citation" id="id40" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>192<span class="fn-bracket">]</span></span>
+<p>C. S. Cox and W. H. Munk. Statistics of the sea surface derived from sun glitter. <em>J. Mar. Res.</em>, 13:198–227, 1954.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>193<span class="fn-bracket">]</span></span>
+<p>Paul J. Durack, Susan E. Wijffels, and Richard J. Matear. Ocean salinities reveal strong global water cycle intensification during 1950 to 2000. <em>Science</em>, 336(6080):455–458, 2012. URL: <a class="reference external" href="https://www.science.org/doi/abs/10.1126/science.1212222">https://www.science.org/doi/abs/10.1126/science.1212222</a>, <a class="reference external" href="https://arxiv.org/abs/https://www.science.org/doi/pdf/10.1126/science.1212222">arXiv:https://www.science.org/doi/pdf/10.1126/science.1212222</a>, <a class="reference external" href="https://doi.org/10.1126/science.1212222">doi:10.1126/science.1212222</a>.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>194<span class="fn-bracket">]</span></span>
+<p>M. A. Donelan, J. Hamilton, and W. H. Hui. Directional spectra of wind-generated waves. <em>Phil. Trans. Roy. Soc. London A</em>, 315(1534):509–562, 1985. <a class="reference external" href="https://doi.org/10.1098/rsta.1985.0054">doi:10.1098/rsta.1985.0054</a>.</p>
+</div>
+<div class="citation" id="id45" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>195<span class="fn-bracket">]</span></span>
+<p>Peter Josef William Debye. <em>Polar molecules</em>. Dover publications, 1929.</p>
+</div>
+<div class="citation" id="id48" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>196<span class="fn-bracket">]</span></span>
+<p>E. P. Dinnat, D. M. Le Vine, and S. Abraham. L-band radiometry and reflection of the galaxy by a rough ocean surface. In <em>Proc. Microwave Radiometry and Remote Sensing of the Environment MICRORAD 2008</em>, 1–4. 11–14 March 2008. <a class="reference external" href="https://doi.org/10.1109/MICRAD.2008.4579494">doi:10.1109/MICRAD.2008.4579494</a>.</p>
+</div>
+<div class="citation" id="id49" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>197<span class="fn-bracket">]</span></span>
+<p>Emmanuel P Dinnat, Jacqueline Boutin, Xiaobin Yin, and David M Le Vine. Inter-comparison of smos and aquarius sea surface salinity: effects of the dielectric constant and vicarious calibration. In <em>2014 13th Specialist Meeting on Microwave Radiometry and Remote Sensing of the Environment (MicroRad)</em>, 55–60. IEEE, 2014.</p>
+</div>
+<div class="citation" id="id51" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>198<span class="fn-bracket">]</span></span>
+<p>LA Dombrovskiy and V Yu Rayzer. Microwave model of a two-phase medium at the ocean surface. <em>IZVESTIIA-RUSSIAN ACADEMY OF SCIENCES ATMOSPHERIC AND OCEANIC PHYSICS C/C OF IZVESTIIA-ROSSIISKAIA AKADEMIIA NAUK FIZIKA ATMOSFERY I OKEANA</em>, 28:650–650, 1992.</p>
+</div>
+<div class="citation" id="id52" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>199<span class="fn-bracket">]</span></span>
+<p>LA Dombrovskiy. Calculation of the thermal radiation emission of foam on the sea surface. <em>Academy of Sciences, USSR, Izvestiya, Atmospheric and Oceanic Physics</em>, 15:193–198, 1979.</p>
+</div>
+<div class="citation" id="id53" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>200<span class="fn-bracket">]</span></span>
+<p>JD Droppleman, RA Mennella, and DE Evans. An airborne measurement of the salinity variations of the mississippi river outflow. <em>Journal of Geophysical Research</em>, 75(30):5909–5913, 1970.</p>
+</div>
+<div class="citation" id="id57" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>201<span class="fn-bracket">]</span></span>
+<p>W. Ellison, A. Balana, G. Delbos, K. Lamkaouchi, L. Eymard, C. Guillou, and C. Prigent. New permittivity measurements of sea water. <em>Radio Sci.</em>, 33(3):639–648, 1998. <a class="reference external" href="https://doi.org/10.1029/97RS02223">doi:10.1029/97RS02223</a>.</p>
+</div>
+<div class="citation" id="id58" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>202<span class="fn-bracket">]</span></span>
+<p>David J. Erickson, John T. Merrill, and Robert A. Duce. Seasonal estimates of global oceanic whitecap coverage. <em>Journal of Geophysical Research: Oceans</em>, 91(C11):12975–12977, 1986. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC091iC11p12975">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JC091iC11p12975</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC091iC11p12975">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC091iC11p12975</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/JC091iC11p12975">doi:https://doi.org/10.1029/JC091iC11p12975</a>.</p>
+</div>
+<div class="citation" id="id59" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>203<span class="fn-bracket">]</span></span>
+<p>T. Elfouhaily, B. Chapron, K. Katsaros, and D. Vandemark. A unified directional spectrum for long and short wind-driven waves. <em>Journal of Geophysical Research: Oceans</em>, 102(C7):15781–15796, 1997. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/97JC00467">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/97JC00467</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/97JC00467">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/97JC00467</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/97JC00467">doi:https://doi.org/10.1029/97JC00467</a>.</p>
+</div>
+<div class="citation" id="id63" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>204<span class="fn-bracket">]</span></span>
+<p>Alexander G. Fore, Simon H. Yueh, Bryan W. Stiles, Wenqing Tang, and Akiko K. Hayashi. Smap radiometer-only tropical cyclone intensity and size validation. <em>IEEE Geoscience and Remote Sensing Letters</em>, 15(10):1480–1484, 2018. <a class="reference external" href="https://doi.org/10.1109/LGRS.2018.2849649">doi:10.1109/LGRS.2018.2849649</a>.</p>
+</div>
+<div class="citation" id="id64" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>205<span class="fn-bracket">]</span></span>
+<p>Rana A. Fine, Debra A. Willey, and Frank J. Millero. Global variability and changes in ocean total alkalinity from aquarius satellite data. <em>Geophysical Research Letters</em>, 44(1):261–267, 2017. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2016GL071712">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2016GL071712</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2016GL071712">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2016GL071712</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/2016GL071712">doi:https://doi.org/10.1002/2016GL071712</a>.</p>
+</div>
+<div class="citation" id="id68" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>206<span class="fn-bracket">]</span></span>
+<p>J.L. Garrison, A. Komjathy, V.U. Zavorotny, and S.J. Katzberg. Wind speed measurement using forward scattered gps signals. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 40(1):50–65, 2002. <a class="reference external" href="https://doi.org/10.1109/36.981349">doi:10.1109/36.981349</a>.</p>
+</div>
+<div class="citation" id="id69" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>207<span class="fn-bracket">]</span></span>
+<p>Mark A Goodberlet, Calvin T Swift, Kevin P Kiley, Jerry L Miller, and James B Zaitzeff. Microwave remote sensing of coastal zone salinity. <em>Journal of coastal research</em>, pages 363–372, 1997.</p>
+</div>
+<div class="citation" id="id70" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>208<span class="fn-bracket">]</span></span>
+<p>MA Goodberlet and CT Swift. A remote sensing system for measuring estuarine and coastal ocean surface salinity. <em>Quadrant Eng., Hadley, MA, Progress Rep</em>, 1993.</p>
+</div>
+<div class="citation" id="id71" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>209<span class="fn-bracket">]</span></span>
+<p>JM Goutoule, E Anterrieu, YH Kerr, A Lannes, and N Skou. Miras microwave radiometry critical technical development. <em>TOULOUSE, MMS</em>, 1996.</p>
+</div>
+<div class="citation" id="id72" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>210<span class="fn-bracket">]</span></span>
+<p>Semyon A Grodsky, Douglas Vandemark, and Hui Feng. Assessing coastal smap surface salinity accuracy and its application to monitoring gulf of maine circulation dynamics. <em>Remote Sensing</em>, 10(8):1232, 2018.</p>
+</div>
+<div class="citation" id="id73" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>211<span class="fn-bracket">]</span></span>
+<p>Semyon A Grodsky, Nicolas Reul, Abderrahim Bentamy, Douglas Vandemark, and Sebastien Guimbard. Eastern mediterranean salinification observed in satellite salinity from smap mission. <em>Journal of Marine Systems</em>, 198:103190, 2019.</p>
+</div>
+<div class="citation" id="id74" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>212<span class="fn-bracket">]</span></span>
+<p>Jianjun Guo, Leung Tsang, William Asher, K-H Ding, and C-T Chen. Applications of dense media radiative transfer theory for passive microwave remote sensing of foam covered ocean. <em>IEEE transactions on geoscience and remote sensing</em>, 39(5):1019–1027, 2001.</p>
+</div>
+<div class="citation" id="id79" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>213<span class="fn-bracket">]</span></span>
+<p>W Ho and WF Hall. Measurements of the dielectric properties of seawater and nacl solutions at 2.65 ghz. <em>Journal of Geophysical Research</em>, 78(27):6301–6315, 1973.</p>
+</div>
+<div class="citation" id="id108" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>214<span class="fn-bracket">]</span></span>
+<p>Ali Khazâal, Joseph Tenerelli, and François Cabot. Impact of sun glint on the smos retrieved brightness temperature maps for almost four years of data. <em>Remote Sensing of Environment</em>, 180:234–245, 2016. Special Issue: ESA's Soil Moisture and Ocean Salinity Mission - Achievements and Applications. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0034425716300311">https://www.sciencedirect.com/science/article/pii/S0034425716300311</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.rse.2016.02.003">doi:https://doi.org/10.1016/j.rse.2016.02.003</a>.</p>
+</div>
+<div class="citation" id="id109" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>215<span class="fn-bracket">]</span></span>
+<p>Bruce M Kendall and JO Blanton. Microwave radiometer measurement of tidally induced salinity changes off the georgia coast. <em>Journal of Geophysical Research: Oceans</em>, 86(C7):6435–6441, 1981.</p>
+</div>
+<div class="citation" id="id110" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>216<span class="fn-bracket">]</span></span>
+<p>Victor Klemas. Remote sensing of sea surface salinity: an overview with case studies. <em>Journal of Coastal Research</em>, 27(5):830–838, 2011.</p>
+</div>
+<div class="citation" id="id111" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>217<span class="fn-bracket">]</span></span>
+<p>L. A. Klein and C. T. Swift. An improved model for the dielectric constant of sea water at microwave frequencies. <em>IEEE Trans. Antennas Propag.</em>, 25(1):104–111, January 1977. <a class="reference external" href="https://doi.org/10.1109/TAP.1977.1141539">doi:10.1109/TAP.1977.1141539</a>.</p>
+</div>
+<div class="citation" id="id114" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>218<span class="fn-bracket">]</span></span>
+<p>V. N. Kudryavtsev, V. K. Makin, and B. Chapron. Coupled sea surface-atmosphere model: 2. spectrum of short wind waves. <em>Journal of Geophysical Research: Oceans</em>, 104(C4):7625–7639, 1999. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/1999JC900005">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/1999JC900005</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/1999JC900005">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/1999JC900005</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/1999JC900005">doi:https://doi.org/10.1029/1999JC900005</a>.</p>
+</div>
+<div class="citation" id="id115" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>219<span class="fn-bracket">]</span></span>
+<p>Vladimir Kudryavtsev, Danièle Hauser, Gérard Caudal, and Bertrand Chapron. A semiempirical model of the normalized radar cross-section of the sea surface 1. background model. <em>Journal of Geophysical Research: Oceans</em>, 108(C3):FET 2–1–FET 2–24, 2003. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2001JC001003">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2001JC001003</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2001JC001003">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2001JC001003</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2001JC001003">doi:https://doi.org/10.1029/2001JC001003</a>.</p>
+</div>
+<div class="citation" id="id116" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>220<span class="fn-bracket">]</span></span>
+<p>V. Kudryavtsev, D. Akimov, J. Johannessen, and B. Chapron. On radar imaging of current features: 1. model and comparison with observations. <em>Journal of Geophysical Research: Oceans</em>, 110(C7):, 2005. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2004JC002505">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2004JC002505</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2004JC002505">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2004JC002505</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2004JC002505">doi:https://doi.org/10.1029/2004JC002505</a>.</p>
+</div>
+<div class="citation" id="id119" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>221<span class="fn-bracket">]</span></span>
+<p>G. S. E. Lagerloef, C. Swift, and D. Le Vine. Sea surface salinity: The next remote sensing challenge. <em>Oceanography</em>, 8(2):44–50, 1995.</p>
+</div>
+<div class="citation" id="id122" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>222<span class="fn-bracket">]</span></span>
+<p>Peter E. Land, Jamie D. Shutler, Helen S. Findlay, Fanny Girard-Ardhuin, Roberto Sabia, Nicolas Reul, Jean-Francois Piolle, Bertrand Chapron, Yves Quilfen, Joseph Salisbury, Douglas Vandemark, Richard Bellerby, and Punyasloke Bhadury. Salinity from space unlocks satellite-based assessment of ocean acidification. <em>Environmental Science &amp; Technology</em>, 49(4):1987–1994, 2015. PMID: 25569587. URL: <a class="reference external" href="https://doi.org/10.1021/es504849s">https://doi.org/10.1021/es504849s</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1021/es504849s">arXiv:https://doi.org/10.1021/es504849s</a>, <a class="reference external" href="https://doi.org/10.1021/es504849s">doi:10.1021/es504849s</a>.</p>
+</div>
+<div class="citation" id="id124" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>223<span class="fn-bracket">]</span></span>
+<p>Roger Lang, Yiwen Zhou, Cuneyt Utku, and David Le Vine. Accurate measurements of the dielectric constant of seawater at l band. <em>Radio Science</em>, 51(1):2–24, 2016.</p>
+</div>
+<div class="citation" id="id126" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>224<span class="fn-bracket">]</span></span>
+<p>R. M. Lerner and J. P. Hollinger. Analysis of 1.4 GHz Radiometric measurements from Skylab. <em>Remote Sens. Environ.</em>, 6(4):251–269, January 1977. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0034425777900475">http://linkinghub.elsevier.com/retrieve/pii/0034425777900475</a>, <a class="reference external" href="https://doi.org/10.1016/0034-4257(77)90047-5">doi:10.1016/0034-4257(77)90047-5</a>.</p>
+</div>
+<div class="citation" id="id128" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>225<span class="fn-bracket">]</span></span>
+<p>David M Le Vine, Michael Kao, Alan B Tanner, Calvin T Swift, and Andrew Griffis. Initial results in the development of a synthetic aperture microwave radiometer. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 28:614–619, 1990.</p>
+</div>
+<div class="citation" id="id129" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>226<span class="fn-bracket">]</span></span>
+<p>DM Le Vine, M Kao, RW Garvine, and T Sanders. Remote sensing of ocean salinity: results from the delaware coastal current experiment. <em>Journal of Atmospheric and Oceanic Technology</em>, 15(6):1478–1484, 1998.</p>
+</div>
+<div class="citation" id="id131" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>227<span class="fn-bracket">]</span></span>
+<p>David M. Le Vine and Saji Abraham. Galactic noise and passive microwave remote sensing from space at L-band. <em>IEEE Trans. Geosci. Remote Sens.</em>, 42(1):119–129, January 2004. <a class="reference external" href="https://doi.org/10.1109/TGRS.2003.817977">doi:10.1109/TGRS.2003.817977</a>.</p>
+</div>
+<div class="citation" id="id135" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>228<span class="fn-bracket">]</span></span>
+<p>David M. Le Vine, Roger H. Lang, Yiwen Zhou, Emmanuel P. Dinnat, and Thomas Meissner. Status of the dielectric constant of sea water at l-band for remote sensing of salinity. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 60():1–14, 2022. <a class="reference external" href="https://doi.org/10.1109/TGRS.2022.3207944">doi:10.1109/TGRS.2022.3207944</a>.</p>
+</div>
+<div class="citation" id="id136" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>229<span class="fn-bracket">]</span></span>
+<p>Sang-Moo Lee and Albin J. Gasiewski. A physically based two-scale ocean surface emissivity model tuned to windsat and ssm/i polarimetric brightness temperatures. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 60():1–23, 2022. <a class="reference external" href="https://doi.org/10.1109/TGRS.2021.3133852">doi:10.1109/TGRS.2021.3133852</a>.</p>
+</div>
+<div class="citation" id="id138" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>230<span class="fn-bracket">]</span></span>
+<p>Hans J Liebe and Donald H Layton. Millimeter-wave properties of the atmosphere: laboratory studies and propagation modeling. <em>NASA STI/Recon Technical Report N</em>, 88:21387, 1987.</p>
+</div>
+<div class="citation" id="id140" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>231<span class="fn-bracket">]</span></span>
+<p>Hans J. Liebe. An updated model for millimeter wave propagation in moist air. <em>Radio Science</em>, 20(5):1069–1089, 1985. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RS020i005p01069">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RS020i005p01069</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/RS020i005p01069">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/RS020i005p01069</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/RS020i005p01069">doi:https://doi.org/10.1029/RS020i005p01069</a>.</p>
+</div>
+<div class="citation" id="id143" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>232<span class="fn-bracket">]</span></span>
+<p>Roger Lukas and Eric Lindstrom. The mixed layer of the western equatorial pacific ocean. <em>Journal of Geophysical Research: Oceans</em>, 96(S01):3343–3357, 1991. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/90JC01951">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/90JC01951</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/90JC01951">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/90JC01951</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/90JC01951">doi:https://doi.org/10.1029/90JC01951</a>.</p>
+</div>
+<div class="citation" id="id157" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>233<span class="fn-bracket">]</span></span>
+<p>Thomas Meissner, Frank J Wentz, A Manaster, and R. Lindsley. NASA/RSS SMAP Salinity: Version 4.0 Validated Release: release notes, algorithm theoretical basis document (atbd), validation, data format specification.technical report 082219. Technical Report, REMSS, 2019. URL: <a class="reference external" href="https://data.remss.com/smap/SSS/Release_V4.0.pdf">https://data.remss.com/smap/SSS/Release_V4.0.pdf</a>.</p>
+</div>
+<div class="citation" id="id160" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>234<span class="fn-bracket">]</span></span>
+<p>W.K. Melville and P. Matusov. Distribution of breaking waves at the ocean surface. <em>Nature</em>, 3(4):155–158, 2002. <a class="reference external" href="https://doi.org/10.1038/417058a">doi:10.1038/417058a</a>.</p>
+</div>
+<div class="citation" id="id161" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>235<span class="fn-bracket">]</span></span>
+<p>Jerry L Miller, Mark A Goodberlet, and James B Zaitzeff. Airborne salinity mapper makes debut in coastal zone. <em>Eos, Transactions American Geophysical Union</em>, 79(14):173–177, 1998.</p>
+</div>
+<div class="citation" id="id162" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>236<span class="fn-bracket">]</span></span>
+<p>Jerry L Miller* and Mark Goodberlet. Development and applications of starrs: a next generation airborne salinity imager. <em>International Journal of Remote Sensing</em>, 25(7-8):1319–1324, 2004.</p>
+</div>
+<div class="citation" id="id165" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>237<span class="fn-bracket">]</span></span>
+<p>E.C. Monahan and D. K. Woolf. Comments on Variations of whitecap coverage with wind stress and water temperature. <em>J. Phys. Oceanogr.</em>, 19(5):706–709, May 1989. URL: <a class="reference external" href="http://dx.doi.org/10.1175/1520-0485(1989)019&lt;0706:COOWCW&gt;2.0.CO;2">http://dx.doi.org/10.1175/1520-0485(1989)019&lt;0706:COOWCW&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0485(1989)019&lt;0706:COOWCW&gt;2.0.CO;2">doi:10.1175/1520-0485(1989)019&lt;0706:COOWCW&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id169" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>238<span class="fn-bracket">]</span></span>
+<p>W. Nordberg, J. Conaway, and P. Thaddeus. Microwave observations of sea state from aircraft. <em>Q. J. Roy. Meteor. Soc.</em>, 95(404):408–413, 1969. <a class="reference external" href="https://doi.org/10.1002/qj.49709741116">doi:10.1002/qj.49709741116</a>.</p>
+</div>
+<div class="citation" id="id171" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>239<span class="fn-bracket">]</span></span>
+<p>Estrella Olmedo, Justino Martínez, Antonio Turiel, Joaquim Ballabrera-Poy, and Marcos Portabella. Debiased non-bayesian retrieval: a novel approach to smos sea surface salinity. <em>Remote Sensing of Environment</em>, 193:103–126, 2017.</p>
+</div>
+<div class="citation" id="id172" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>240<span class="fn-bracket">]</span></span>
+<p>Estrella Olmedo, Isabelle Taupier-Letage, Antonio Turiel, and Aida Alvera-Azcárate. Improving smos sea surface salinity in the western mediterranean sea through multivariate and multifractal analysis. <em>Remote Sensing</em>, 2018. URL: <a class="reference external" href="https://www.mdpi.com/2072-4292/10/3/485">https://www.mdpi.com/2072-4292/10/3/485</a>, <a class="reference external" href="https://doi.org/10.3390/rs10030485">doi:10.3390/rs10030485</a>.</p>
+</div>
+<div class="citation" id="id173" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>241<span class="fn-bracket">]</span></span>
+<p>Jack F Paris. Microwave radiometry and its application to marine meteorology and oceanography. Technical Report, TEXAS A AND M UNIV COLLEGE STATION DEPT OF OCEANOGRAPHY, 1969.</p>
+</div>
+<div class="citation" id="id175" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>242<span class="fn-bracket">]</span></span>
+<p>Tabare Perez, Joel C Wesson, and Derek Burrage. Airborne remote sensing of the plata plume using starrs. Technical Report, NAVAL RESEARCH LAB STENNIS SPACE CENTER MS OCEANOGRAPHY DIV, 2006.</p>
+</div>
+<div class="citation" id="id180" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>243<span class="fn-bracket">]</span></span>
+<p>Victor Raizer. <em>Advances in Passive Microwave Remote Sensing of Oceans</em>. CRC Press, 2017.</p>
+</div>
+<div class="citation" id="id189" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>244<span class="fn-bracket">]</span></span>
+<p>N. Reul, J. Tenerelli, B. Chapron, S. Guimbard, S.‐S. Picard, P.‐Y. Le Traon, and S. Zine. Preparing the potential and challenge of remote sensing‐based sea surface salinity estimation: the cosmos airborne campaign. In <em>Proceedings of the SPIE 7150</em>. edited by R. J. Frouin et al., 2008. <a class="reference external" href="https://doi.org/10.1117/12.804940">doi:10.1117/12.804940</a>.</p>
+</div>
+<div class="citation" id="id191" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>245<span class="fn-bracket">]</span></span>
+<p>Ian Stuart Robinson. <em>Satellite oceanography; an introduction for oceanographers and remote-sensing scientists</em>. Chichester (UK) Horwood, 1985.</p>
+</div>
+<div class="citation" id="id192" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>246<span class="fn-bracket">]</span></span>
+<p>Philip W. Rosenkranz. Shape of the 5 mm oxygen band in the atmosphere. <em>IEEE Transactions on Antennas and Propagation</em>, 23:498–506, 1975.</p>
+</div>
+<div class="citation" id="id193" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>247<span class="fn-bracket">]</span></span>
+<p>Philip W Rosenkranz. Water vapor microwave continuum absorption: a comparison of measurements and models. <em>Radio Science</em>, 33(4):919–928, 1998.</p>
+</div>
+<div class="citation" id="id197" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>248<span class="fn-bracket">]</span></span>
+<p>A Shutko, B Liberman, and G Chuhray. On the influence of dielectric property variations on the microwave radiation of a water surface. <em>IEEE Journal of Oceanic Engineering</em>, 7(1):35–39, 1982.</p>
+</div>
+<div class="citation" id="id198" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>249<span class="fn-bracket">]</span></span>
+<p>G. Siedler, J. Church, and J. Gould. <em>Ocean Circulation and Climate: Observing and Modelling the Global Ocean</em>. Academic Press, London, 2001.</p>
+</div>
+<div class="citation" id="id199" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>250<span class="fn-bracket">]</span></span>
+<p>V Sirounian. Effect of temperature, angle of observation, salinity, and thin ice on the microwave emission of water. <em>Journal of Geophysical Research</em>, 73(14):4481–4486, 1968.</p>
+</div>
+<div class="citation" id="id206" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>251<span class="fn-bracket">]</span></span>
+<p>SMOS Team and others. Smos l2 os algorithm theoretical baseline document so-tn-arg-gs-0007. 2016.</p>
+</div>
+<div class="citation" id="id209" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>252<span class="fn-bracket">]</span></span>
+<p>SR Smith, JJ Rolph, K Briggs, and MA Bourassa. Quality-controlled underway oceanographic and meteorological data from the center for ocean-atmospheric predictions center (coaps)-shipboard automated meteorological and oceanographic system (samos). <em>Asheville, NC: NOAA National Centers for Environmental Information. Dataset, doi</em>, 10:V5QJ7F8R, 2009.</p>
+</div>
+<div class="citation" id="id210" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>253<span class="fn-bracket">]</span></span>
+<p>R. W. Schmitt. Salinity and the global water cycle. <em>Oceanography</em>, 21(1):12–19, 2008. URL: <a class="reference external" href="https://www.jstor.org/stable/24860148">https://www.jstor.org/stable/24860148</a> (visited on 2022-11-30).</p>
+</div>
+<div class="citation" id="id211" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>254<span class="fn-bracket">]</span></span>
+<p>Nikolaos Skliris, Robert Marsh, Simon A. Josey, Simon A. Good, Chunlei Liu, and Richard P. Allan. Salinity changes in the world ocean since 1950 in relation to changing surface freshwater fluxes. <em>Climate Dynamics</em>, 43(3-4):709–736, August 2014. URL: <a class="reference external" href="https://eprints.soton.ac.uk/365182/">https://eprints.soton.ac.uk/365182/</a>.</p>
+</div>
+<div class="citation" id="id212" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>255<span class="fn-bracket">]</span></span>
+<p>AP Stogryn, HT Bull, K Rubayi, and S Iravanchy. The microwave permittivity of sea and fresh water. <em>GenCorp Aerojet, Azusa, CA</em>, 1995.</p>
+</div>
+<div class="citation" id="id213" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>256<span class="fn-bracket">]</span></span>
+<p>C. T. Swift. Microwave radiometer measurements of the Cape Code Canal. <em>Radio Sci.</em>, 9(7):641–653, 1974.</p>
+</div>
+<div class="citation" id="id214" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>257<span class="fn-bracket">]</span></span>
+<p>Calvin T Swift and Robert E McIntosh. Considerations for microwave remote sensing of ocean-surface salinity. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, pages 480–491, 1983.</p>
+</div>
+<div class="citation" id="id215" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>258<span class="fn-bracket">]</span></span>
+<p>A Stogryn. Equations for calculating the dielectric constant of saline water (correspondence). <em>IEEE transactions on microwave theory and Techniques</em>, 19(8):733–736, 1971.</p>
+</div>
+<div class="citation" id="id219" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>259<span class="fn-bracket">]</span></span>
+<p>Ram Somaraju and Jochen Trumpf. Frequency, temperature and salinity variation of the permittivity of seawater. <em>IEEE Transactions on Antennas and Propagation</em>, 54(11):3441–3448, 2006. <a class="reference external" href="https://doi.org/10.1109/TAP.2006.884290">doi:10.1109/TAP.2006.884290</a>.</p>
+</div>
+<div class="citation" id="id221" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>260<span class="fn-bracket">]</span></span>
+<p>Gary C Thomann. Experimental results of the remote sensing of sea-surface salinity at 21-cm wavelength. <em>IEEE Transactions on Geoscience Electronics</em>, 14(3):198–214, 1976.</p>
+</div>
+<div class="citation" id="id223" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>261<span class="fn-bracket">]</span></span>
+<p>Yu. G. Trokhimovski. Gravity-Capillary Wave Curvature Spectrum and Mean-Square Slope Retrieved from Microwave Radiometric Measurements (Coastal Ocean Probing Experiment). <em>J. Atmos. Oceanic Technol.</em>, 17(9):1259–1270, September 2000. URL: <a class="reference external" href="http://dx.doi.org/10.1175/1520-0426(2000)017&lt;1259:GNCWCS&gt;2.0.CO;2">http://dx.doi.org/10.1175/1520-0426(2000)017&lt;1259:GNCWCS&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0426(2000)017&lt;1259:GNCWCS&gt;2.0.CO;2">doi:10.1175/1520-0426(2000)017&lt;1259:GNCWCS&gt;2.0.CO;2</a>.</p>
+</div>
+<div class="citation" id="id224" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>262<span class="fn-bracket">]</span></span>
+<p>Y. G. Trokhimovski and V. G. Irisov. The analysis of wind exponents retrieved from microwave radar and radiometric measurements. <em>IEEE Trans. Geosci. Remote Sens.</em>, 38(1):470–479, 2000. <a class="reference external" href="https://doi.org/10.1109/36.823942">doi:10.1109/36.823942</a>.</p>
+</div>
+<div class="citation" id="id225" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>263<span class="fn-bracket">]</span></span>
+<p>Y. G. Trokhimovski, V. G. Irisov, E. R. Westwater, L. S. Fedor, and V. E. Leuski. Microwave polarimetric measurements of the sea surface brightness temperature from a blimp during the Coastal Ocean Probing Experiment (COPE). <em>J. Geophys. Res.</em>, 105(C3):6501–6516, March 2000. <a class="reference external" href="https://doi.org/10.1029/1999JC900315">doi:10.1029/1999JC900315</a>.</p>
+</div>
+<div class="citation" id="id227" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>264<span class="fn-bracket">]</span></span>
+<p>Fawwaz T Ulaby. Microwave remote sensing active and passive. <em>Rader remote sensing and surface scattering and emission theory</em>, pages 848–902, 1982.</p>
+</div>
+<div class="citation" id="id229" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>265<span class="fn-bracket">]</span></span>
+<p>Eric Uhlhorn and Peter G. Black. Verification of remotely sensed sea surface winds in hurricanes. <em>Journal of Atmospheric and Oceanic Technology</em>, 20:99–116, 2003.</p>
+</div>
+<div class="citation" id="id231" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>266<span class="fn-bracket">]</span></span>
+<p>A. G. Voronovich and V. U. Zavorotny. Theoretical Model for Scattering of Radar Signals in Ku- and C-bands from a Rough Sea Surface with Breaking Waves. <em>Waves in Random Media</em>, 11:247–269, 2001. <a class="reference external" href="https://doi.org/10.1080/13616670109409784">doi:10.1080/13616670109409784</a>.</p>
+</div>
+<div class="citation" id="id232" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>267<span class="fn-bracket">]</span></span>
+<p>J.W. Waters. <em>2.3. Absorption and Emission by Atmospheric Gases</em>, pages 142–176. Volume 12 of Methods in Experimental Physics. Academic Press, 1976. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0076695X08606845">https://www.sciencedirect.com/science/article/pii/S0076695X08606845</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/S0076-695X(08)60684-5">doi:https://doi.org/10.1016/S0076-695X(08)60684-5</a>.</p>
+</div>
+<div class="citation" id="id240" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>268<span class="fn-bracket">]</span></span>
+<p>Frank J Wentz and Thomas Meissner. Algorithm theoretical basis document (atbd), version 2, amsr ocean algorithm. Technical Report RSS Tech. Report 121599A-1, REMSS, 2000. URL: <a class="reference external" href="http://images.remss.com/papers/rsstech/2000_121599A-1_Wentz_AMSR_Ocean_Algorithm_ATBD_Version2.pdf">http://images.remss.com/papers/rsstech/2000_121599A-1_Wentz_AMSR_Ocean_Algorithm_ATBD_Version2.pdf</a>.</p>
+</div>
+<div class="citation" id="id248" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>269<span class="fn-bracket">]</span></span>
+<p>William J Wilson, Simon H Yueh, Steve Dinardo, Yi Chao, and Fuk Li. Precision ocean salinity measurements using the passive active l/s-band aircraft instrument. In <em>IGARSS 2003. 2003 IEEE International Geoscience and Remote Sensing Symposium. Proceedings (IEEE Cat. No. 03CH37477)</em>, volume 4, 2792–2794. IEEE, 2003.</p>
+</div>
+<div class="citation" id="id250" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>270<span class="fn-bracket">]</span></span>
+<p>W.J. Wilson, S.H. Yueh, S.J. Dinardo, S.L. Chazanoff, A. Kitiyakara, F.K. Li, and Y. Rahmat-Samii. Passive active L- and S-band (PALS) microwave sensor for ocean salinity and soil moisture measurements. <em>IEEE Trans. Geosci. Remote Sens.</em>, 39(5):1039–1048, May 2001. <a class="reference external" href="https://doi.org/10.1109/36.921422">doi:10.1109/36.921422</a>.</p>
+</div>
+<div class="citation" id="id251" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>271<span class="fn-bracket">]</span></span>
+<p>Jin Wu. Variations of whitecap coverage with wind stress and water temperature. <em>Journal of physical oceanography</em>, 18(10):1448–1453, 1988.</p>
+</div>
+<div class="citation" id="id254" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>272<span class="fn-bracket">]</span></span>
+<p>G. Wust. <em>Oberflachensalzgehalt, Verdunstung und Niederschlag auf dem Weltmeere</em>, pages 347–359. Landerkundliche Forschung, Festschrift Norbert Krebs, 1936.</p>
+</div>
+<div class="citation" id="id257" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>273<span class="fn-bracket">]</span></span>
+<p>Simon H. Yueh, Alexander G. Fore, Wenqing Tang, Akiko Hayashi, Bryan Stiles, Nicolas Reul, Yonghui Weng, and Fuqing Zhang. Smap l-band passive microwave observations of ocean surface wind during severe storms. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 54(12):7339–7350, 2016. <a class="reference external" href="https://doi.org/10.1109/TGRS.2016.2600239">doi:10.1109/TGRS.2016.2600239</a>.</p>
+</div>
+<div class="citation" id="id267" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>274<span class="fn-bracket">]</span></span>
+<p>M. V. Yurovskaya, V. A. Dulov, B. Chapron, and V. N. Kudryavtsev. Directional short wind wave spectra derived from the sea surface photography. <em>Journal of Geophysical Research: Oceans</em>, 118(9):4380–4394, 2013. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/jgrc.20296">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/jgrc.20296</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/jgrc.20296">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/jgrc.20296</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/jgrc.20296">doi:https://doi.org/10.1002/jgrc.20296</a>.</p>
+</div>
+<div class="citation" id="id272" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>275<span class="fn-bracket">]</span></span>
+<p>Jan D. Zika, Nikolaos Skliris, A. J. George Nurser, Simon A. Josey, Lawrence Mudryk, Frédéric Laliberté, and Robert Marsh. Maintenance and broadening of the ocean’s salinity distribution by the water cycle. <em>Journal of Climate</em>, 28(24):9550 – 9560, 2015. URL: <a class="reference external" href="https://journals.ametsoc.org/view/journals/clim/28/24/jcli-d-15-0273.1.xml">https://journals.ametsoc.org/view/journals/clim/28/24/jcli-d-15-0273.1.xml</a>, <a class="reference external" href="https://doi.org/10.1175/JCLI-D-15-0273.1">doi:10.1175/JCLI-D-15-0273.1</a>.</p>
+</div>
+<div class="citation" id="id274" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>276<span class="fn-bracket">]</span></span>
+<p>Yiwen Zhou, Roger H Lang, Emmanuel P Dinnat, and David M Le Vine. L-band model function of the dielectric constant of seawater. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 55(12):6964–6974, 2017.</p>
+</div>
+<div class="citation" id="id277" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>277<span class="fn-bracket">]</span></span>
+<p>Seubson Soisuvarn, Zorana Jelenak, and W. Linwood Jones. An ocean surface wind vector model function for a spaceborne microwave radiometer. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 45(10):3119–3130, 2007. <a class="reference external" href="https://doi.org/10.1109/TGRS.2007.895418">doi:10.1109/TGRS.2007.895418</a>.</p>
+</div>
+<div class="citation" id="id279" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>278<span class="fn-bracket">]</span></span>
+<p>L. M. Zurk, L. Tsang, K. H. Ding, and D. P. Winebrenner. Monte carlo simulations of the extinction rate of densely packed spheres with clustered and nonclustered geometries. <em>J. Opt. Soc. Am. A</em>, 12(8):1772–1781, Aug 1995. URL: <a class="reference external" href="https://opg.optica.org/josaa/abstract.cfm?URI=josaa-12-8-1772">https://opg.optica.org/josaa/abstract.cfm?URI=josaa-12-8-1772</a>, <a class="reference external" href="https://doi.org/10.1364/JOSAA.12.001772">doi:10.1364/JOSAA.12.001772</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cimr_ocean_retrieval.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">THE CIMR OCEAN RETRIEVAL SYSTEM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="annex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Annex</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joseph Tenerelli (ODL) and Nicolas Reul (IFREMER/LOPS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD study (2024-2026) (contract 4000143081).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
