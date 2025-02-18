@@ -369,14 +369,12 @@
 <p>To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes (<a class="reference internal" href="#figure36"><span class="std std-numref">Fig. 16</span></a>).</p>
 <p>As described in RD.2, the simulator consists of a single statically-linked Linux executable program, <strong>cimrProject</strong>, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a <em>test card</em>, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures.</p>
 <p>The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_p\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure35">
 <img alt="_images/Figure35.png" src="_images/Figure35.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Schematic of the retrieval algorithm assessment using SCEPS</span><a class="headerlink" href="#figure35" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Schematic of the retrieval algorithm assessment using SCEPS.</span><a class="headerlink" href="#figure35" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<hr class="docutils" />
 <p>A schematic of the overall retrieval algorithm assessment using SCEPS is provided in <a class="reference internal" href="#figure35"><span class="std std-numref">Fig. 15</span></a>. The assessment is based upon these successive steps:</p>
 <ol class="arabic simple">
 <li><p>The scene is first described by geophysical fields, including: SSS, SST, OWV at ~1 km spatial resolution and then interpolated (in space and time) atmospheric vertical parameters from ERA5.</p></li>
@@ -709,33 +707,29 @@ While this error is obviously related to azimuthal-harmonic components (see <a c
 T_p = [U_C^{TOA,fore}, V_C^{TOA,fore}, U_C^{TOA,aft}, V_C^{TOA,aft}, U_X^{TOA,fore}, V_X^{TOA,fore}, U_X^{TOA,aft}, V_X^{TOA,aft}]
 \]</div>
 <p>The algorithm also uses as input the surface wind speed <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> and temperature <span class="math notranslate nohighlight">\(T_s^{ret}\)</span>, retrieved from Step 1.</p>
-<hr class="docutils" />
 <p>To retrieve the surface wind speed vector direction, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind direction <span class="math notranslate nohighlight">\(\tilde{\phi}_w\)</span>, denoted <span class="math notranslate nohighlight">\(\mathcal{P}'\)</span>, is taken to be the product of the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}'\)</span> and prior distribution functions <span class="math notranslate nohighlight">\(P''\)</span> for wind direction:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T) = \mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) \cdot P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) \quad (Eq.R4)
+<div class="math notranslate nohighlight" id="equation-eqr4">
+<span class="eqno">(173)<a class="headerlink" href="#equation-eqr4" title="Link to this equation">#</a></span>\[
+\mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T) = \mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) \cdot P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret})
 \]</div>
 <p>For the prior distribution of wind direction, we assumed a Gaussian distribution.</p>
 <div class="math notranslate nohighlight">
 \[
-P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \exp \left( -\frac{[\tilde{\phi}_w - \phi_{wp}]^2}{2\sigma_{\phi}^2} \right) \quad (Eq.177)
+P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \exp \left( -\frac{[\tilde{\phi}_w - \phi_{wp}]^2}{2\sigma_{\phi}^2} \right)
 \]</div>
 <p>Where the prior wind direction <span class="math notranslate nohighlight">\(\phi_{wp}\)</span> is given by ERA5 and where we tested several values for the prior standard deviation of <span class="math notranslate nohighlight">\(\sigma_{\phi} = 20^\circ, 30^\circ, 40^\circ, 60^\circ\)</span>.</p>
-<hr class="docutils" />
 <p>The likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}'\)</span> is computed using the RTM, here represented by the geophysical model function <span class="math notranslate nohighlight">\(G\)</span> and which can be evaluated using (Eq.166) and the input SCEPS simulated CIMR TOA 3rd and 4th Stokes Tbs <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_{p,i} - G(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}))^2}{2\sigma_{p,i}^2} \right) \quad (Eq.R5)
+\mathcal{L}'(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_{p,i} - G(\tilde{\phi}_w, U_{10}^{ret}, T_s^{ret}))^2}{2\sigma_{p,i}^2} \right)
 \]</div>
 <p>Where <span class="math notranslate nohighlight">\(\sigma_{p,i}\)</span> is the standard deviation of the CIMR TOA 3rd and 4th Stokes parameters.</p>
-<hr class="docutils" />
 <p>The nominal Bayesian wind direction solution is then taken to be the Maximum Likelihood Estimate (mode of the posterior distribution), following:</p>
 <div class="math notranslate nohighlight">
 \[
-\phi_w^{ret} = \arg \max_{\phi} \, \mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T) \quad (Eq.R6)
+\phi_w^{ret} = \arg \max_{\phi} \, \mathcal{P}'(\tilde{\phi}_w|T_p, \sigma_u, U_{10}^{ret}, T_s^{ret}, \sigma_T)
 \]</div>
 <p>We apply the conjugate gradient technique using a modified Levenberg-Marquardt (1963) algorithm to find the local maxima. The wind speed vector solution to this constrained minimization problem is the final L2B retrieval.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure50">
 <img alt="_images/Figure50.png" src="_images/Figure50.png" />
 <figcaption>
@@ -756,13 +750,11 @@ P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \ex
 </figcaption>
 </figure>
 <p>As shown, and expected, the quality of the wind direction retrieval strongly degrades in the near-coast region (distance to nearest coasts less than or equal to 40 km) and some larger errors are apparent at low winds. Maps of the input and retrieved wind direction, as well as their differences, are shown in <a class="reference internal" href="#figure53"><span class="std std-numref">Fig. 33</span></a> and <a class="reference internal" href="#figure54"><span class="std std-numref">Fig. 34</span></a> after filtering data at grid points where the distance to nearest coasts is less than or equal to 40 km.</p>
-<hr class="docutils" />
 <p>While the retrieved wind direction is noisy, the retrieved wind direction patterns are in general very coherent with the input ones. As evidenced, larger uncertainties in the retrieved wind direction are observed:</p>
 <ol class="arabic simple">
 <li><p>For lower wind speeds (see <a class="reference internal" href="#figure54"><span class="std std-numref">Fig. 34</span></a>, right panel), as expected given the small amplitudes (&lt; 0.5 K) of the azimuthal harmonics of the 3rd and 4th Stokes parameters for <span class="math notranslate nohighlight">\(U_{10} &lt; 5 \, m/s\)</span> with respect to the antenna Tbs NEDT in C and X-bands (0.2 - 0.3 K).</p></li>
 <li><p>Larger uncertainties are also observed in regions where the relative wind direction exhibits transitions around ±180°. This can be potentially attributed to larger ambiguities in the wind direction because U and V = 0 at all wind speeds and frequencies at such values of the relative azimuth angle (see for example Figure 27 to Figure 31).</p></li>
 </ol>
-<hr class="docutils" />
 <figure class="align-default" id="figure53">
 <img alt="_images/Figure53.png" src="_images/Figure53.png" />
 <figcaption>
@@ -770,7 +762,6 @@ P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \ex
 </figcaption>
 </figure>
 <p>After filtering for data at grid points where the distance to nearest coasts is less than or equal to 40 km and where the relative wind direction angle reaches ±180°, we found an RMSD between the input and retrieved wind direction of ~19° on average over the scene, increasing to 35° for conditions where <span class="math notranslate nohighlight">\(U_{10} &lt; 5\)</span> m/s.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure54">
 <img alt="_images/Figure54.png" src="_images/Figure54.png" />
 <figcaption>
@@ -793,7 +784,6 @@ P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \ex
 <li><p>Finally, an OZA correction is then applied after resampling.</p></li>
 </ul>
 <p>The two-step OWV retrieval algorithm was then applied by minimizing the differences between simulated CIMR antenna Tbs and Tbs from the RTM model.</p>
-<hr class="docutils" />
 <p>As found, the Ocean Wind Speed (and SST) retrievals exhibit an RMSD of ~0.1 m/s with zero bias with respect to the input OWVs as long as the data are acquired at a distance of at least more than 40 km from the nearest coasts.</p>
 <p>The land-contamination is the first error source for these TOA Tbs resampled at the C- and X-band resolution (using a FWHM window of 15 km in the BG resampling):</p>
 <ul class="simple">
@@ -805,13 +795,11 @@ P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \ex
 <li><p>Unresolved spatial structure in the veering winds around the eye, and/or</p></li>
 <li><p>Uncertainties in the wind direction (here with a first guess assumed to be ERA5 wind direction), which would translate into errors in the anisotropic components of the modeled Tbs.</p></li>
 </ul>
-<hr class="docutils" />
 <p>Similar patterns of high land-contamination are found in the retrieved SSTs within ~40 km from nearest coasts. After removing the data within that band:</p>
 <ul class="simple">
 <li><p>An overall unbiased SST retrieval is found with an RMSD of ~0.1°C with respect to the input data when combining both aft and fore views in the input TOA Tb data used for retrieval, as well as adding the proper NEDT to each used channel.</p></li>
 </ul>
 <p>Outside of the coastal bands, as for the retrieved wind speed modulus, the largest errors in the retrieved SSTs are found in the hurricane center region. While this error is obviously related to azimuthal-harmonic components, the exact source for that error (polarization mixing?) yet remains unidentified and would require further investigation.</p>
-<hr class="docutils" />
 <p>As found for OWV and SST, the quality of the wind direction retrieval strongly degrades in the near-coast region (distance to nearest coasts less than or equal to 40 km), and some larger errors are apparent at low winds. While the retrieved wind direction is noisy, the retrieved wind direction patterns are in general very coherent with the input ones.</p>
 <p>As evidenced, larger uncertainties in the retrieved wind direction are observed:</p>
 <ol class="arabic simple">

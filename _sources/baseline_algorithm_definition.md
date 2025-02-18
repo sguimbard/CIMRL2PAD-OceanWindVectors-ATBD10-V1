@@ -2195,18 +2195,21 @@ U^{TOA,RTM} \\
 V^{TOA,RTM} \\
 \end{matrix}\right)=
 \left(\begin{matrix}
-T_{atm}^{up}+(τ_d τ_v )[T_{surf,h}^{tot}+R_{surf,h}^{tot}\cdot T_{atm}^{dw}+T_{sch}+T_{ssh}] \\
-T_{atm}^{up}+(τ_d τ_v )[T_{surf,v}^{tot}+R_{surf,v}^{tot}\cdot T_{atm}^{dw}+T_{scv}+T_{ssv}] \\
-(τ_d τ_v ) T_{erU} \\
-(τ_d τ_v ) T_{erV} \\
+T_{atm}^{up}+(\tau_d \tau_v \tau_w \tau_I \tau_R )[T_{surf,h}^{tot}+R_{surf,h}^{tot}\cdot T_{atm}^{dw}+T_{sch}+T_{ssh}] \\
+T_{atm}^{up}+(\tau_d \tau_v \tau_w \tau_I \tau_R)[T_{surf,v}^{tot}+R_{surf,v}^{tot}\cdot T_{atm}^{dw}+T_{scv}+T_{ssv}] \\
+(\tau_d \tau_v \tau_w \tau_I \tau_R ) T_{erU} \\
+(\tau_d \tau_v \tau_w \tau_I \tau_R) T_{erV} \\
 \end{matrix}\right)
 $$ (eq210)
 where 
 
-- $T_{atm}^{up}$ and $T_{atm}^{dw}$ are the unpolarized upwelling and downwelling brightness temperature of atmospheric 1-way emission which can be derived from [Equation 4](#eq2) and  [Equation 132](#eqatm84),
-- $τ_d$ is the 1-way atmospheric transmittance associated with molecular oxygen absorption, determined from [Equation 119](#eqatm71),
-- $τ_v$ is the 1-way atmospheric transmittance associated with water vapor absorption, , determined from [Equation 119](#eqatm71),
-- $T_{surf,p}^{tot}$ and $R_{surf,p}^{tot}$, the p-pol brightness temperature, and reflectivity, of the total sea surface emission, including specular emission determined from [Equation 38](#eq19),[Equation 39](#eq20); rough and foamy sea surface induced emission from [Equation 43](#eq:rough4) to [Equation 46](#eq:rough7),
+- $T_{atm}^{up}$ and $T_{atm}^{dw}$ are the unpolarized upwelling and downwelling brightness temperature of atmospheric 1-way emission which can be derived from [Equation](#eq2) and [Equation](#eqatm84),
+- $\tau_d$ is the 1-way atmospheric transmittance associated with molecular oxygen absorption, determined from [Equation](#eqatm71),
+- $\tau_v$ is the 1-way atmospheric transmittance associated with water vapor absorption, determined from [Equation](#eqatm71),
+- $\tau_w$ is the 1-way atmospheric transmittance associated with cloud liquid water absorption, determined from [Equation](#eqatm71),
+- $\tau_I$ is the 1-way atmospheric transmittance associated with cloud ice absorption, determined from [Equation](#eqatm71),
+- $\tau_R$ is the 1-way atmospheric transmittance associated with rain absorption, determined from [Equation](#eqatm71),
+- $T_{surf,p}^{tot}$ and $R_{surf,p}^{tot}$, the p-pol brightness temperature, and reflectivity, of the total sea surface emission, including specular emission determined from [Equation](#eq19),[Equation 39](#eq20); rough and foamy sea surface induced emission from [Equation 43](#eq:rough4) to [Equation 46](#eq:rough7),
 - $T_{erU}$	and $T_{erV}$ are the third and fourth Stokes brightness temperature of rough surface emission, respectively, determined in from [Equation 46](#eq:rough7) 
 - $T_{scp}$	is the p-pol brightness temperature of scattered celestial sky radiation (not part of the present algorithm, see for L-band the L2SSS ATBD's dedicated [page](https://cimr-algos.github.io/L2SSS/baseline_algorithm_definition.html#sea-surface-scattered-celestial-sky-radiation-contribution)),
 - $T_{ssp}$, is the p-pol brightness temperature of scattered solar radiation (sunglint), (not part of the present algorithm, see for L-band the L2SSS ATBD's dedicated [page](https://cimr-algos.github.io/L2SSS/baseline_algorithm_definition.html#sea-surface-scattered-solar-sunglint-contributions)).
