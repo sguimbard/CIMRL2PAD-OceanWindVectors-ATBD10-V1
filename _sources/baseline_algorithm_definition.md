@@ -2228,6 +2228,8 @@ $$ (eq210c)
 
 where $\theta_s$ is the incidence angle and $r$ is the range. For a spherical Earth, the leading term $f_{lat}$ would be unity. However, the Earth is modeled as an oblate spheroid and as a consequence this term is a function of latitude, deviating about ±1% from unity. The matrix $G$ is a 4×4 matrix describing the antenna gain function. Each element in this matrix is a function of the look direction $\mathbf{b}$ which  is the unit vector pointing from the antenna to $dA$. The term $\mathbf{\Psi}(\phi)$ is the rotation matrix defined in previous section ([Equation (165)](#eq:rot10)).
 
+
+
 ## CIMR Leve1b re-sampling approach
 
 We recommend the Backus-Gilbert (BG) Optimum Interpolation for the CIMR Leve1b re-sampling approach, which is an established and widely used method for sampling and gridding passive microwave satellite data ({cite:p}`Poe1990`). It finds a set of weights $A_i$ in the neighborhood of a chosen synthetic target footprint and computes the antenna temperature $T_A$ of the target $T_{A,rsp}$, as weighted sum of the individual observations $T_{A,i}$:

@@ -242,10 +242,10 @@ $$
 
 We set here $P = P' = 1$, to give zero impacts of priors on the end retrievals. In addition, we further assumed that $u_{10p} = 7 \, m/s$, and $T_{sp} = 15^\circ C$ are constant and uniform for all the scene. 
 
-The likelihood function $\mathcal{L}$ is computed using the previously described RTM, here represented by the geophysical model function $G$, and which can be evaluated using **(Eq.166)** and the input CIMR TOA Tbs $T_p$:
+The likelihood function $\mathcal{L}$ is computed using the previously described RTM, here represented by the geophysical model function $G$, and which can be evaluated using [Equation](eq210) and the input CIMR TOA Tbs $T_p$:
 
 $$
-\mathcal{L}(\tilde{u}_{10}, \tilde{T}_s, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_p^i - G(\tilde{u}_{10}, \tilde{T}_s, \phi_{wp}))^2}{2\sigma_{p,i}^2} \right) \quad (Eq.R2)
+\mathcal{L}(\tilde{u}_{10}, \tilde{T}_s, T_p, \phi_{wp}) = \prod_{i=1}^{n} \exp \left( -\frac{(T_p^i - G(\tilde{u}_{10}, \tilde{T}_s, \phi_{wp}))^2}{2\sigma_{p,i}^2} \right)
 $$
 
 Where $\sigma_{p,i}$ is the standard deviation of the CIMR TOA Tbs. It can be first taken to be the respective NEDT of each channel and can be re-evaluated post-launch using a large collected Tb TOA dataset.
