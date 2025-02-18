@@ -182,8 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment using SCEPS</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Roadmap for future ATBD development</a></li>
@@ -411,11 +410,11 @@ T_{BH} = (1 - R_H \tau^2) T_{eff}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau\)</span> is the atmospheric transmittance.</p>
 <p>If there is scattering rain in the atmosphere due to rain, the expressions above remain still valid but the effective temperature <span class="math notranslate nohighlight">\(T_{eff}\)</span> is smaller than the atmospheric temperature. It is very difficult to accurately model brightness temperatures in rain. Because of the high variability of rainy atmospheres, the brightness temperatures depend on cloud type and the distribution of rain within the footprint (beam filling). In addition, with increasing frequency and increasing drop size, atmospheric scattering starts to become important.</p>
-<p>That means that it is not possible to use the simple Rayleigh approximation for cloud water absorption but one rather needs to apply the full Mie absorption theory. This requires additional input such as size and form of the raindrops. However, those parameters are not readily available. Nevertheless, using Liebe et al., 1995 atmospheric microwave propagation model one can obtain a “rough” estimate of the values of <span class="math notranslate nohighlight">\(\tau\)</span> for the three L-, C-, and X-band frequencies as a function of rain rate as illustrated in <a class="reference internal" href="#figure55"><span class="std std-numref">Fig. 37</span></a>.</p>
+<p>That means that it is not possible to use the simple Rayleigh approximation for cloud water absorption but one rather needs to apply the full Mie absorption theory. This requires additional input such as size and form of the raindrops. However, those parameters are not readily available. Nevertheless, using Liebe et al., 1995 atmospheric microwave propagation model one can obtain a “rough” estimate of the values of <span class="math notranslate nohighlight">\(\tau\)</span> for the three L-, C-, and X-band frequencies as a function of rain rate as illustrated in <a class="reference internal" href="#figure55"><span class="std std-numref">Fig. 35</span></a>.</p>
 <figure class="align-default" id="figure55">
 <img alt="_images/Figure55.png" src="_images/Figure55.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">(Left) Rain attenuation coefficient (Nepers/m) and (right) brightness temperature reduction (K) through rain at 4 km altitude as a function of rain rate (mm/h) and electromagnetic frequency: L-band (black), C-band (red), and X-band (magenta).</span><a class="headerlink" href="#figure55" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">(Left) Rain attenuation coefficient (Nepers/m) and (right) brightness temperature reduction (K) through rain at 4 km altitude as a function of rain rate (mm/h) and electromagnetic frequency: L-band (black), C-band (red), and X-band (magenta).</span><a class="headerlink" href="#figure55" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>According to this model, L-band Tbs are very little attenuated by rain compared to C- and X-bands. C-band attenuation coefficient is found about <span class="math notranslate nohighlight">\(1/3^{rd}\)</span> of the X-band at most rain rate. At C-band and X-frequency bands, atmospheric absorption, emission, and scattering associated with high cloud liquid and ice water content and intense precipitations have large impacts on the brightness temperatures.</p>
@@ -444,7 +443,7 @@ Q = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz}
 <figure class="align-default" id="figure56">
 <img alt="_images/Figure56.png" src="_images/Figure56.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Sensitivity of the surface brightness temperature to wind speed for the L-band H polarization <span class="math notranslate nohighlight">\(T_{BH}^{1.4 GHz}\)</span>, compared to <span class="math notranslate nohighlight">\(Q = T_{BH}^{6.8 GHz} - 0.3 \cdot T_{BH}^{10.7 GHz}\)</span>.</span><a class="headerlink" href="#figure56" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Sensitivity of the surface brightness temperature to wind speed for the L-band H polarization <span class="math notranslate nohighlight">\(T_{BH}^{1.4 GHz}\)</span>, compared to <span class="math notranslate nohighlight">\(Q = T_{BH}^{6.8 GHz} - 0.3 \cdot T_{BH}^{10.7 GHz}\)</span>.</span><a class="headerlink" href="#figure56" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Interestingly, we find that:</p>

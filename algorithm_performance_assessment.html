@@ -182,8 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Performance Assessment using SCEPS</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future ATBD development</a></li>
@@ -348,7 +347,6 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithm Performance Assessment using SCEPS</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geophysical-data-used-to-describe-the-ocean-scene">Geophysical Data Used to Describe the Ocean Scene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-toa-tbs-over-the-scene">Simulated TOA Tbs over the Scene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-instrument-tbs-over-the-scene">Simulated Instrument Tbs Over the Scene</a></li>
@@ -356,24 +354,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ocean-wind-direction-inversion-algorithm">Step 2: Ocean Wind Direction Inversion Algorithm</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-assessment-summary">Performance Assessment Summary</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-future-atbd-development">Roadmap for future ATBD development</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -574,8 +554,7 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <hr class="docutils" />
 <p>The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.</p>
 <hr class="docutils" />
-<p>The simulated noisy instrument <span class="math notranslate nohighlight">\(T_B\)</span> are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands.
-For L-band, one uses a weighted average of the original scene <span class="math notranslate nohighlight">\(T_Bs\)</span> based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in <a class="reference internal" href="#figure41"><span class="std std-numref">Fig. 21</span></a>.</p>
+<p>The simulated noisy instrument <span class="math notranslate nohighlight">\(T_B\)</span> are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands. For L-band, one uses a weighted average of the original scene <span class="math notranslate nohighlight">\(T_Bs\)</span> based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in <a class="reference internal" href="#figure41"><span class="std std-numref">Fig. 21</span></a>.</p>
 <hr class="docutils" />
 <p>Note that instrument measurements are simulated from scene <span class="math notranslate nohighlight">\(T_p\)</span> using SCEPS with several options:</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA + NEDT (constant over the antenna pattern),</p>
@@ -842,102 +821,6 @@ P''(\tilde{\phi}_w|\phi_{wp}, U_{10}^{ret}) = \frac{1}{2\pi \sigma_{\phi}^2} \ex
 <p>The combination of aft and fore views helps minimize such uncertainties, but they are not totally suppressed. After filtering for data at grid points where the distance to nearest coasts is less than or equal to 40 km and where the relative wind direction angle reaches <span class="math notranslate nohighlight">\( \pm 180^\circ \)</span>, we found an RMSD between the input and retrieved wind direction of <span class="math notranslate nohighlight">\( \sim 19^\circ \)</span> on average over the scene, increasing to <span class="math notranslate nohighlight">\(35^\circ\)</span> for conditions where <span class="math notranslate nohighlight">\(U_{10} &lt; 5\)</span> m/s.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="roadmap-for-future-atbd-development">
-<h1>Roadmap for future ATBD development<a class="headerlink" href="#roadmap-for-future-atbd-development" title="Link to this heading">#</a></h1>
-<p>The prototype CIMR Level-2 OWV retrieval algorithm presented in this ATBD is based on several assumptions and simplifications. Several developments and improvements to the prototype algorithm are planned which have the potential to significantly improve the performance of the CIMR Level-2 OWV algorithm. We highlight a few of them in this chapter.</p>
-<section id="improvements-in-the-forward-radiative-transfer-model">
-<h2>Improvements in the Forward Radiative Transfer model<a class="headerlink" href="#improvements-in-the-forward-radiative-transfer-model" title="Link to this heading">#</a></h2>
-<section id="new-sea-water-dielectric-constant-model-at-l-band">
-<h3>New Sea water dielectric constant model at L-band<a class="headerlink" href="#new-sea-water-dielectric-constant-model-at-l-band" title="Link to this heading">#</a></h3>
-<p>At the time this ATBD was developed, two up-to-date parametrizations for the sea water dielectric constant at L-band were available, based on one hand, on the Soil Moisture and Ocean Salinity (SMOS) satellite multi-angular brightness temperature measurements by Boutin et al. (2021) (BV), and, on the other hand, on the new George Washington University laboratory measurements by Zhou et al. (2021) (GW2020). These two approaches are fully independent. For most SSS and Sea Surface Temperature (SST) conditions commonly observed over the open ocean, the relative variations of brightness temperatures Tb simulated through the BV and GW2020 parametrizations agree particularly well, and better than with earlier parametrizations previously used in the SMOS, SMAP, and Aquarius SSS retrievals. Being based purely on Laboratory data, we therefore advise the use of GW2020 in the present ATBD. However, uncertainty remains, especially below 10°C where a ∼0.1 K relative difference between the two models is observed. This motivated the development of a revised parameterization, BVZ (Boutin, Vergely, and Zhou (2023)), based on a methodology similar to that used to derive BV but using GW2020 instead of SMOS measurements. Compared to the GW2020 parameterization, BVZ is derived with a reduced number of degrees of freedom, it relies on the TEOS10 PSS78 conductivity-salinity relationship, and on the previously derived static permittivity of fresh water. Noting that this new parametrization significantly improved the SSS retrieval from SMOS in the 5°C–15°C SST range, we advise to update the GW2020 L-band sea water dielectric constant model with this new BVZ model in future algorithm developments for CIMR.</p>
-</section>
-<section id="roughness-emission-azimuthal-harmonics-in-high-winds">
-<h3>Roughness emission azimuthal harmonics in High winds<a class="headerlink" href="#roughness-emission-azimuthal-harmonics-in-high-winds" title="Link to this heading">#</a></h3>
-<p>It remains unclear how the roughness anisotropic emission components (first and second harmonics, see Figure 9 and Figure 10) for all four Stokes parameters behave in high wind speed regimes (say &gt; 20 m/s). Wind-direction signals in passive microwave polarimetry for ocean surfaces under hurricane force winds were however presented in Yueh et al., 2008. They performed analysis of Windsat data for several Atlantic hurricanes from 2003 to 2005. The polarimetric third Stokes parameter observations from the Windsat 10-,18-, and 37-GHz channels were collocated with the ocean-surface winds from the National Oceanic and Atmospheric Administration Hwind analysis. The collocated data were binned as a function of wind speed and wind direction. The 10-GHz data show clear 4-K peak-to-peak directional signals at 50-60-m/s wind speed after correction for atmospheric attenuation. The signals in the 18- and 37-GHz channels were unclear at above 40-m/s wind speeds, probably caused by the impact of clouds and rain. The data were expanded by sinusoidal series of the relative azimuth angles between the Hwind analysis and observation directions. The coefficients of the sinusoidal series suggest decreasing response to wind direction for increasing wind speed, but the 10-GHz data appear to be fairly constant for up to 50-m/s wind speeds. The trend of the high-wind data (&gt; 25 m/s) is, in general, consistent with the characteristics of the lighter wind data. The combined Windsat–GDAS (&lt; 25 m/s) and Windsat–Hwind (&gt; 25 m/s) analyses show that the amplitude of first-harmonic coefficients (U1) increases with increasing wind speed from low to 20 m/s but then saturates and decreases at higher wind speeds. The amplitude of second harmonic coefficients (U2), having a similar feature, increases with wind speed from light to moderately high wind speed (&lt; 15 m/s) and then displays a decreasing trend beyond about 15–20-m/s wind speeds. This feature is consistent with the active microwave observations of hurricanes. This implies that the ocean waves and other roughness features generated by hurricane force winds will start to lose directionality for increasing wind speed beyond 30–50 m/s. The loss of directionality can be due to a wider azimuthal spreading of wave propagation, increasing coverage of sea foam and spray, and the impact of raindrops on the surface roughness. Excessive attenuation by rain, if undercorrected, may further reduce the directional dependence of U. The ocean waves with longer wavelengths having greater influence on the 10, 6 and 1.4-GHz microwaves probably can sustain better directionality at very high winds than the ocean waves with shorter wavelength, which have greater impact on the 18.7- and 36.5-GHz frequencies. Therefore, in future ATBD developments for CIMR, we suggest to decrease the directional harmonics (1 and 2) towards zero for wind speed higher than 20 m/s.</p>
-</section>
-<section id="simplified-atmospheric-corrections">
-<h3>Simplified Atmospheric Corrections<a class="headerlink" href="#simplified-atmospheric-corrections" title="Link to this heading">#</a></h3>
-<p>Our proposed atmospheric corrections rely on the vertical integration of the indexes of refraction from local atmospheric parameter profiles. This may be unpractical for an operational processing in terms of computing time. In this case, we suggest to follow the approach used in AMSR-E ATBD (Wentz and Meissner, 2000), where approximated vertically integrated absorption coefficients can be derived from vertically integrated water vapor, cloud liquid water, and air temperature.</p>
-</section>
-</section>
-<section id="needed-and-missing-corrections">
-<h2>Needed and Missing Corrections<a class="headerlink" href="#needed-and-missing-corrections" title="Link to this heading">#</a></h2>
-<section id="retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">
-<h3>Retrieval in Coastal Areas and Closer to the Sea Ice Edge<a class="headerlink" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge" title="Link to this heading">#</a></h3>
-<p>The improved resolution of CIMR and stringent beam forming (“distance-to-coast”) requirements mean that Level-2 OWV retrievals can be achieved closer to the coastline. Still, coastal regions and water bodies will be challenging for the CIMR Level-2 products when the main beam overlaps different surface types. This can lead to erroneous coastal OWVs.</p>
-<p>Similar challenges exist for retrieval of OWV close to the sea-ice edge. Application of a land-spill over correction and methods for mitigating land contamination (Olmedo et al., 2017; Olmedo et al., 2018) should be investigated, as well as methods to reduce sea-ice contamination (Meissner and Manaster, 2021). It is not fully clear yet at which processing level (1 or 2) the land- and ice-ocean transitions effects shall be corrected for on the <span class="math notranslate nohighlight">\(T_B\)</span>s (so-called land-sea contamination). Given that these effects require antenna-pattern-related information, it shall better be applied in the Level 1 algorithms.</p>
-</section>
-<hr class="docutils" />
-<section id="all-weather-owv-retrieval-algorithm">
-<h3>All Weather OWV Retrieval Algorithm<a class="headerlink" href="#all-weather-owv-retrieval-algorithm" title="Link to this heading">#</a></h3>
-<p>It is difficult to measure radiometer wind speeds in rainy conditions which are often encountered simultaneously with high wind conditions. Rain increases the atmospheric attenuation, especially at frequencies higher than L-band, such as C- to Ka-band channels of CIMR. The brightness temperature signal and therefore the signal-to-noise ratio decreases with the square of the atmospheric transmittance <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
-<p>Therefore, under rain, the radiometer measurement is less sensitive to the surface wind speed. This is particularly true for the Ku- and Ka-band channels of CIMR, which will be strongly affected by rain. By assuming that the vertical atmospheric temperature profile <span class="math notranslate nohighlight">\(T_{eff}(h)\)</span> is isothermal and therefore independent of <span class="math notranslate nohighlight">\(h\)</span> and that it is also equal to the surface temperature <span class="math notranslate nohighlight">\(T_s\)</span>, and that there are no surface scattering of sky radiation, Meissner and Wentz (2009) have nevertheless shown that the Top of the Atmosphere brightness can be related to the surface reflectivity <span class="math notranslate nohighlight">\(R_p\)</span> using:</p>
-<div class="math notranslate nohighlight">
-\[
-T_{BV} = (1 - R_V \tau^2) T_{eff}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-T_{BH} = (1 - R_H \tau^2) T_{eff}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is the atmospheric transmittance.</p>
-<p>If there is scattering rain in the atmosphere due to rain, the expressions above remain still valid but the effective temperature <span class="math notranslate nohighlight">\(T_{eff}\)</span> is smaller than the atmospheric temperature. It is very difficult to accurately model brightness temperatures in rain. Because of the high variability of rainy atmospheres, the brightness temperatures depend on cloud type and the distribution of rain within the footprint (beam filling). In addition, with increasing frequency and increasing drop size, atmospheric scattering starts to become important.</p>
-<p>That means that it is not possible to use the simple Rayleigh approximation for cloud water absorption but one rather needs to apply the full Mie absorption theory. This requires additional input such as size and form of the raindrops. However, those parameters are not readily available. Nevertheless, using Liebe et al., 1995 atmospheric microwave propagation model one can obtain a “rough” estimate of the values of <span class="math notranslate nohighlight">\(\tau\)</span> for the three L-, C-, and X-band frequencies as a function of rain rate as illustrated in <a class="reference internal" href="roadmap.html#figure55"><span class="std std-numref">Fig. 37</span></a>.</p>
-<figure class="align-default" id="figure55">
-<img alt="_images/Figure55.png" src="_images/Figure55.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">(Left) Rain attenuation coefficient (Nepers/m) and (right) brightness temperature reduction (K) through rain at 4 km altitude as a function of rain rate (mm/h) and electromagnetic frequency: L-band (black), C-band (red), and X-band (magenta).</span><a class="headerlink" href="#figure55" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>According to this model, L-band Tbs are very little attenuated by rain compared to C- and X-bands. C-band attenuation coefficient is found about <span class="math notranslate nohighlight">\(1/3^{rd}\)</span> of the X-band at most rain rate. At C-band and X-frequency bands, atmospheric absorption, emission, and scattering associated with high cloud liquid and ice water content and intense precipitations have large impacts on the brightness temperatures.</p>
-<p>The algorithm we proposed is valid for moderate wind speed conditions (&lt; 20 m/s) and low rain rates (&lt; 1-2 mm/h). In order to retrieve wind speeds in rain at higher resolution than L-band, we need to be able to find appropriate combinations of CIMR C and X-band channels that reduce the sensitivity to rain without reducing the sensitivity to wind too much. As discussed in Meissner and Wentz (2009), it is interesting to consider the channel combinations <span class="math notranslate nohighlight">\(T6H − λ \cdot T10H\)</span> between H-polarized data at C-band and H-pol at X-band.</p>
-<p>As found, the <span class="math notranslate nohighlight">\(\lambda\)</span> parameter shall be chosen to minimize the sensitivity to rain. As found in Meissner and Wentz (2009) and also in the Hwang (2019)’s GMF, the H-pol reflectivities are approximately the same for both C and X-band: <span class="math notranslate nohighlight">\(R_{6H} \sim R_{10H} \equiv R_H\)</span>. Therefore, we find:</p>
-<div class="math notranslate nohighlight">
-\[
-Q = T_{BH}^{6.8 \, GHz} - \lambda \cdot T_{BH}^{10.7 \, GHz} = -T_{eff} R_H (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2)
-\]</div>
-<p>and <span class="math notranslate nohighlight">\(\lambda\)</span> is then chosen to minimize the sensitivity of <span class="math notranslate nohighlight">\(Q\)</span> to rain rate:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\partial Q}{\partial R} (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2) = 0
-\]</div>
-<p>or:</p>
-<div class="math notranslate nohighlight">
-\[
-\lambda = \frac{\partial \tau_{6.8 \, GHz}^2 / \partial R}{\partial \tau_{10.7 \, GHz}^2 / \partial R}
-\]</div>
-<p>According to matchup-atmospheric databases established globally and under hurricanes for WindSat and also, as found from the Liebe et al. (1992)’s model, the dependence of <span class="math notranslate nohighlight">\(\tau^2\)</span> on rain rate <span class="math notranslate nohighlight">\(R\)</span> for global atmospheric set, give an estimate <span class="math notranslate nohighlight">\(\lambda \simeq 1/3\)</span>. So, when using the quantity:</p>
-<div class="math notranslate nohighlight">
-\[
-Q = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz}
-\]</div>
-<p>the rain effect shall be best minimized at both C and X bands. The change of <span class="math notranslate nohighlight">\(Q\)</span> as a function of surface wind speed can be then derived from the linearly extrapolated isotropic GMFs above 20 m/s. As found, <span class="math notranslate nohighlight">\(Q\)</span> remains sensitive to wind speed although it is certainly less sensitive to wind speed than <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, or <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, separately.</p>
-<figure class="align-default" id="figure56">
-<img alt="_images/Figure56.png" src="_images/Figure56.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Sensitivity of the surface brightness temperature to wind speed for the L-band H polarization <span class="math notranslate nohighlight">\(T_{BH}^{1.4 GHz}\)</span>, compared to <span class="math notranslate nohighlight">\(Q = T_{BH}^{6.8 GHz} - 0.3 \cdot T_{BH}^{10.7 GHz}\)</span>.</span><a class="headerlink" href="#figure56" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Interestingly, we find that:</p>
-<div class="math notranslate nohighlight">
-\[
-Q(U_{10}) = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz} \approx T_{BH}^{1.4 \, GHz}(U_{10})
-\]</div>
-<p>Basically, by combining the H-pol channel of the X- and C-bands, one can reproduce a quasi-synthetic “L-band” sensor from the viewpoint of sea surface roughness dependencies (minimized rain effects and similar sensitivity to surface wind) but at a significantly higher spatial resolution of ~15 km instead of ~60 km for the L-band.</p>
-<p>To retrieve the wind speed in stormy weather, one can therefore minimize a likelihood function which will include the quantity <span class="math notranslate nohighlight">\(Q\)</span> for wind speed and the 3rd Stokes parameter at X-band for wind direction. An important additional constraint will be put on the C-, X-band wind vector retrievals during the iterative inversion: after spatial averaging of the retrieved Moderate spatial resolution (~15 km wind vector at the spatial resolution of the L-band (~50 km)), the <span class="math notranslate nohighlight">\(Q\)</span>-retrieved wind field shall match the L-band-only retrieved low-resolution wind. We suggest to implement in the future the <span class="math notranslate nohighlight">\(Q\)</span>-retrieval approach for winds above 20 m/s and rain rate &gt; 2 mm/h.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="input-cimr-data-combination-and-retrieval-configuration">
-<h2>Input CIMR Data Combination and Retrieval Configuration<a class="headerlink" href="#input-cimr-data-combination-and-retrieval-configuration" title="Link to this heading">#</a></h2>
-<p>In the OWV retrieval simulations that were performed over the large tropical test card:</p>
-<ol class="arabic simple">
-<li><p>We both retrieved ocean wind speed and SST together from all input linear polarization channels.</p></li>
-<li><p>Wind direction is retrieved using only C- and X-band channels 3rd and 4th Stokes parameters.</p></li>
-</ol>
-<p>It is expected that the number and type of frequency channels used as input for wind speed retrieval shall be kept configurable in the operational processor. SST can be provided as a first guess in the retrieval algorithm from the official L2 product retrievals. For the wind direction, we focused only on using the C- and X-band channels 3rd and 4th Stokes parameters as inputs because at higher frequency, atmospheric effects might corrupt the quality of the wind direction retrievals. In clear sky conditions, the Ku and Ka-band data might nevertheless be used as inputs given their higher sensitivity to wind direction. The L-band channel can also be used but the sensitivity to wind direction of the 3rd and <span class="math notranslate nohighlight">\(4^{th}\)</span> Stokes parameters is much reduced and the data might be more affected by Faraday rotation than at the higher frequencies.</p>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1004,7 +887,6 @@ Q(U_{10}) = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz} \approx T_{BH}^
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithm Performance Assessment using SCEPS</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geophysical-data-used-to-describe-the-ocean-scene">Geophysical Data Used to Describe the Ocean Scene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-toa-tbs-over-the-scene">Simulated TOA Tbs over the Scene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-instrument-tbs-over-the-scene">Simulated Instrument Tbs Over the Scene</a></li>
@@ -1012,24 +894,6 @@ Q(U_{10}) = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz} \approx T_{BH}^
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ocean-wind-direction-inversion-algorithm">Step 2: Ocean Wind Direction Inversion Algorithm</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-assessment-summary">Performance Assessment Summary</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-future-atbd-development">Roadmap for future ATBD development</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
