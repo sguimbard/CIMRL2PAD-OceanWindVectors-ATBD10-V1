@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Roadmap for future ATBD development &#8212; CIMR L2 Ocean Wind Vectors ATBD v1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'roadmap';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="References" href="references.html" />
+    <link rel="prev" title="THE CIMR OCEAN RETRIEVAL SYSTEM" href="cimr_ocean_retrieval.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="CIMR L2 Ocean Wind Vectors ATBD v1 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 Ocean Wind Vector ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_purpose_scope.html">Introduction, purpose and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and justification of selected algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment using SCEPS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Roadmap for future ATBD development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/OceanWindVectors_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/roadmap.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Roadmap for future ATBD development</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="roadmap-for-future-atbd-development">
+<h1>Roadmap for future ATBD development<a class="headerlink" href="#roadmap-for-future-atbd-development" title="Link to this heading">#</a></h1>
+<p>The prototype CIMR Level-2 OWV retrieval algorithm presented in this ATBD is based on several assumptions and simplifications. Several developments and improvements to the prototype algorithm are planned which have the potential to significantly improve the performance of the CIMR Level-2 OWV algorithm. We highlight a few of them in this chapter.</p>
+<section id="improvements-in-the-forward-radiative-transfer-model">
+<h2>Improvements in the Forward Radiative Transfer model<a class="headerlink" href="#improvements-in-the-forward-radiative-transfer-model" title="Link to this heading">#</a></h2>
+<section id="new-sea-water-dielectric-constant-model-at-l-band">
+<h3>New Sea water dielectric constant model at L-band<a class="headerlink" href="#new-sea-water-dielectric-constant-model-at-l-band" title="Link to this heading">#</a></h3>
+<p>At the time this ATBD was developed, two up-to-date parametrizations for the sea water dielectric constant at L-band were available, based on one hand, on the Soil Moisture and Ocean Salinity (SMOS) satellite multi-angular brightness temperature measurements by Boutin et al. (2021) (BV), and, on the other hand, on the new George Washington University laboratory measurements by Zhou et al. (2021) (GW2020). These two approaches are fully independent. For most SSS and Sea Surface Temperature (SST) conditions commonly observed over the open ocean, the relative variations of brightness temperatures Tb simulated through the BV and GW2020 parametrizations agree particularly well, and better than with earlier parametrizations previously used in the SMOS, SMAP, and Aquarius SSS retrievals. Being based purely on Laboratory data, we therefore advise the use of GW2020 in the present ATBD. However, uncertainty remains, especially below 10°C where a ∼0.1 K relative difference between the two models is observed. This motivated the development of a revised parameterization, BVZ (Boutin, Vergely, and Zhou (2023)), based on a methodology similar to that used to derive BV but using GW2020 instead of SMOS measurements. Compared to the GW2020 parameterization, BVZ is derived with a reduced number of degrees of freedom, it relies on the TEOS10 PSS78 conductivity-salinity relationship, and on the previously derived static permittivity of fresh water. Noting that this new parametrization significantly improved the SSS retrieval from SMOS in the 5°C–15°C SST range, we advise to update the GW2020 L-band sea water dielectric constant model with this new BVZ model in future algorithm developments for CIMR.</p>
+</section>
+<section id="roughness-emission-azimuthal-harmonics-in-high-winds">
+<h3>Roughness emission azimuthal harmonics in High winds<a class="headerlink" href="#roughness-emission-azimuthal-harmonics-in-high-winds" title="Link to this heading">#</a></h3>
+<p>It remains unclear how the roughness anisotropic emission components (first and second harmonics, see Figure 9 and Figure 10) for all four Stokes parameters behave in high wind speed regimes (say &gt; 20 m/s). Wind-direction signals in passive microwave polarimetry for ocean surfaces under hurricane force winds were however presented in Yueh et al., 2008. They performed analysis of Windsat data for several Atlantic hurricanes from 2003 to 2005. The polarimetric third Stokes parameter observations from the Windsat 10-,18-, and 37-GHz channels were collocated with the ocean-surface winds from the National Oceanic and Atmospheric Administration Hwind analysis. The collocated data were binned as a function of wind speed and wind direction. The 10-GHz data show clear 4-K peak-to-peak directional signals at 50-60-m/s wind speed after correction for atmospheric attenuation. The signals in the 18- and 37-GHz channels were unclear at above 40-m/s wind speeds, probably caused by the impact of clouds and rain. The data were expanded by sinusoidal series of the relative azimuth angles between the Hwind analysis and observation directions. The coefficients of the sinusoidal series suggest decreasing response to wind direction for increasing wind speed, but the 10-GHz data appear to be fairly constant for up to 50-m/s wind speeds. The trend of the high-wind data (&gt; 25 m/s) is, in general, consistent with the characteristics of the lighter wind data. The combined Windsat–GDAS (&lt; 25 m/s) and Windsat–Hwind (&gt; 25 m/s) analyses show that the amplitude of first-harmonic coefficients (U1) increases with increasing wind speed from low to 20 m/s but then saturates and decreases at higher wind speeds. The amplitude of second harmonic coefficients (U2), having a similar feature, increases with wind speed from light to moderately high wind speed (&lt; 15 m/s) and then displays a decreasing trend beyond about 15–20-m/s wind speeds. This feature is consistent with the active microwave observations of hurricanes. This implies that the ocean waves and other roughness features generated by hurricane force winds will start to lose directionality for increasing wind speed beyond 30–50 m/s. The loss of directionality can be due to a wider azimuthal spreading of wave propagation, increasing coverage of sea foam and spray, and the impact of raindrops on the surface roughness. Excessive attenuation by rain, if undercorrected, may further reduce the directional dependence of U. The ocean waves with longer wavelengths having greater influence on the 10, 6 and 1.4-GHz microwaves probably can sustain better directionality at very high winds than the ocean waves with shorter wavelength, which have greater impact on the 18.7- and 36.5-GHz frequencies. Therefore, in future ATBD developments for CIMR, we suggest to decrease the directional harmonics (1 and 2) towards zero for wind speed higher than 20 m/s.</p>
+</section>
+<section id="simplified-atmospheric-corrections">
+<h3>Simplified Atmospheric Corrections<a class="headerlink" href="#simplified-atmospheric-corrections" title="Link to this heading">#</a></h3>
+<p>Our proposed atmospheric corrections rely on the vertical integration of the indexes of refraction from local atmospheric parameter profiles. This may be unpractical for an operational processing in terms of computing time. In this case, we suggest to follow the approach used in AMSR-E ATBD (Wentz and Meissner, 2000), where approximated vertically integrated absorption coefficients can be derived from vertically integrated water vapor, cloud liquid water, and air temperature.</p>
+</section>
+</section>
+<section id="needed-and-missing-corrections">
+<h2>Needed and Missing Corrections<a class="headerlink" href="#needed-and-missing-corrections" title="Link to this heading">#</a></h2>
+<section id="retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">
+<h3>Retrieval in Coastal Areas and Closer to the Sea Ice Edge<a class="headerlink" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge" title="Link to this heading">#</a></h3>
+<p>The improved resolution of CIMR and stringent beam forming (“distance-to-coast”) requirements mean that Level-2 OWV retrievals can be achieved closer to the coastline. Still, coastal regions and water bodies will be challenging for the CIMR Level-2 products when the main beam overlaps different surface types. This can lead to erroneous coastal OWVs.</p>
+<p>Similar challenges exist for retrieval of OWV close to the sea-ice edge. Application of a land-spill over correction and methods for mitigating land contamination (Olmedo et al., 2017; Olmedo et al., 2018) should be investigated, as well as methods to reduce sea-ice contamination (Meissner and Manaster, 2021). It is not fully clear yet at which processing level (1 or 2) the land- and ice-ocean transitions effects shall be corrected for on the <span class="math notranslate nohighlight">\(T_B\)</span>s (so-called land-sea contamination). Given that these effects require antenna-pattern-related information, it shall better be applied in the Level 1 algorithms.</p>
+</section>
+<hr class="docutils" />
+<section id="all-weather-owv-retrieval-algorithm">
+<h3>All Weather OWV Retrieval Algorithm<a class="headerlink" href="#all-weather-owv-retrieval-algorithm" title="Link to this heading">#</a></h3>
+<p>It is difficult to measure radiometer wind speeds in rainy conditions which are often encountered simultaneously with high wind conditions. Rain increases the atmospheric attenuation, especially at frequencies higher than L-band, such as C- to Ka-band channels of CIMR. The brightness temperature signal and therefore the signal-to-noise ratio decreases with the square of the atmospheric transmittance <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
+<p>Therefore, under rain, the radiometer measurement is less sensitive to the surface wind speed. This is particularly true for the Ku- and Ka-band channels of CIMR, which will be strongly affected by rain. By assuming that the vertical atmospheric temperature profile <span class="math notranslate nohighlight">\(T_{eff}(h)\)</span> is isothermal and therefore independent of <span class="math notranslate nohighlight">\(h\)</span> and that it is also equal to the surface temperature <span class="math notranslate nohighlight">\(T_s\)</span>, and that there are no surface scattering of sky radiation, Meissner and Wentz (2009) have nevertheless shown that the Top of the Atmosphere brightness can be related to the surface reflectivity <span class="math notranslate nohighlight">\(R_p\)</span> using:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{BV} = (1 - R_V \tau^2) T_{eff}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T_{BH} = (1 - R_H \tau^2) T_{eff}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is the atmospheric transmittance.</p>
+<p>If there is scattering rain in the atmosphere due to rain, the expressions above remain still valid but the effective temperature <span class="math notranslate nohighlight">\(T_{eff}\)</span> is smaller than the atmospheric temperature. It is very difficult to accurately model brightness temperatures in rain. Because of the high variability of rainy atmospheres, the brightness temperatures depend on cloud type and the distribution of rain within the footprint (beam filling). In addition, with increasing frequency and increasing drop size, atmospheric scattering starts to become important.</p>
+<p>That means that it is not possible to use the simple Rayleigh approximation for cloud water absorption but one rather needs to apply the full Mie absorption theory. This requires additional input such as size and form of the raindrops. However, those parameters are not readily available. Nevertheless, using Liebe et al., 1995 atmospheric microwave propagation model one can obtain a “rough” estimate of the values of <span class="math notranslate nohighlight">\(\tau\)</span> for the three L-, C-, and X-band frequencies as a function of rain rate as illustrated in <a class="reference internal" href="#figure55"><span class="std std-numref">Fig. 37</span></a>.</p>
+<figure class="align-default" id="figure55">
+<img alt="_images/Figure55.png" src="_images/Figure55.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">(Left) Rain attenuation coefficient (Nepers/m) and (right) brightness temperature reduction (K) through rain at 4 km altitude as a function of rain rate (mm/h) and electromagnetic frequency: L-band (black), C-band (red), and X-band (magenta).</span><a class="headerlink" href="#figure55" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>According to this model, L-band Tbs are very little attenuated by rain compared to C- and X-bands. C-band attenuation coefficient is found about <span class="math notranslate nohighlight">\(1/3^{rd}\)</span> of the X-band at most rain rate. At C-band and X-frequency bands, atmospheric absorption, emission, and scattering associated with high cloud liquid and ice water content and intense precipitations have large impacts on the brightness temperatures.</p>
+<p>The algorithm we proposed is valid for moderate wind speed conditions (&lt; 20 m/s) and low rain rates (&lt; 1-2 mm/h). In order to retrieve wind speeds in rain at higher resolution than L-band, we need to be able to find appropriate combinations of CIMR C and X-band channels that reduce the sensitivity to rain without reducing the sensitivity to wind too much. As discussed in Meissner and Wentz (2009), it is interesting to consider the channel combinations <span class="math notranslate nohighlight">\(T6H − λ \cdot T10H\)</span> between H-polarized data at C-band and H-pol at X-band.</p>
+<p>As found, the <span class="math notranslate nohighlight">\(\lambda\)</span> parameter shall be chosen to minimize the sensitivity to rain. As found in Meissner and Wentz (2009) and also in the Hwang (2019)’s GMF, the H-pol reflectivities are approximately the same for both C and X-band: <span class="math notranslate nohighlight">\(R_{6H} \sim R_{10H} \equiv R_H\)</span>. Therefore, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = T_{BH}^{6.8 \, GHz} - \lambda \cdot T_{BH}^{10.7 \, GHz} = -T_{eff} R_H (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2)
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(\lambda\)</span> is then chosen to minimize the sensitivity of <span class="math notranslate nohighlight">\(Q\)</span> to rain rate:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial Q}{\partial R} (\tau_{6.8 \, GHz}^2 - \lambda \cdot \tau_{10.7 \, GHz}^2) = 0
+\]</div>
+<p>or:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \frac{\partial \tau_{6.8 \, GHz}^2 / \partial R}{\partial \tau_{10.7 \, GHz}^2 / \partial R}
+\]</div>
+<p>According to matchup-atmospheric databases established globally and under hurricanes for WindSat and also, as found from the Liebe et al. (1992)’s model, the dependence of <span class="math notranslate nohighlight">\(\tau^2\)</span> on rain rate <span class="math notranslate nohighlight">\(R\)</span> for global atmospheric set, give an estimate <span class="math notranslate nohighlight">\(\lambda \simeq 1/3\)</span>. So, when using the quantity:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz}
+\]</div>
+<p>the rain effect shall be best minimized at both C and X bands. The change of <span class="math notranslate nohighlight">\(Q\)</span> as a function of surface wind speed can be then derived from the linearly extrapolated isotropic GMFs above 20 m/s. As found, <span class="math notranslate nohighlight">\(Q\)</span> remains sensitive to wind speed although it is certainly less sensitive to wind speed than <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, or <span class="math notranslate nohighlight">\(T_{BH}^{6.8 GHz}\)</span>, separately.</p>
+<figure class="align-default" id="figure56">
+<img alt="_images/Figure56.png" src="_images/Figure56.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Sensitivity of the surface brightness temperature to wind speed for the L-band H polarization <span class="math notranslate nohighlight">\(T_{BH}^{1.4 GHz}\)</span>, compared to <span class="math notranslate nohighlight">\(Q = T_{BH}^{6.8 GHz} - 0.3 \cdot T_{BH}^{10.7 GHz}\)</span>.</span><a class="headerlink" href="#figure56" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Interestingly, we find that:</p>
+<div class="math notranslate nohighlight">
+\[
+Q(U_{10}) = T_{BH}^{6.8 \, GHz} - 0.3 \cdot T_{BH}^{10.7 \, GHz} \approx T_{BH}^{1.4 \, GHz}(U_{10})
+\]</div>
+<p>Basically, by combining the H-pol channel of the X- and C-bands, one can reproduce a quasi-synthetic “L-band” sensor from the viewpoint of sea surface roughness dependencies (minimized rain effects and similar sensitivity to surface wind) but at a significantly higher spatial resolution of ~15 km instead of ~60 km for the L-band.</p>
+<p>To retrieve the wind speed in stormy weather, one can therefore minimize a likelihood function which will include the quantity <span class="math notranslate nohighlight">\(Q\)</span> for wind speed and the 3rd Stokes parameter at X-band for wind direction. An important additional constraint will be put on the C-, X-band wind vector retrievals during the iterative inversion: after spatial averaging of the retrieved Moderate spatial resolution (~15 km wind vector at the spatial resolution of the L-band (~50 km)), the <span class="math notranslate nohighlight">\(Q\)</span>-retrieved wind field shall match the L-band-only retrieved low-resolution wind. We suggest to implement in the future the <span class="math notranslate nohighlight">\(Q\)</span>-retrieval approach for winds above 20 m/s and rain rate &gt; 2 mm/h.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="input-cimr-data-combination-and-retrieval-configuration">
+<h2>Input CIMR Data Combination and Retrieval Configuration<a class="headerlink" href="#input-cimr-data-combination-and-retrieval-configuration" title="Link to this heading">#</a></h2>
+<p>In the OWV retrieval simulations that were performed over the large tropical test card:</p>
+<ol class="arabic simple">
+<li><p>We both retrieved ocean wind speed and SST together from all input linear polarization channels.</p></li>
+<li><p>Wind direction is retrieved using only C- and X-band channels 3rd and 4th Stokes parameters.</p></li>
+</ol>
+<p>It is expected that the number and type of frequency channels used as input for wind speed retrieval shall be kept configurable in the operational processor. SST can be provided as a first guess in the retrieval algorithm from the official L2 product retrievals. For the wind direction, we focused only on using the C- and X-band channels 3rd and 4th Stokes parameters as inputs because at higher frequency, atmospheric effects might corrupt the quality of the wind direction retrievals. In clear sky conditions, the Ku and Ka-band data might nevertheless be used as inputs given their higher sensitivity to wind direction. The L-band channel can also be used but the sensitivity to wind direction of the 3rd and <span class="math notranslate nohighlight">\(4^{th}\)</span> Stokes parameters is much reduced and the data might be more affected by Faraday rotation than at the higher frequencies.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cimr_ocean_retrieval.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">THE CIMR OCEAN RETRIEVAL SYSTEM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">References</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements-in-the-forward-radiative-transfer-model">Improvements in the Forward Radiative Transfer model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-sea-water-dielectric-constant-model-at-l-band">New Sea water dielectric constant model at L-band</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roughness-emission-azimuthal-harmonics-in-high-winds">Roughness emission azimuthal harmonics in High winds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-atmospheric-corrections">Simplified Atmospheric Corrections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needed-and-missing-corrections">Needed and Missing Corrections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-in-coastal-areas-and-closer-to-the-sea-ice-edge">Retrieval in Coastal Areas and Closer to the Sea Ice Edge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-weather-owv-retrieval-algorithm">All Weather OWV Retrieval Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-cimr-data-combination-and-retrieval-configuration">Input CIMR Data Combination and Retrieval Configuration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joseph Tenerelli (ODL) and Nicolas Reul (IFREMER/LOPS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD study (2024-2026) (contract 4000143081).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
