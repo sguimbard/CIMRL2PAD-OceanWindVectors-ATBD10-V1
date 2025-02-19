@@ -36,8 +36,6 @@ A schematic of the overall retrieval algorithm assessment using SCEPS is provide
 
 5. The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped *'measured L1B Tbs'*.
 
----
-
 ## Geophysical Data Used to Describe the Ocean Scene
 
 The synthetic wind field used to model the scene is a merge between ERA5 re-analyses used as the background wind field, and more local and high-resolution surface winds from Sentinel-1/2 SAR data around two hurricanes. The SSS is from the MERCATOR model. The SST is from ERA5 re-analyses, which were also used to simulate the atmospheric vertical profiles. The test scene includes several coasts to analyze the land-contamination.
@@ -81,8 +79,6 @@ $$
 V(x_1, x_2, \theta_s) = V_{hs1}(U_{10}) \sin(\tilde{\varphi}) + V_{hs2}(U_{10}) \sin(2\tilde{\varphi})
 $$
 
----
-
 As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: $T_{ho}(U_{10})$ and $T_{vo}(U_{10})$. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: $(T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))$ and the second-order azimuthal harmonics: $(T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))$. Note that the third $U$ and fourth $V$ Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.
 
 For each frequency, SCEPS integrates the harmonic contributions (*see {numref}`Figure38`): 
@@ -102,8 +98,6 @@ Example of the TOA scene azimuthal harmonics simulated from the surface wind fie
 
 Here, we specified wind direction-relative harmonics together with the wind direction at each grid point. Note that the harmonics other than 0 cannot vary with incidence angle and are provided as a single value at each horizontal grid point.
 
----
-
 ## Simulated Instrument Tbs Over the Scene
 
 The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field then involves several aspects:
@@ -116,8 +110,6 @@ The computation of (noisy) simulated CIMR antenna temperature from the scene bri
 6. Production of a preliminary version of the Level 1B product, 
 7. Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied, 
 8. An OZA adjustment is then simply computed by interpolating the test card Tbs (without harmonics) to the reference and actual OZA for each sample/measurement using those values directly without integrating over the antenna pattern. Then, the resampler resamples the interpolated test card Tbs at the OZA values as well as the unadjusted antenna Tbs separately so as to keep track of the adjustment. The OZA correction is then applied after resampling as a simple addition of the resampled adjustment.
-
----
 
 Details about each step of the SCEPS simulator can be found in [RD.2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns. 
 
@@ -143,8 +135,6 @@ name: Figure40
 Projection of the L-band, C-band, X-band, and Ku-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.
 ```
 
----
-
 In SCEPS, the total antenna temperature integral over all space is separated into several parts, with different integration methods for each:
 
 - Inner domain: Extending from each feed boresight out to a circle (in tilted director cosine coordinates) corresponding to an isotropic directivity of -40 dB relative to the maximum at feed center (HBS).
@@ -153,13 +143,11 @@ In SCEPS, the total antenna temperature integral over all space is separated int
 - Contribution from localized sources: Bright spots in the test card scene (bs).
 - Contribution from the direct sun and moon: Without reflection from the Earth.
 
----
 
 In SCEPS, the default reflector rotation rate is set to the fixed value of 7.8 rpm (clockwise looking towards the instrument along the spin axis from behind the reflector), and the radiometer integration times are set to the values shown in {numref}`tablerecparam`. 
 
 SCEPS can be configured to produce antenna temperatures for only the full measurements or for all samples. In the present simulation, there are five samples per measurement.
 
----
 
 ```{table} Receiver characteristics. Both the antenna temperature and the effective receiver noise temperature ($T_{rn}$) corresponding to the NEDT values are taken to be 150 K in SCEPS. There are five samples per measurement for all bands.
 :name: tablerecparam
@@ -172,15 +160,15 @@ SCEPS can be configured to produce antenna temperatures for only the full measur
 | Ka            | 8                   | 36.5                       | 1000.0                      | 0.74                             | 0.7                                      |
 ```
 
----
+
 
 The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.
 
----
+
 
 The simulated noisy instrument $T_B$ are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands. For L-band, one uses a weighted average of the original scene $T_Bs$ based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in {numref}`Figure41`.
 
----
+
 
 Note that instrument measurements are simulated from scene $T_p$ using SCEPS with several options:
 
@@ -212,7 +200,7 @@ The two-step OWV retrieval has been implemented and applied over the scene, foll
 
 - **Step 2:** Retrieval of ocean surface wind direction from the 8 input C- and X-band channels 3rd and 4th Stokes parameters $U^{TOA}$ and $V^{TOA}$ for aft and fore views, as well as the surface wind speed $U_{10}^{ret}$ and SST $T_s^{ret}$ retrieved at the previous step.
 
----
+
 
 To retrieve the surface wind speed vector modulus, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind speed, and of the SST: $\mathcal{p}$ is taken to be the product of the likelihood function $\mathcal{L}$ and prior distribution functions $P$ and $P'$ for wind speed and SST, respectively:
 
@@ -238,7 +226,7 @@ $$
 - $u_{10p}$ is the prior wind speed, and
 - $\phi_{wp}$ is the prior wind direction.
 
----
+
 
 We set here $P = P' = 1$, to give zero impacts of priors on the end retrievals. In addition, we further assumed that $u_{10p} = 7 \, m/s$, and $T_{sp} = 15^\circ C$ are constant and uniform for all the scene. 
 
@@ -261,7 +249,7 @@ This non-linear problem is solved iteratively using a Levenberg-Marquardt (1963)
 
 Examples of Ocean Surface wind $U_{10}^{ret}$ speed retrieved over the scene is shown in {numref}`Figure42`. In these retrieval simulations, the instrument Tbs were derived by integrating the scene over the full antenna patterns (HBS + outer patterns). **SCEPS** provides the option to add NEDT noise to the antenna temperatures: we perform retrieval simulations with and without NEDT.
 
----
+
 ```{figure} Figure42.png
 --- 
 name: Figure42
@@ -272,7 +260,7 @@ Retrieved Ocean wind speed modulus using aft-views with full antenna pattern int
 We next focus on comparing the input surface wind speed to the retrieved ones. 
 Here, we consider only the most complete simulations combining aft and fore views (weighted average), adding NEDT on the antenna Tbs, and integrating over the full antenna patterns.
 
----
+
 ```{figure} Figure43.png
 --- 
 name: Figure43
@@ -286,7 +274,7 @@ As illustrated in {numref}`Figure43`, the difference between the retrieved wind 
 - Along the coasts where the $\Delta WS$ shows high values greater than **1 m/s**.
 - Around the eye of the hurricane, where **negative** $\Delta WS$ values are observed.
 
----
+
 ```{figure} Figure44.png
 --- 
 name: Figure44
@@ -321,7 +309,7 @@ When filtering data with distance to nearest coasts less than or equal to **40 k
 
 showing that most of the ‘bad-quality’ retrievals are found in the **40 km coastal band**.
 
----
+
 ```{figure} Figure46.png
 --- 
 name: Figure46

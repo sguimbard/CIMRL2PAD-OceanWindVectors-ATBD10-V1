@@ -400,7 +400,6 @@
 </li>
 <li><p>The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped <em>‘measured L1B Tbs’</em>.</p></li>
 </ol>
-<hr class="docutils" />
 <section id="geophysical-data-used-to-describe-the-ocean-scene">
 <h2>Geophysical Data Used to Describe the Ocean Scene<a class="headerlink" href="#geophysical-data-used-to-describe-the-ocean-scene" title="Link to this heading">#</a></h2>
 <p>The synthetic wind field used to model the scene is a merge between ERA5 re-analyses used as the background wind field, and more local and high-resolution surface winds from Sentinel-1/2 SAR data around two hurricanes. The SSS is from the MERCATOR model. The SST is from ERA5 re-analyses, which were also used to simulate the atmospheric vertical profiles. The test scene includes several coasts to analyze the land-contamination.</p>
@@ -438,7 +437,6 @@ U(x_1, x_2, \theta_s) = U_{hs1}(U_{10}) \sin(\tilde{\varphi}) + U_{hs2}(U_{10}) 
 \[
 V(x_1, x_2, \theta_s) = V_{hs1}(U_{10}) \sin(\tilde{\varphi}) + V_{hs2}(U_{10}) \sin(2\tilde{\varphi})
 \]</div>
-<hr class="docutils" />
 <p>As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: <span class="math notranslate nohighlight">\(T_{ho}(U_{10})\)</span> and <span class="math notranslate nohighlight">\(T_{vo}(U_{10})\)</span>. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))\)</span> and the second-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))\)</span>. Note that the third <span class="math notranslate nohighlight">\(U\)</span> and fourth <span class="math notranslate nohighlight">\(V\)</span> Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.</p>
 <p>For each frequency, SCEPS integrates the harmonic contributions (*see <a class="reference internal" href="#figure38"><span class="std std-numref">Fig. 18</span></a>):</p>
 <div class="math notranslate nohighlight">
@@ -454,7 +452,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 </figure>
 <p>Here, we specified wind direction-relative harmonics together with the wind direction at each grid point. Note that the harmonics other than 0 cannot vary with incidence angle and are provided as a single value at each horizontal grid point.</p>
 </section>
-<hr class="docutils" />
 <section id="simulated-instrument-tbs-over-the-scene">
 <h2>Simulated Instrument Tbs Over the Scene<a class="headerlink" href="#simulated-instrument-tbs-over-the-scene" title="Link to this heading">#</a></h2>
 <p>The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field then involves several aspects:</p>
@@ -468,7 +465,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <li><p>Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied,</p></li>
 <li><p>An OZA adjustment is then simply computed by interpolating the test card Tbs (without harmonics) to the reference and actual OZA for each sample/measurement using those values directly without integrating over the antenna pattern. Then, the resampler resamples the interpolated test card Tbs at the OZA values as well as the unadjusted antenna Tbs separately so as to keep track of the adjustment. The OZA correction is then applied after resampling as a simple addition of the resampled adjustment.</p></li>
 </ol>
-<hr class="docutils" />
 <p>Details about each step of the SCEPS simulator can be found in [RD.2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns.</p>
 <p>Noting that most of the power originates near the feed boresight, the integration domain is divided into an inner and an outer domain. These domains are defined for each feed (see <a class="reference internal" href="#figure39"><span class="std std-numref">Fig. 19</span></a>): The inner domain includes the boresight and extends out to an ellipse corresponding to an azimuthally averaged power 40 dB below the peak (at the feed boresight), where the azimuthal average is computed in the tilted direction cosine coordinate system. The outer domain covers the rest of the Front Half-Space (FHS) of antenna (containing boresight) in either the tilted or un-tilted coordinate system.</p>
 <figure class="align-default" id="figure39">
@@ -486,7 +482,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">Projection of the L-band, C-band, X-band, and Ku-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.</span><a class="headerlink" href="#figure40" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<hr class="docutils" />
 <p>In SCEPS, the total antenna temperature integral over all space is separated into several parts, with different integration methods for each:</p>
 <ul class="simple">
 <li><p>Inner domain: Extending from each feed boresight out to a circle (in tilted director cosine coordinates) corresponding to an isotropic directivity of -40 dB relative to the maximum at feed center (HBS).</p></li>
@@ -495,10 +490,8 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <li><p>Contribution from localized sources: Bright spots in the test card scene (bs).</p></li>
 <li><p>Contribution from the direct sun and moon: Without reflection from the Earth.</p></li>
 </ul>
-<hr class="docutils" />
 <p>In SCEPS, the default reflector rotation rate is set to the fixed value of 7.8 rpm (clockwise looking towards the instrument along the spin axis from behind the reflector), and the radiometer integration times are set to the values shown in <a class="reference internal" href="#tablerecparam"><span class="std std-numref">Table 8</span></a>.</p>
 <p>SCEPS can be configured to produce antenna temperatures for only the full measurements or for all samples. In the present simulation, there are five samples per measurement.</p>
-<hr class="docutils" />
 <div class="pst-scrollable-table-container"><table class="table" id="tablerecparam">
 <caption><span class="caption-number">Table 8 </span><span class="caption-text">Receiver characteristics. Both the antenna temperature and the effective receiver noise temperature (<span class="math notranslate nohighlight">\(T_{rn}\)</span>) corresponding to the NEDT values are taken to be 150 K in SCEPS. There are five samples per measurement for all bands.</span><a class="headerlink" href="#tablerecparam" title="Link to this table">#</a></caption>
 <thead>
@@ -549,11 +542,8 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <p>The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.</p>
-<hr class="docutils" />
 <p>The simulated noisy instrument <span class="math notranslate nohighlight">\(T_B\)</span> are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands. For L-band, one uses a weighted average of the original scene <span class="math notranslate nohighlight">\(T_Bs\)</span> based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in <a class="reference internal" href="#figure41"><span class="std std-numref">Fig. 21</span></a>.</p>
-<hr class="docutils" />
 <p>Note that instrument measurements are simulated from scene <span class="math notranslate nohighlight">\(T_p\)</span> using SCEPS with several options:</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA + NEDT (constant over the antenna pattern),</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA without NEDT.</p>
@@ -575,7 +565,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <li><p><strong>Step 1:</strong> Retrieval of ocean surface wind speed modulus <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> (and of the SST <span class="math notranslate nohighlight">\(T_s^{ret}\)</span>) from the 16 input linearly polarized Tbs at resampled C-, X-, Ku-, and Ka-band channel data, namely <span class="math notranslate nohighlight">\(T_{th}^{TOA}\)</span> and <span class="math notranslate nohighlight">\(T_{tv}^{TOA}\)</span>, for aft and fore views.</p></li>
 <li><p><strong>Step 2:</strong> Retrieval of ocean surface wind direction from the 8 input C- and X-band channels 3rd and 4th Stokes parameters <span class="math notranslate nohighlight">\(U^{TOA}\)</span> and <span class="math notranslate nohighlight">\(V^{TOA}\)</span> for aft and fore views, as well as the surface wind speed <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> and SST <span class="math notranslate nohighlight">\(T_s^{ret}\)</span> retrieved at the previous step.</p></li>
 </ul>
-<hr class="docutils" />
 <p>To retrieve the surface wind speed vector modulus, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind speed, and of the SST: <span class="math notranslate nohighlight">\(\mathcal{p}\)</span> is taken to be the product of the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> and prior distribution functions <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(P'\)</span> for wind speed and SST, respectively:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -600,7 +589,6 @@ T_p = [T_{h,C}^{TOA,fore}, T_{v,C}^{TOA,fore}, T_{h,C}^{TOA,aft}, T_{v,C}^{TOA,a
 <li><p><span class="math notranslate nohighlight">\(u_{10p}\)</span> is the prior wind speed, and</p></li>
 <li><p><span class="math notranslate nohighlight">\(\phi_{wp}\)</span> is the prior wind direction.</p></li>
 </ul>
-<hr class="docutils" />
 <p>We set here <span class="math notranslate nohighlight">\(P = P' = 1\)</span>, to give zero impacts of priors on the end retrievals. In addition, we further assumed that <span class="math notranslate nohighlight">\(u_{10p} = 7 \, m/s\)</span>, and <span class="math notranslate nohighlight">\(T_{sp} = 15^\circ C\)</span> are constant and uniform for all the scene.</p>
 <p>The likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is computed using the previously described RTM, here represented by the geophysical model function <span class="math notranslate nohighlight">\(G\)</span>, and which can be evaluated using <a class="reference internal" href="baseline_algorithm_definition.html#equation-eq210">(163)</a> and the input CIMR TOA Tbs <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -615,7 +603,6 @@ T_p = [T_{h,C}^{TOA,fore}, T_{v,C}^{TOA,fore}, T_{h,C}^{TOA,aft}, T_{v,C}^{TOA,a
 \]</div>
 <p>This non-linear problem is solved iteratively using a Levenberg-Marquardt (1963) algorithm to find the local maxima.</p>
 <p>Examples of Ocean Surface wind <span class="math notranslate nohighlight">\(U_{10}^{ret}\)</span> speed retrieved over the scene is shown in <a class="reference internal" href="#figure42"><span class="std std-numref">Fig. 22</span></a>. In these retrieval simulations, the instrument Tbs were derived by integrating the scene over the full antenna patterns (HBS + outer patterns). <strong>SCEPS</strong> provides the option to add NEDT noise to the antenna temperatures: we perform retrieval simulations with and without NEDT.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure42">
 <img alt="_images/Figure42.png" src="_images/Figure42.png" />
 <figcaption>
@@ -624,7 +611,6 @@ T_p = [T_{h,C}^{TOA,fore}, T_{v,C}^{TOA,fore}, T_{h,C}^{TOA,aft}, T_{v,C}^{TOA,a
 </figure>
 <p>We next focus on comparing the input surface wind speed to the retrieved ones.
 Here, we consider only the most complete simulations combining aft and fore views (weighted average), adding NEDT on the antenna Tbs, and integrating over the full antenna patterns.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure43">
 <img alt="_images/Figure43.png" src="_images/Figure43.png" />
 <figcaption>
@@ -636,7 +622,6 @@ Here, we consider only the most complete simulations combining aft and fore view
 <li><p>Along the coasts where the <span class="math notranslate nohighlight">\(\Delta WS\)</span> shows high values greater than <strong>1 m/s</strong>.</p></li>
 <li><p>Around the eye of the hurricane, where <strong>negative</strong> <span class="math notranslate nohighlight">\(\Delta WS\)</span> values are observed.</p></li>
 </ul>
-<hr class="docutils" />
 <figure class="align-default" id="figure44">
 <img alt="_images/Figure44.png" src="_images/Figure44.png" />
 <figcaption>
@@ -666,7 +651,6 @@ Here, we consider only the most complete simulations combining aft and fore view
 <li><p><strong>STD(<span class="math notranslate nohighlight">\(\Delta WS\)</span>) ~ 0.1 m/s</strong></p></li>
 </ul>
 <p>showing that most of the ‘bad-quality’ retrievals are found in the <strong>40 km coastal band</strong>.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure46">
 <img alt="_images/Figure46.png" src="_images/Figure46.png" />
 <figcaption>

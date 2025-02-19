@@ -937,11 +937,11 @@ $$
 \end{eqnarray}
 $$(eqatm24)
 
-and the nonresonant term is given by the sum of a relaxation spectrum term $S_\circ F_\circ$ and a term associated with pressure-induced $N_2$ absorption (which makes a small contribution above 100 GHz), $S_nF_n$:
+and the nonresonant term is given by the sum of a relaxation spectrum term $S_0 F_0$ and a term associated with pressure-induced $N_2$ absorption (which makes a small contribution above 100 GHz), $S_nF_n$:
 
 $$
 \begin{eqnarray}
-\tilde{N}_n = S_\circ F_\circ + i S_n F_n
+\tilde{N}_n = S_0 F_0 + i S_n F_n
 \quad\mbox{[ppm]},
 \end{eqnarray}
 $$(eqatm25)
@@ -950,8 +950,8 @@ with
 
 $$
 \begin{eqnarray}
-S_\circ &=& 6.14\times10^{-5} p_d T_r^2\quad\mbox{[ppm]},\\
-F_\circ &=& -f\left[f+i0.56\times10^{-3}(p_d+e)T_r^{0.8}\right]^{-1},\\
+S_0 &=& 6.14\times10^{-5} p_d T_r^2\quad\mbox{[ppm]},\\
+F_0 &=& -f\left[f+i0.56\times10^{-3}(p_d+e)T_r^{0.8}\right]^{-1},\\
 S_n     &=& 1.4\times10^{-12} p_d^2T_r^{3.5}\quad\mbox{[ppm]},\\
 F_n     &=& f\left[1 + 1.93\times10^{-5}f^{1.5}\right]^{-1}.
 \end{eqnarray}
