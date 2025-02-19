@@ -34,7 +34,7 @@ A schematic of the overall retrieval algorithm assessment using SCEPS is provide
    - A single application of BG yields weights that can be applied to all antenna pattern contributions.
    - Maps of error variance amplification factors are computed from the BG weights.
 
-5. The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped *'measured L1B Tbs'*.
+5. The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped measured L1B Tbs.
 
 ## Geophysical Data Used to Describe the Ocean Scene
 
