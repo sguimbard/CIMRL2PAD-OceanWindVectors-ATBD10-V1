@@ -2,7 +2,7 @@
 
 To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes ({numref}`Figure36`).
 
-As described in RD.2, the simulator consists of a single statically-linked Linux executable program, **cimrProject**, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a *test card*, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures. 
+As described in RD-2, the simulator consists of a single statically-linked Linux executable program, **cimrProject**, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a *test card*, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures. 
 
 The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector ($T_h$, $T_p$, $U$, $V$) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.
 
@@ -47,7 +47,6 @@ name: Figure36
 Input geophysical data used to simulate the test card: (top left): SSS from Mercator; (top right): ERA5 SST and (bottom) merged ERA5 & SAR images (over the two hurricanes) surface wind vectors
 ```
 
-
 ## Simulated TOA Tbs over the Scene
 
 Using these geophysical data as input, we generated TOA L- to Ka-band TOA Tbs using the previously described RTM at an ensemble of EIA with values of 0°, 20°, 40°, 50°, 55°, 60°, 70°, 80° including azimuthal harmonics for the full Stokes vector. Note: In the Forward Model simulations, we assumed the anisotropic roughness effects to be similar at all EIA values. ERA5 vertical profiles for Cloud Liquid, Ice Water Content, air temperature, humidity were used to evaluate the atmospheric contributions at each frequency. Land Tbs > 300K are from the SCEPS project (courtesy Carlos Jimenez). Example of such Tb fields are shown in {numref}`Figure37`.
@@ -79,7 +78,7 @@ $$
 V(x_1, x_2, \theta_s) = V_{hs1}(U_{10}) \sin(\tilde{\varphi}) + V_{hs2}(U_{10}) \sin(2\tilde{\varphi})
 $$
 
-As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: $T_{ho}(U_{10})$ and $T_{vo}(U_{10})$. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: $(T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))$ and the second-order azimuthal harmonics: $(T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))$. Note that the third $U$ and fourth $V$ Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.
+As found, only the horizontal and vertical polarization exhibit isotropic contributions (0 order azimuthal harmonics), namely: $T_{ho}(U_{10})$ and $T_{vo}(U_{10})$. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: $(T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))$ and the second-order azimuthal harmonics: $(T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))$. Note that the third $U$ and fourth $V$ Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.
 
 For each frequency, SCEPS integrates the harmonic contributions (see {numref}`Figure38`): 
 
@@ -111,7 +110,7 @@ The computation of (noisy) simulated CIMR antenna temperature from the scene bri
 7. Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied, 
 8. An OZA adjustment is then simply computed by interpolating the test card Tbs (without harmonics) to the reference and actual OZA for each sample/measurement using those values directly without integrating over the antenna pattern. Then, the resampler resamples the interpolated test card Tbs at the OZA values as well as the unadjusted antenna Tbs separately so as to keep track of the adjustment. The OZA correction is then applied after resampling as a simple addition of the resampled adjustment.
 
-Details about each step of the SCEPS simulator can be found in [RD.2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns. 
+Details about each step of the SCEPS simulator can be found in RD-2. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns. 
 
 Noting that most of the power originates near the feed boresight, the integration domain is divided into an inner and an outer domain. These domains are defined for each feed (see {numref}`Figure39`): The inner domain includes the boresight and extends out to an ellipse corresponding to an azimuthally averaged power 40 dB below the peak (at the feed boresight), where the azimuthal average is computed in the tilted direction cosine coordinate system. The outer domain covers the rest of the Front Half-Space (FHS) of antenna (containing boresight) in either the tilted or un-tilted coordinate system.
 
@@ -124,7 +123,7 @@ Inner (left) and outer (right) integration grids in untilted director cosine (u,
 
 The CIMR instrument consists of 25 feeds, with one at L-band, 4 at C/X bands, and 8 at Ku/Ka bands. {numref}`Figure40` shows the measurement (full integration time) footprints for a portion of three successive scans for the L-, C-band, X-band, and Ku-band horns. The figure illustrates the extent of overlap between successive footprints both along and across the scan near the swath center. Although overlap can be increased (at the expense of increased noise) along the scan by using individual samples, the across-scan overlap cannot be changed. To obtain a resolution consistent with the antenna pattern footprint size, distance between neighboring measurements should not exceed half the Half-Power Beam Width (by the Whittaker–Nyquist–Shannon sampling theorem).
 
-As discussed in [RD.2], this condition is not satisfied across scan in L and Ku bands, but is satisfied in C and X bands. For Ku-band, there is no overlap in the half-power footprints across scan, which may be a limiting factor in the resolution of images obtained from resampled antenna temperatures.
+As discussed in RD-2, this condition is not satisfied across scan in L and Ku bands, but is satisfied in C and X bands. For Ku-band, there is no overlap in the half-power footprints across scan, which may be a limiting factor in the resolution of images obtained from resampled antenna temperatures.
 
 The figure illustrates the extent of overlap between successive footprints both along and across scan near the swath center. Although overlap can be increased (at the expense of increased noise) along scan by using individual samples, the across-scan overlap cannot be changed.
 
@@ -389,7 +388,7 @@ name: Figure50
 Example of wind speed and direction retrievals (red arrows) and input ERA5 winds (green arrows) after full antenna pattern integration, NEDT added, combining Aft and Fore views, and assuming a standard deviation for the prior wind direction of 60°
 ```
 
-Examples of wind speed and direction retrievals (as compared to the prior ERA5 wind direction), using as input the simulated instrument’s 3rd and 4th Stokes parameters after full antenna pattern integration, NEDT added, combining Aft and Fore views, and assuming a standard deviation for the prior wind direction of 60°, are shown in {numref}`Figure50` to {numref}`Figure52`.
+Examples of wind speed and direction retrievals (as compared to the prior ERA5 wind direction), using as input the simulated instrument's 3rd and 4th Stokes parameters after full antenna pattern integration, NEDT added, combining Aft and Fore views, and assuming a standard deviation for the prior wind direction of 60°, are shown in {numref}`Figure50` to {numref}`Figure52`.
 
 
 ```{figure} Figure51.png
@@ -452,7 +451,7 @@ As found, the Ocean Wind Speed (and SST) retrievals exhibit an RMSD of ~0.1 m/s 
 The land-contamination is the first error source for these TOA Tbs resampled at the C- and X-band resolution (using a FWHM window of 15 km in the BG resampling):
 
 - It is coming from earth emissivity contributions from both inner and outer antenna patterns.
-- When filtering data with distance to nearest coasts greater than or equal to 40 km, the statistics of $ \Delta WS $ evolves toward expected values with a median (and mean) $ \Delta WS \sim 0$ m/s and STD$(\Delta WS) \sim 0.1$ m/s, showing that most of the ‘bad-quality’ retrievals are found in the 40 km coastal band.
+- When filtering data with distance to nearest coasts greater than or equal to 40 km, the statistics of $ \Delta WS $ evolves toward expected values with a median (and mean) $ \Delta WS \sim 0$ m/s and STD$(\Delta WS) \sim 0.1$ m/s, showing that most of the 'bad-quality' retrievals are found in the 40 km coastal band.
 
 Locally, retrieved SWS error is also found to increase around the eye of the hurricanes. This might come from:
 
