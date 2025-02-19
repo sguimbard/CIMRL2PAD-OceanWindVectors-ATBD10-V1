@@ -56,7 +56,7 @@ Using these geophysical data as input, we generated TOA L- to Ka-band TOA Tbs us
 --- 
 name: Figure37
 ---
-(Top Left) L-band H-pol; (Top right) L-band V-pol; (2nd panel from Top Left) C-band H-pol; (2nd panel from Top right) C-band V-pol; (3rd panel from Top Left) X-band H-pol; (3rd panel from Top right) X-band V-pol; (4th panel from Top Left) Ku-band H-pol; (4th panel from Top right) Ku-band V-pol; (Bottom panel, left) Ka-band H-pol; (Bottom panel, right) Ka-band H-pol; based on the Radiative forward model (EIA = 52° for L-band and EIA = 55° for X-Ka band).
+(Top Left) L-band H-pol; (Top right) L-band V-pol; (2nd panel from Top Left) C-band H-pol; (2nd panel from Top right) C-band V-pol; (3rd panel from Top Left) X-band H-pol; (3rd panel from Top right) X-band V-pol; (4th panel from Top Left) Ku-band H-pol; (4th panel from Top right) Ku-band V-pol; (Bottom panel, left) Ka-band H-pol; (Bottom panel, right) Ka-band H-pol; based on the Radiative forward model (EIA $=$ 52° for L-band and EIA $=$ 55° for X-Ka band).
 ```
 
 As described in previous sections, the roughness-induced emission $\Delta T_p$ can be decomposed into isotropic and anisotropic emission components using a second-order azimuthal harmonic expansion as a function of $\tilde{\varphi}$, the relative azimuth between the radiometer look direction and the wind direction. 
@@ -81,7 +81,7 @@ $$
 
 As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: $T_{ho}(U_{10})$ and $T_{vo}(U_{10})$. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: $(T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))$ and the second-order azimuthal harmonics: $(T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))$. Note that the third $U$ and fourth $V$ Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.
 
-For each frequency, SCEPS integrates the harmonic contributions (*see {numref}`Figure38`): 
+For each frequency, SCEPS integrates the harmonic contributions (see {numref}`Figure38`): 
 
 $$
 T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10})
@@ -160,11 +160,7 @@ SCEPS can be configured to produce antenna temperatures for only the full measur
 | Ka            | 8                   | 36.5                       | 1000.0                      | 0.74                             | 0.7                                      |
 ```
 
-
-
 The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.
-
-
 
 The simulated noisy instrument $T_B$ are then resampled using Backus-Gilbert with a footprint of FWHM = 15 km for C- and X-band and FWHM = 8 km for Ku- and Ka-bands. For L-band, one uses a weighted average of the original scene $T_Bs$ based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in {numref}`Figure41`.
 
@@ -199,7 +195,6 @@ The two-step OWV retrieval has been implemented and applied over the scene, foll
 - **Step 1:** Retrieval of ocean surface wind speed modulus $U_{10}^{ret}$ (and of the SST $T_s^{ret}$) from the 16 input linearly polarized Tbs at resampled C-, X-, Ku-, and Ka-band channel data, namely $T_{th}^{TOA}$ and $T_{tv}^{TOA}$, for aft and fore views.
 
 - **Step 2:** Retrieval of ocean surface wind direction from the 8 input C- and X-band channels 3rd and 4th Stokes parameters $U^{TOA}$ and $V^{TOA}$ for aft and fore views, as well as the surface wind speed $U_{10}^{ret}$ and SST $T_s^{ret}$ retrieved at the previous step.
-
 
 
 To retrieve the surface wind speed vector modulus, we use a Bayesian inversion approach in which the posterior distribution of the retrieved wind speed, and of the SST: $\mathcal{p}$ is taken to be the product of the likelihood function $\mathcal{L}$ and prior distribution functions $P$ and $P'$ for wind speed and SST, respectively:
@@ -241,7 +236,7 @@ Where $\sigma_{p,i}$ is the standard deviation of the CIMR TOA Tbs. It can be fi
 The nominal Bayesian wind speed and SST solution are then taken to be the Maximum Likelihood Estimate (mode of the posterior distribution), following:
 
 $$
-(U_{10}^{ret}, T_s^{ret}) = arg_{max(u_{10}, T_s)} \mathcal{p}(\tilde{u}_{10}|T_p; \tilde{T}_s|T_p, \sigma_u, u_{10p}, \phi_{wp}, \sigma_T, T_{sp}) \quad (Eq.R3)
+(U_{10}^{ret}, T_s^{ret}) = arg_{max(u_{10}, T_s)} \mathcal{p}(\tilde{u}_{10}|T_p; \tilde{T}_s|T_p, \sigma_u, u_{10p}, \phi_{wp}, \sigma_T, T_{sp})
 $$
 
 
@@ -257,8 +252,7 @@ name: Figure42
 Retrieved Ocean wind speed modulus using aft-views with full antenna pattern integration and NEDT added to antenna temperatures. (Right) Retrieved Ocean wind speed modulus using fore-views with full antenna pattern integration and no NEDT added to antenna temperatures.
 ```
 
-We next focus on comparing the input surface wind speed to the retrieved ones. 
-Here, we consider only the most complete simulations combining aft and fore views (weighted average), adding NEDT on the antenna Tbs, and integrating over the full antenna patterns.
+We next focus on comparing the input surface wind speed to the retrieved ones. Here, we consider only the most complete simulations combining aft and fore views (weighted average), adding NEDT on the antenna Tbs, and integrating over the full antenna patterns.
 
 
 ```{figure} Figure43.png
@@ -337,8 +331,7 @@ Median (top) and STD (bottom) of the $\Delta SST$ evaluated per bins of distance
 ```
 
 
-As illustrated in {numref}`Figure46` to {numref}`Figure49`, a similar pattern of high land-contamination is found in the retrieved SSTs within ~40 km from nearest coasts. After removing the data within that band, an overall unbiased retrieval is found with an RMSD of ~0.1°C with respect to the input data when combining both aft and fore views in the input data used for retrieval, as well as adding the proper NEDT to each used channel. Outside of the coastal band, as for the retrieved wind speed modulus, the largest errors in the retrieved SSTs are found in the hurricane center region.
-While this error is obviously related to azimuthal-harmonic components (see {numref}`Figure38`), the exact source for that error (polarization mixing?) yet remains unidentified and would require further investigation.
+As illustrated in {numref}`Figure46` to {numref}`Figure49`, a similar pattern of high land-contamination is found in the retrieved SSTs within ~40 km from nearest coasts. After removing the data within that band, an overall unbiased retrieval is found with an RMSD of ~0.1°C with respect to the input data when combining both aft and fore views in the input data used for retrieval, as well as adding the proper NEDT to each used channel. Outside of the coastal band, as for the retrieved wind speed modulus, the largest errors in the retrieved SSTs are found in the hurricane center region. While this error is obviously related to azimuthal-harmonic components (see {numref}`Figure38`), the exact source for that error (polarization mixing?) yet remains unidentified and would require further investigation.
 
 ```{figure} Figure49.png
 --- 
@@ -476,8 +469,8 @@ As found for OWV and SST, the quality of the wind direction retrieval strongly d
 
 As evidenced, larger uncertainties in the retrieved wind direction are observed:
 
-1. For lower wind speed, as expected given the relatively small amplitudes ($<0.5$K) of the azimuthal harmonics of the third and fourth Stokes parameters for $ U_{10} < 5 $ m/s with respect to the antenna Tbs NEDT in C and X-bands (0.2–0.3 K).
+1. For lower wind speed, as expected given the relatively small amplitudes (<0.5K) of the azimuthal harmonics of the third and fourth Stokes parameters for $U_{10} < 5$ m/s with respect to the antenna Tbs NEDT in C and X-bands (0.2–0.3 K).
 
-2. Larger uncertainties are also observed in regions where the relative wind direction exhibits transitions around $ \pm 180^\circ $. This can be potentially attributed to larger ambiguities in the wind direction because $U$ and $V = 0$ at all wind speeds and frequencies at such value of the relative azimuth angle.
+2. Larger uncertainties are also observed in regions where the relative wind direction exhibits transitions around $ \pm 180^\circ$. This can be potentially attributed to larger ambiguities in the wind direction because $U$ and $V = 0$ at all wind speeds and frequencies at such value of the relative azimuth angle.
 
 The combination of aft and fore views helps minimize such uncertainties, but they are not totally suppressed. After filtering for data at grid points where the distance to nearest coasts is less than or equal to 40 km and where the relative wind direction angle reaches $ \pm 180^\circ $, we found an RMSD between the input and retrieved wind direction of $ \sim 19^\circ $ on average over the scene, increasing to $35^\circ$ for conditions where $U_{10} < 5$ m/s.
