@@ -230,7 +230,8 @@ $$ (eqdiel13)
 $$
 \nu_{2}(T,S=0)=\displaystyle\frac{45+T}{a_8+a_9 T+a_{10} T^2}
 $$ (eqdiel14)
- 
+
+
 The $a_i$ parameters for the fits are given by (Table III in {cite:p}`meissner2014emission`):
  
  | Coefficient | Value |
@@ -1155,7 +1156,7 @@ $$
 \end{eqnarray}
 $$ (eqatm45a)
 
-where $R$ is the rain rate in [mm/h], $z$ the altitude, $y=f/f_R$, $f_R=53-R(0.37-0.0015R)$, $c_R=x_1 and $z=x_2\cdot f\cdot y_2$, where $x_1$=3.51e-4, $y_1$=1.03, $x_2$=0.851 and $y_2$=0.158 for f=1.4 GHz and $x_1$=2.31e-4, $y_1$=1.42, $x_2$=1.41 and $y_2$=-0.0779 for the 4 higher frequencies of CIMR.
+where $R$ is the rain rate in [mm/h], $z$ the altitude, $y=f/f_R$, $f_R=53-R(0.37-0.0015R)$, $c_R=x_1$ and $z=x_2\cdot f\cdot y_2$, where $x_1$=3.51e-4, $y_1$=1.03, $x_2$=0.851 and $y_2$=0.158 for f=1.4 GHz and $x_1$=2.31e-4, $y_1$=1.42, $x_2$=1.41 and $y_2$=-0.0779 for the 4 higher frequencies of CIMR.
 
 
 ### Effects on the Stokes Vector
